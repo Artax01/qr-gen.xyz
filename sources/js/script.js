@@ -13,12 +13,32 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
   const qrCodeContainer = document.getElementById('qrcode');
+  const moon = document.getElementById('theme-color'); // dark-theme
+  const burger_menu = document.getElementById('burger-menu'); // burger menu
 
+  moon.onclick = function () {
+    document.body.classList.toggle('dark_theme');
+    
+    if (document.body.classList.contains("dark_theme")) {
+      moon.src = "./sources/images/sun.png";
+      moon.classList.add('invert_icon');
+      burger_menu.classList.add('invert_icon');
+
+    } else {
+      moon.src = "./sources/images/moon.svg";
+      moon.classList.remove('invert_icon');
+      burger_menu.classList.remove('invert_icon');
+    }
+  }
+  
   fileNameDisplayInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-      fileNameDisplayInput.classList.add('disabled');
       generateQRCode();
     }
+  });
+
+  generateQRLink.addEventListener('change', (e) => {
+    generateQRCode();
   });
 
   generateQRLink.addEventListener('click', (e) => {
@@ -26,15 +46,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   function generateQRCode() {
+    
     const value = fileNameDisplayInput.value;
+    
     if (value.trim() !== '') {
+      
         qrCodeContainer.innerHTML = ''; // delete previous qrcode
         new QRCode(qrCodeContainer, value); // Generate new qrcode
 
         saveQRCodeLink .classList.remove('disabled');
         removeInputLink.classList.remove('disabled');
+      
     } else {
+
+        qrCodeContainer.innerHTML = '';
         alert('Veuillez entrer une valeur afin de pouvoir générer un qrcode.');
+      
     }
   }
 
