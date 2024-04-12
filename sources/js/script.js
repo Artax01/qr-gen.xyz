@@ -7,8 +7,8 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
-  const saveQRCodeLink  = document.getElementById('saveQrLink'); // suggests saving the qrcode
-  const removeInputLink = document.getElementById('removeInputLink'); // clears the value entered in the input
+  // const saveQRCodeLink  = document.getElementById('saveQrLink'); // suggests saving the qrcode
+  // const removeInputLink = document.getElementById('removeInputLink'); // clears the value entered in the input
   const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
@@ -21,13 +21,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     if (document.body.classList.contains("dark_theme")) {
       moon.src = "./sources/images/sun.png";
+      
       moon.classList.add('invert_icon');
       burger_menu.classList.add('invert_icon');
+      fileSelectorLink.classList.add('invert_icon');
 
     } else {
       moon.src = "./sources/images/moon.svg";
+      
       moon.classList.remove('invert_icon');
       burger_menu.classList.remove('invert_icon');
+      fileSelectorLink.classList.remove('invert_icon');
     }
   }
   
@@ -54,49 +58,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
         qrCodeContainer.innerHTML = ''; // delete previous qrcode
         new QRCode(qrCodeContainer, value); // Generate new qrcode
 
-        saveQRCodeLink .classList.remove('disabled');
-        removeInputLink.classList.remove('disabled');
+        // saveQRCodeLink .classList.remove('disabled');
+        // removeInputLink.classList.remove('disabled');
       
     } else {
 
         qrCodeContainer.innerHTML = '';
-        alert('Veuillez entrer une valeur afin de pouvoir générer un qrcode.');
+        alert('Please enter a value to generate a qrcode.');
       
     }
   }
 
 
-  saveQRCodeLink.addEventListener('click', function(event) {
-    event.preventDefault();
+  // saveQRCodeLink.addEventListener('click', function(event) {
+  //   event.preventDefault();
 
-    const qrCodeDataURL = qrCodeContainer.querySelector('img').src;
+  //   const qrCodeDataURL = qrCodeContainer.querySelector('img').src;
 
-    fetch(qrCodeDataURL)
-      .then(response => response.blob())
-      .then(blob => {
+  //   fetch(qrCodeDataURL)
+  //     .then(response => response.blob())
+  //     .then(blob => {
 
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
+  //       const link = document.createElement('a');
+  //       link.href = URL.createObjectURL(blob);
 
-        link.download = 'qrcode.png';
+  //       link.download = 'qrcode.png';
 
-        link.click();
+  //       link.click();
 
-        URL.revokeObjectURL(link.href);
+  //       URL.revokeObjectURL(link.href);
 
-      });
-  });
+  //     });
+  // });
 
 
-  removeInputLink.addEventListener('click', function(event) {
-    event.preventDefault();
-    resetInput();
+  // removeInputLink.addEventListener('click', function(event) {
+  //   event.preventDefault();
+  //   resetInput();
 
-    qrCodeContainer.innerHTML = '';
+  //   qrCodeContainer.innerHTML = '';
 
-    saveQRCodeLink .classList.add('disabled');
-    removeInputLink.classList.add('disabled');
-  });
+  //   saveQRCodeLink .classList.add('disabled');
+  //   removeInputLink.classList.add('disabled');
+  // });
 
   function resetInput() {
     fileNameDisplayInput.value = '';
@@ -116,8 +120,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (file) {
       resetInput();
       fileNameDisplayInput.value = file.name;
-      fileNameDisplayInput.classList.add('disabled');
-      fileNameDisplayInput.addEventListener('focus', preventFocus);
+      // fileNameDisplayInput.classList.add('disabled');
+      // fileNameDisplayInput.addEventListener('focus', preventFocus);
     }
   });
 
