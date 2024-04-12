@@ -47,8 +47,8 @@ body {
   --text-input-container-background: hsl(270 70% 6%);
   --input-text-color: #E3ECF2;
   --separator-color: hsl(270 70% 6%);
-  --selected-border-color: #E3ECF2;
   --smooth-border-color: rgba(183, 195, 210, 0.5);
+  --selected-border-color: #E3ECF2;
 }
 
 .invert_icon {
@@ -73,6 +73,11 @@ body {
   cursor: pointer;
   background: transparent;
   transition: 1s ease-in-out;
+}
+
+.navbar h1 {
+  background: transparent;
+  transition: 0.3s ease;
 }
 
 .qrcode_panel {
@@ -108,10 +113,6 @@ body {
 
 .qrcode_frame {
   margin: 100px 15% 100px 15%;
-}
-
-.qrcode_frame h1 {
-  padding: 50px 0px 50px 0px;
 }
 
 .qrcode_frame img {
@@ -195,6 +196,7 @@ body {
 
 
 
+
 /* JAVASCRIPT CLASS */
 
 .disabled {
@@ -269,6 +271,10 @@ body {
 
 
 
+
+
+
+
 /* RESPONSIVE */
 
 
@@ -276,7 +282,7 @@ body {
   body {
     overflow-x: auto;
   }
-    
+
   .qrcode_panel {
     display: flex;
     flex-direction: column;
@@ -291,7 +297,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
-    
+
   .qrcode_frame {
     margin-top: 5px;
     margin-bottom: 0;
