@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: -webkit-fill-available;
   overflow-x: hidden;
   transition: 0.3s ease;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -23,6 +24,10 @@ body {
         -ms-animation: fadein 2s; /* Internet Explorer */
           -o-animation: fadein 2s; /* Opera < 12.1 */
             animation: fadein 2s;
+}
+
+html {
+  height: -webkit-fill-available;
 }
 
 :root {
