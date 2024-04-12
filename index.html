@@ -21,7 +21,7 @@
     
     <main>
       <div class="qrcode_panel">
-        <div class="side_menu_left">
+<!--         <div class="side_menu_left">
           <section>
             <dl>
               <dt><a href="#" id="generateQRLink">generate qrcode</a></dt>
@@ -35,35 +35,40 @@
               </dt>
             </dl>
           </section>
-        </div>
+        </div> -->
 
 
         <div class="content">
           <div class="qrcode_frame">
-            <section>
-              <div id="qrcode"></div>
-            </section>
+            <div id="qrcode"></div>
           </div>
 
-          <div class="input">
-            <section>
-              <input type="text" id="fileNameDisplayInput" placeholder="Write here..." spellcheck="false">
-              <p>Possibility to download a qr code come back soon.</p>
-            </section>
+          <div class="text-input-container">
+            <label class="file-select-btn">
+              <img src="./sources/images/add-file.svg" class="add-file-btn" id="fileSelectorLink">
+              <input type="file" id="hiddenFileInput" style="display: none;">
+            </label>
+            <input type="text" class="message-input" id="fileNameDisplayInput" placeholder="Write here..." spellcheck="false">
+
+            <div class="send-btn">
+              <img src="./sources/images/send-message.png" class="send-btn-icon" id="generateQRLink">
+            </div>
           </div>
+          
         </div>
-
       </div>
     </main>
 
     <footer>
       <div class="credits">
+        <p>Possibility to download a qr code come back soon.</p>
+        <br>
         <p>AGPL-3.0 license.</p>
         <p>All Rights Reserved.</p>
         <p>2024.By SneaKxyz.</p>
-        <p>v1.1.0</p>
+        <p>v1.3.0</p>
         <br>
-        <a href="https://github.com/SneaKxyz/qrcode-generator-website">Github page of this site.</a>
+        <a href="https://github.com/SneaKxyz/qrcode-generator-website" target="_blank">Github page of this site.</a>
         <p>The github page of qrcode.js is <a href="https://github.com/davidshimjs/qrcodejs" target="_blank">here</a>.</p>
         <p>QR Code is a registered trademark of DENSO WAVE INCORPORATED</p>
       </div>
