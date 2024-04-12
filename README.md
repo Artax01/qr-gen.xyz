@@ -34,7 +34,9 @@ Simply press the "delete qrcode" button to reset the process.
 
 This website was developed by SneaKxyz.
 
-This website uses a file called "qrcode.js" which comes from this github : https://github.com/davidshimjs/qrcodejs
+This website uses a file called "qrcode.js" which comes from this github : https://github.com/davidshimjs/qrcodejs  
+
+QR Code is a registered trademark of DENSO WAVE INCORPORATED
 
 
 <!-- MARKDOWN -->
