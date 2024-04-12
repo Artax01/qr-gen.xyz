@@ -326,7 +326,7 @@ html {
   }
 
   .send-btn {
-    display: flex;
+    display: none;
   }
 
   .credits {
