@@ -267,6 +267,7 @@ footer {
   .content {
     display: flex;
     min-height: calc(100svh - 97px);
+    max-width: 100vw;
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
@@ -278,6 +279,7 @@ footer {
   }
 
   .text-input-container {
+    max-width: 100vw;
     padding-bottom: 15px;
     border-radius: 15px 15px 0px 0px;
     border-top: 2px solid var(--separator-color);
