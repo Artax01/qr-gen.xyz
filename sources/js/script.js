@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (file) {
       resetInput();
       fileNameDisplayInput.value = file.name;
+      generateQRCode();
       // fileNameDisplayInput.classList.add('disabled');
       // fileNameDisplayInput.addEventListener('focus', preventFocus);
     }
