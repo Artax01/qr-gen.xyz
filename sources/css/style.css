@@ -114,6 +114,7 @@ body {
   margin-right: 10px;
   border: none;
   cursor: pointer;
+  background: none;
 }
 
 .add-file-btn {
@@ -293,7 +294,7 @@ footer {
   }
 
   .send-btn {
-    display: flex;
+    display: none;
   }
 
   .credits {
