@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   height: -webkit-fill-available;
   transition: 0.3s ease-in-out;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
