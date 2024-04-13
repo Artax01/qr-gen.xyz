@@ -266,7 +266,7 @@ footer {
 @media only screen and (max-width: 1024px){
   .content {
     display: flex;
-    min-height: calc(100svh - 97px);
+    min-height: calc(100svh - 95px);
     max-width: 100vw;
     width: 100%;
     flex-direction: column;
