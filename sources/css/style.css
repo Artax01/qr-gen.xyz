@@ -49,7 +49,7 @@ body {
   --selection-color: hsla(340, 100%, 75%, 0.5);
   --text-input-container-background: hsl(270 70% 6%);
   --input-text-color: #E3ECF2;
-  --separator-color: rgba(183, 195, 210, 0.5);
+  --separator-color: rgba(183, 195, 210, 0.1);
   --smooth-border-color: rgba(183, 195, 210, 0.5);
   --selected-border-color: #E3ECF2;
 }
@@ -296,7 +296,7 @@ footer {
   }
 
   .send-btn {
-    display: none;
+    display: flex;
   }
 
   .credits {
