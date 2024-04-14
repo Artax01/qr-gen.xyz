@@ -140,7 +140,7 @@ body {
 .send-btn {
   display: none;
   height: 34px;
-  width: auto;
+  width: 100%;
   margin-right: 10px;
   padding: 10px 15px;
   border-radius: 15px;
