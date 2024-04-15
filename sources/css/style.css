@@ -102,7 +102,6 @@ body {
 .text-input-container {
   display: flex;
   width: 100%;
-/*   padding: 10px 10px; */
   padding: 10px;
   border-radius: 20px;
   align-items: center;
@@ -139,11 +138,10 @@ body {
 }
 
 .send-btn {
-/*   display: none; */
+  visibility: hidden;
   display: inline-block;
   align-items: center;
   height: 34px;
-/*   padding: 10px 15px; */
   padding: 0 15px;
   border-radius: 15px;
   border: none;
@@ -289,6 +287,7 @@ body {
   }
 
   .send-btn {
+    visibility: visible;
     display: flex;
   }
 
