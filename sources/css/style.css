@@ -25,6 +25,7 @@ body {
 }
 
 :root {
+  --static-neutral: #fff;
   --neutral: #fff;
   --disabled-color: grey;
   --primary-color: #212121;
@@ -43,6 +44,7 @@ body {
 }
 
 .dark_theme {
+  --neutral: hsl(270 70% 6%);
   --primary-color: #F3F7FA;
   --background-color: hsl(270 70% 6%);
   --selection-color: hsla(340, 100%, 75%, 0.5);
@@ -83,18 +85,67 @@ body {
 
 .content {
   width: 100%;
-  text-align: center;
   font-size: x-large;
 }
 
+
+/* QRCODE FRAME */
+
+
+
 .qrcode_frame {
-  margin: 100px 15% 100px 15%;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
 }
 
-.qrcode_frame img {
-  margin: 0px auto 0px auto;
-  border: 10px solid var(--neutral);
-  border-radius: 5px;
+.qrcode_card {
+  padding-bottom: auto;
+  border: 2px solid var(--smooth-border-color);
+  border-radius: 25px;
+}
+
+.qrcode {
+  padding: 20px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.qrcode_info {
+  padding: 20px;
+  font-size: large;
+  text-overflow: ellipsis;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top: 2px solid var(--smooth-border-color);
+  background: var(--neutral);
+}
+
+.qrcode_info p {
+  padding: 1px 0px 5px 0px;
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.qrcode_sub_info {
+  display: flex;
+  padding-top: 5px;
+  flex-direction: row;
+  background: transparent;
+}
+
+.qrcode_size {
+  font-weight: bold;
+}
+
+.download_btn {
+  height: 20px;
+  padding-right: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 /* INPUT FIELD BOTTOM AND BUTTON */
@@ -111,11 +162,11 @@ body {
   margin-left: 25%;
   margin-right: 10px;
   border: none;
-  cursor: pointer;
   background: none;
+  cursor: pointer;
 }
 
-.add-file-btn {
+.add-file-img {
   height: 32px;
   padding-top: 5px;
   background: transparent;
@@ -266,7 +317,6 @@ body {
   }
 
   .qrcode_frame {
-    margin-top: 5px;
     margin-bottom: 0;
   }
 
