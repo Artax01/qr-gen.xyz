@@ -7,7 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
-  // const saveQRCodeLink  = document.getElementById('saveQrLink'); // suggests saving the qrcode
+  const download_btn  = document.getElementById('download_btn'); // suggests saving the qrcode
   // const removeInputLink = document.getElementById('removeInputLink'); // clears the value entered in the input
   const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
   const hiddenFileInput = document.getElementById('hiddenFileInput');
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       moon.classList.add('invert_icon');
       burger_menu.classList.add('invert_icon');
       fileSelectorLink.classList.add('invert_icon');
+      download_btn.classList.add('invert_icon');
 
     } else {
       moon.src = "./sources/images/moon.svg";
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       moon.classList.remove('invert_icon');
       burger_menu.classList.remove('invert_icon');
       fileSelectorLink.classList.remove('invert_icon');
+      download_btn.classList.remove('invert_icon');
     }
   }
   
@@ -57,9 +59,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       
         qrCodeContainer.innerHTML = ''; // delete previous qrcode
         new QRCode(qrCodeContainer, value); // Generate new qrcode
-
-        // saveQRCodeLink .classList.remove('disabled');
-        // removeInputLink.classList.remove('disabled');
       
     } else {
 
@@ -70,26 +69,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  // saveQRCodeLink.addEventListener('click', function(event) {
-  //   event.preventDefault();
+  download_btn.addEventListener('click', function(event) {
+    event.preventDefault();
 
-  //   const qrCodeDataURL = qrCodeContainer.querySelector('img').src;
+    const qrCodeDataURL = qrCodeContainer.querySelector('img').src;
 
-  //   fetch(qrCodeDataURL)
-  //     .then(response => response.blob())
-  //     .then(blob => {
+    fetch(qrCodeDataURL)
+      .then(response => response.blob())
+      .then(blob => {
 
-  //       const link = document.createElement('a');
-  //       link.href = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
 
-  //       link.download = 'qrcode.png';
+        link.download = 'qrcode.png';
 
-  //       link.click();
+        link.click();
 
-  //       URL.revokeObjectURL(link.href);
+        URL.revokeObjectURL(link.href);
 
-  //     });
-  // });
+      });
+  });
 
 
   // removeInputLink.addEventListener('click', function(event) {
@@ -98,7 +97,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   //   qrCodeContainer.innerHTML = '';
 
-  //   saveQRCodeLink .classList.add('disabled');
+  //   download_btn .classList.add('disabled');
   //   removeInputLink.classList.add('disabled');
   // });
 
@@ -121,8 +120,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       resetInput();
       fileNameDisplayInput.value = file.name;
       generateQRCode();
-      // fileNameDisplayInput.classList.add('disabled');
-      // fileNameDisplayInput.addEventListener('focus', preventFocus);
     }
   });
 
