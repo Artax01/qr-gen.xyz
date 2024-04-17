@@ -4,19 +4,17 @@ A website for generating qrcode.
 
 ## How do you use it ?
 
-It's simple, just put a value in the input field and press enter or click on "generate qrcode" on the left.
+It's simple, just put a value in the input field and press enter or click on "generate qrcode" button on the right.
 
 Once you've done that, you'll see your qrcode appear.
-
-By default two button are disabled because there is no qrcode.
 
 > You must enter a value in the input field, otherwise you won't be able to generate qrcode.
 
 ## How do I save it ?
 
-On the left you have a button called "save qrcode", by clicking on it you will open a window to save the qrcode on your computer.
+Below the qrcode you have a button to download the qrcode, by clicking on it you will open a window to save the qrcode on your computer or on your phone.
 
-> If you haven't created a qrcode yet, you won't be able to save it.
+> If you haven't created a qrcode yet, you won't be able to download it.
 
 ## How do I delete the qrcode I've generated ?
 
