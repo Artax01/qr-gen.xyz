@@ -6,16 +6,22 @@
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
-  const download_btn  = document.getElementById('download_btn'); // suggests saving the qrcode
   // const removeInputLink = document.getElementById('removeInputLink'); // clears the value entered in the input
   const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
   const qrCodeContainer = document.getElementById('qrcode');
+
+  // buttons
+  const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
+  const download_btn  = document.getElementById('download_btn'); // suggests saving the qrcode
   const moon = document.getElementById('theme-color'); // dark-theme
   const burger_menu = document.getElementById('burger-menu'); // burger menu
 
+  // qrcode stats
+  const qrcode_name = document.getElementById('qrcode_name');
+  const qrcode_size = document.getElementById('qrcode_size');
+  
   moon.onclick = function () {
     document.body.classList.toggle('dark_theme');
     
@@ -59,6 +65,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       
         qrCodeContainer.innerHTML = ''; // delete previous qrcode
         new QRCode(qrCodeContainer, value); // Generate new qrcode
+
+        qrcode_name.innerText = fileNameDisplayInput.value; // show the name of the qrcode
       
     } else {
 
@@ -118,7 +126,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     if (file) {
       resetInput();
+      
       fileNameDisplayInput.value = file.name;
+      qrcode_name.innerText = file.name;
+      
       generateQRCode();
     }
   });
