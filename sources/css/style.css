@@ -30,8 +30,8 @@ body {
   --disabled-color: grey;
   --primary-color: #212121;
   --secondary-color: black;
-  --selection-color: hsla(340, 100%, 75%, 0.5);
   --background-color: #F3F7FA;
+  --selection-color: hsla(340, 100%, 75%, 0.5);
   --shadow: rgb(0 0 0 / 0.05);
   --highlight-color: hsl(45 90% 65%);
   --text-input-container-background: #edf2f5;
@@ -134,6 +134,10 @@ body {
   padding-top: 5px;
   flex-direction: row;
   background: transparent;
+}
+
+.qrcode_name {
+  text-overflow: ellipsis;
 }
 
 .qrcode_size {
