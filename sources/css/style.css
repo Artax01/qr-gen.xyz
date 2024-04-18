@@ -136,10 +136,6 @@ body {
   background: transparent;
 }
 
-.qrcode_name {
-  text-overflow: ellipsis;
-}
-
 .qrcode_size {
   font-weight: bold;
 }
