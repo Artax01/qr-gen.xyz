@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const burger_menu = document.getElementById('burger-menu'); // burger menu
 
   // qrcode stats
-  const qrcode_name = document.getElementById('qrcode_name');
   const qrcode_size = document.getElementById('qrcode_size');
   
   moon.onclick = function () {
@@ -65,8 +64,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       
         qrCodeContainer.innerHTML = ''; // delete previous qrcode
         new QRCode(qrCodeContainer, value); // Generate new qrcode
-
-        qrcode_name.innerText = fileNameDisplayInput.value; // show the name of the qrcode
       
     } else {
 
@@ -128,7 +125,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       resetInput();
       
       fileNameDisplayInput.value = file.name;
-      qrcode_name.innerText = file.name;
       
       generateQRCode();
     }
