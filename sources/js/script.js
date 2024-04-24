@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
+  const qrcodeFrame = document.getElementById('qrcode_frame');
   const qrCodeContainer = document.getElementById('qrcode');
 
   // buttons
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     9: 'Go',
     12: 'To'
   }
+
+  qrcodeFrame.classList.add('unvisible')
   
   moon.onclick = function () {
     document.body.classList.toggle('dark_theme');
@@ -73,9 +76,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         new QRCode(qrCodeContainer, value); // Generate new qrcode
 
         qrcodeActions(get_size=true);
+
+        qrcodeFrame.classList.remove('unvisible')
       
     } else {
-
+      
+        qrcodeFrame.classList.add('unvisible');
+      
         qrCodeContainer.innerHTML = '';
         alert('Please enter a value to generate a qrcode.');
       
