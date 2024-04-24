@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         qrcodeActions(get_size=true);
 
-        qrcodeFrame.classList.remove('unvisible')
+        qrcodeFrame.classList.remove('unvisible');
       
     } else {
       
