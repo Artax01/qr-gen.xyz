@@ -233,6 +233,9 @@ body {
   pointer-events: none;
 }
 
+.unvisible {
+  visibility: hidden;
+}
 
 /* CUSTOMISATION */
 
