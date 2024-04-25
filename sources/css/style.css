@@ -271,7 +271,7 @@ footer p, a {
   pointer-events: none;
 }
 
-.unvisible {
+.visible {
   visibility: hidden;
   margin-left: 0;
 }
