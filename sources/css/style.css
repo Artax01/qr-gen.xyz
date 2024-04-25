@@ -6,7 +6,7 @@
   padding: 0;
   color: var(--primary-color);
   background: var(--background-color);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif !important;
 }
 
 html {
