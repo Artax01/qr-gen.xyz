@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="font-src 'self' https://fonts.googleapis.com;">
   <link rel="stylesheet" type="text/css" href="./sources/css/style.css">
   <script src="./sources/js/qrcode.js"></script>
   <script src="./sources/js/script.js"></script>
@@ -44,7 +45,7 @@
           <img src="./sources/images/add-file.svg" class="add-file-img" id="fileSelectorLink">
           <input type="file" id="hiddenFileInput" style="display: none;">
         </label>
-        <input type="text" class="message-input" id="fileNameDisplayInput" placeholder="Write here..." spellcheck="false">
+        <input type="text" class="message-input" id="fileNameDisplayInput" placeholder="Write here to generate a qrcode..." spellcheck="false">
 
         <div class="send-btn" id="generateQRLink">
           <img src="./sources/images/send-message.png" class="send-btn-icon">
