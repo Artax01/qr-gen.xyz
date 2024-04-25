@@ -65,12 +65,16 @@ body {
 }
 
 .navbar img {
-  display: block;
+  display: absolute;
   height: 45px;
   margin: 25px;
   background: transparent;
   cursor: pointer;
   transition: 1s ease-in-out;
+}
+
+#burger-menu {
+  z-index: 1;
 }
 
 .navbar h1 {
@@ -89,6 +93,7 @@ body {
 
 
 .qrcode_frame {
+  visibility: hidden;
   display: flex;
   margin-top: 50px;
   margin-bottom: 100px;
@@ -111,7 +116,6 @@ body {
 .qrcode_info {
   padding: 20px;
   font-size: large;
-  text-overflow: ellipsis;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border-top: 2px solid var(--smooth-border-color);
@@ -207,15 +211,54 @@ body {
   height: 15px;
 }
 
-.credits {
-  padding: 0px 20px 0px 0px;
-  color: var(--secondary-color);
-  opacity: 0.6;
-  text-align: end;
+
+
+
+/*  FOOTER / SIDE_MENU / BURGER_MENU */
+
+
+
+footer {
+  visibility: hidden;
+  margin-left: -100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(var(--background-color) ,0.299);
+  backdrop-filter: blur(7px);
+  color: var(--primary-color);
+  border-right: 2px solid var(--smooth-border-color);
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
 }
 
+footer p, a {
+  background: none;
+}
 
+.footer_info {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 50px;
+  background: none;
+}
 
+.footer_links {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  background: inherit;
+}
 
 
 
@@ -230,6 +273,7 @@ body {
 
 .unvisible {
   visibility: hidden;
+  margin-left: 0;
 }
 
 /* CUSTOMISATION */
@@ -340,14 +384,25 @@ body {
     display: flex;
   }
 
-  .credits {
-    display: none;
+  footer {
+    width: 100%;
+    border-right: none;
   }
 }
 
 @media only screen and (max-width: 465px) {
   .navbar h1 {
     font-size: larger;
+  }
+
+  .footer_info {
+    font-size: x-large;
+  }
+}
+
+@media only screen and (max-width: 355px) {
+  .footer_info {
+    font-size: large;
   }
 }
 
@@ -362,5 +417,9 @@ body {
 
   .send-btn {
     display: none;
+  }
+
+  .footer_info {
+    font-size: smaller;
   }
 }
