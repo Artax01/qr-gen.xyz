@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const moon = document.getElementById('theme-color'); // dark-theme
   const burger_menu = document.getElementById('burger-menu'); // burger menu
 
+  // element
+  const footer = document.getElementById('footer');
+  
   // qrcode stats
   const qrcode_size = document.getElementById('qrcode_size');
   const units = {
@@ -29,7 +32,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     12: 'To'
   }
 
-  qrcodeFrame.classList.add('unvisible')
+  burger_menu.onclick = function () {
+    footer.classList.toggle('visible');
+  }
   
   moon.onclick = function () {
     document.body.classList.toggle('dark_theme');
@@ -77,11 +82,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         qrcodeActions(get_size=true);
 
-        qrcodeFrame.classList.remove('unvisible');
+        qrcodeFrame.classList.add('visible');
       
     } else {
       
-        qrcodeFrame.classList.add('unvisible');
+        qrcodeFrame.classList.remove('visible');
       
         qrCodeContainer.innerHTML = '';
         alert('Please enter a value to generate a qrcode.');
