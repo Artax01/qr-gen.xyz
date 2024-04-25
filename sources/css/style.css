@@ -9,13 +9,8 @@
   font-family: "Montserrat", sans-serif;
 }
 
-html {
-  height: -webkit-fill-available;
-}
-
 body {
   min-height: 100svh;
-  height: -webkit-fill-available;
   transition: 0.3s ease;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
       -moz-animation: fadein 2s; /* Firefox < 16 */
