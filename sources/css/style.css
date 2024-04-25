@@ -220,7 +220,7 @@ body {
 
 footer {
   visibility: hidden;
-  margin-left: -100%;
+  /*margin-left: -100%;*/
   top: 0;
   left: 0;
   position: absolute;
@@ -273,7 +273,7 @@ footer p, a {
 
 .visible {
   visibility: hidden;
-  margin-left: 0;
+  /*margin-left: 0;*/
 }
 
 /* CUSTOMISATION */
