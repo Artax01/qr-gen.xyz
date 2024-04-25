@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 
-  generateQRLink.addEventListener('change', (e) => {
+  fileNameDisplayInput.addEventListener('change', (e) => {
     generateQRCode();
   });
 
@@ -77,19 +77,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     
     if (value.trim() !== '') {
       
-        qrCodeContainer.innerHTML = ''; // delete previous qrcode
-        new QRCode(qrCodeContainer, value); // Generate new qrcode
+      qrCodeContainer.innerHTML = ''; // delete previous qrcode
+      new QRCode(qrCodeContainer, value); // Generate new qrcode
 
-        qrcodeActions(get_size=true);
+      qrcodeActions(get_size=true);
 
-        qrcodeFrame.classList.add('visible');
+      qrcodeFrame.classList.add('visible');
       
     } else {
       
-        qrcodeFrame.classList.remove('visible');
-      
-        qrCodeContainer.innerHTML = '';
-        alert('Please enter a value to generate a qrcode.');
+      qrcodeFrame.classList.remove('visible');
+    
+      qrCodeContainer.innerHTML = '';
+      alert('Please enter a value to generate a qrcode.');
       
     }
   }
