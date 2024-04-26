@@ -233,7 +233,7 @@ footer {
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 100vh;
+  height: 100svh;
   justify-content: center;
   align-items: center;
   transition: 0.3s ease-in-out;
