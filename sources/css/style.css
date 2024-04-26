@@ -226,8 +226,8 @@ footer {
   left: 0;
   position: absolute;
   background: rgba(var(--background-color) ,0.299);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--primary-color);
   border-right: 2px solid var(--smooth-border-color);
   display: flex;
