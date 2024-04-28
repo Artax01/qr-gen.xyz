@@ -36,11 +36,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   resetInput()
   
 
-  burger_menu.onclick = function () {
+  burger_menu.addEventListener('click', () => {
+    burger_menu.classList.toggle('active');
     footer.classList.toggle('visible');
-  }
+  });
   
-  moon.onclick = function () {
+  moon.addEventListener('click', () => {
     document.body.classList.toggle('dark_theme');
     
     if (document.body.classList.contains("dark_theme")) {
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       fileSelectorLink.classList.remove('invert_icon');
       download_btn.classList.remove('invert_icon');
     }
-  }
+  });
   
   fileNameDisplayInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
