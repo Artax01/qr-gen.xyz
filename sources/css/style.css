@@ -267,12 +267,6 @@ footer p, a {
 
 /* JAVASCRIPT CLASS */
 
-.disabled {
-  color: var(--disabled-color);
-  font-style: italic;
-  pointer-events: none;
-}
-
 .visible {
   visibility: visible;
   margin-left: 0;
