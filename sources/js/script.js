@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     12: 'To'
   }
 
+
+  resetInput()
+  
+
   burger_menu.onclick = function () {
     footer.classList.toggle('visible');
   }
@@ -106,15 +110,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //   resetInput();
 
   //   qrCodeContainer.innerHTML = '';
-
-  //   download_btn .classList.add('disabled');
-  //   removeInputLink.classList.add('disabled');
   // });
 
   function resetInput() {
     fileNameDisplayInput.value = '';
     hiddenFileInput.value = '';
-    fileNameDisplayInput.classList.remove('disabled');
     fileNameDisplayInput.removeEventListener('focus', preventFocus);
   }
 
