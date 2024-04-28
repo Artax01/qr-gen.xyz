@@ -232,7 +232,7 @@ footer {
   border-right: 2px solid var(--smooth-border-color);
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   height: 100svh;
   justify-content: center;
   align-items: center;
