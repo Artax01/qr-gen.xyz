@@ -7,6 +7,7 @@
   color: var(--primary-color);
   background: var(--background-color);
   font-family: "Montserrat", sans-serif;
+  transition: 0.3s ease-in-out;
 }
 
 body {
