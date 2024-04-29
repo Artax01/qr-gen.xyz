@@ -319,19 +319,19 @@ footer {
 }
 
 footer a, footer p {
-  background: none;
+  background: transparent;
 }
 
 .footer_info {
   font-size: xx-large;
   font-weight: bold;
   padding: 0 50px 50px 50px;
-  background: none;
+  background: transparent;
 }
 
 .footer_links {
   padding: 0 50px 0 50px;
-  background: none;
+  background: transparent;
 }
 
 
