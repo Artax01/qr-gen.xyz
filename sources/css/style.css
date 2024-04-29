@@ -318,20 +318,20 @@ footer {
   transition: 0.3s ease-in-out;
 }
 
-footer a, footer p {
-  background: transparent;
+footer a, footer p, footer center{
+  background: none;
 }
 
 .footer_info {
   font-size: xx-large;
   font-weight: bold;
   padding: 0 50px 50px 50px;
-  background: transparent;
+  background: none;
 }
 
 .footer_links {
   padding: 0 50px 0 50px;
-  background: transparent;
+  background: none;
 }
 
 
