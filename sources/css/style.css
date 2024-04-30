@@ -76,7 +76,7 @@ body {
 
 
 .navbar {
-  position: relative;
+  position: inherit;
   display: flex;
   top: 0;
   left: 0;
