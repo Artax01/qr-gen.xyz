@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
   moon.addEventListener('click', () => {
     document.body.classList.toggle('dark_theme');
+    darkMode.classList.toggle('active');
     
     if (document.body.classList.contains("dark_theme")) {
       moon.src = "./sources/images/sun.png";
       
       moon.classList.add('invert_icon');
-      burger_menu.classList.add('invert_icon');
       fileSelectorLink.classList.add('invert_icon');
       download_btn.classList.add('invert_icon');
 
@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       moon.src = "./sources/images/moon.svg";
       
       moon.classList.remove('invert_icon');
-      burger_menu.classList.remove('invert_icon');
       fileSelectorLink.classList.remove('invert_icon');
       download_btn.classList.remove('invert_icon');
     }
