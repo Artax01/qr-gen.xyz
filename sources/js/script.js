@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
   moon.addEventListener('click', () => {
     document.body.classList.toggle('dark_theme');
-    darkMode.classList.toggle('active');
     
     if (document.body.classList.contains("dark_theme")) {
       moon.src = "./sources/images/sun.png";
