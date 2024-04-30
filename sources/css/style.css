@@ -21,33 +21,42 @@ body {
 }
 
 :root {
+  /* ---------BASIC---------- */
   --static-neutral: #fff;
   --neutral: #fff;
+  --invert-neutral: #000;
   --primary-color: #212121;
-  --secondary-color: black;
   --background-color: #F3F7FA;
+  --alert-color: red;
+  /* -------OTHER-------- */
   --selection-color: hsla(340, 100%, 75%, 0.5);
-  --shadow: rgb(0 0 0 / 0.05);
-  --highlight-color: hsl(45 90% 65%);
-  --text-input-container-background: #edf2f5;
-  --input-text-color: rgba(33, 33, 33, 0.75);
-  --separator-color: #E3ECF2;
   --smooth-border-color: #E3ECF2;
+  --shadow: rgb(0 0 0 / 0.05);
+  /* -------SCROLLBAR-------- */
+  --scrollbar-color: #000;
+  /* -------INPUT-------- */
+  --input-container-background: #edf2f5;
+  --input-top-border: #E3ECF2;
   --selected-border-color: rgba(183, 195, 210, 0.5);
+  --input-text-color: rgba(33, 33, 33, 0.75);
+  /* -------SEND-BTN-------- */
   --send-button-color: #007bff;
   --send-button-hover-color: #0056b3;
 }
 
 .dark_theme {
+  /* ---------BASIC---------- */
   --neutral: hsl(270 70% 6%);
+  --invert-neutral: #fff;
   --primary-color: #F3F7FA;
   --background-color: hsl(270 70% 6%);
-  --selection-color: hsla(340, 100%, 75%, 0.5);
-  --text-input-container-background: hsl(270 70% 6%);
-  --input-text-color: #E3ECF2;
-  --separator-color: rgba(183, 195, 210, 0.1);
+  /* -------OTHER-------- */
   --smooth-border-color: rgba(183, 195, 210, 0.5);
+  /* -------INPUT-------- */
+  --input-container-background: hsl(270 70% 6%);
+  --input-top-border: rgba(183, 195, 210, 0.1);
   --selected-border-color: #E3ECF2;
+  --input-text-color: #E3ECF2;
 }
 
 .invert_icon {
@@ -67,7 +76,7 @@ body {
 
 
 .navbar {
-  position: inherit;
+  position: relative;
   display: flex;
   top: 0;
   left: 0;
@@ -79,7 +88,6 @@ body {
 .navbar img {
   display: absolute;
   height: 45px;
-  margin: 25px;
   background: transparent;
   cursor: pointer;
   transition: 0.4s ease-in-out;
@@ -98,7 +106,7 @@ body {
 .burger-menu span {
   width: 66%;
   height: 4px;
-  background: var(--secondary-color);
+  background: var(--invert-neutral);
   display: block;
   position: absolute;
   top: 50%;
@@ -113,7 +121,7 @@ body {
   width: 100%;
   height: 4px;
   border-radius: 100px;
-  background: var(--secondary-color);
+  background: var(--invert-neutral);
   transition: 0.3s ease-in-out;
 }
 
@@ -125,6 +133,11 @@ body {
 .burger-menu span::after {
   width: 58%;
   transform: translateY(11px);
+}
+
+.burger-menu.active:hover span::before, .burger-menu.active:hover span::after {
+  background: var(--alert-color);
+  box-shadow: 0 0 2rem 0 var(--alert-color);
 }
 
 .burger-menu.active span {
@@ -225,7 +238,7 @@ body {
 
 
 
-.text-input-container {
+.input-container {
   display: flex;
   width: 100%;
   padding: 10px;
@@ -348,12 +361,12 @@ footer a, footer p, footer center{
 /* CUSTOMISATION */
 
 ::-moz-selection {
-  color: var(--neutral);
+  color: var(--static-neutral);
   background-color: var(--selection-color);
 }
 
 ::selection {
-  color: var(--neutral);
+  color: var(--static-neutral);
   background-color: var(--selection-color);
 }
 
@@ -378,7 +391,7 @@ footer a, footer p, footer center{
 
 /* cursor */
 ::-webkit-scrollbar-thumb {
-  background: var(--highlight-color);
+  background: var(--scrollbar-color);
   border-radius: 60px;
 }
 
@@ -432,11 +445,11 @@ footer a, footer p, footer center{
     margin-bottom: 10%;
   }
 
-  .text-input-container {
+  .input-container {
     padding-bottom: 15px;
     border-radius: 15px 15px 0px 0px;
-    border-top: 2px solid var(--separator-color);
-    background: var(--text-input-container-background);
+    border-top: 2px solid var(--input-top-border);
+    background: var(--input-container-background);
   }
 
   .file-select-btn {
