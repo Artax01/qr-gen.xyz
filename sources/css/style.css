@@ -10,10 +10,6 @@
   transition: background 0.3s ease-in-out;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 body {
   overflow-x: hidden;
   min-height: 100svh;
