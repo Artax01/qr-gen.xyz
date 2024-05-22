@@ -453,6 +453,10 @@ nav.active {
 
 
 @media only screen and (max-width: 1024px){
+  body {
+    overflow-x: hidden;
+  }
+    
   .navbar {
     padding: 1rem 1.5rem 1rem 1.5rem;
   }
