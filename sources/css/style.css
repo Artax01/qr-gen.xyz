@@ -344,7 +344,6 @@ nav {
   left: 0;
   margin-left: 100%;
   background: var(--background-color);
-  color: var(--text-color);
   flex-direction: column;
   justify-content: center;
   transition-property: all;
