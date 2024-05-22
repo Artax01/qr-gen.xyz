@@ -10,6 +10,10 @@
   transition: background 0.3s ease-in-out;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   overflow-x: hidden;
   min-height: 100svh;
@@ -452,11 +456,7 @@ nav.active {
 /* RESPONSIVE */
 
 
-@media only screen and (max-width: 1024px){
-  body {
-    overflow-x: hidden;
-  }
-    
+@media only screen and (max-width: 1024px){   
   .navbar {
     padding: 1rem 1.5rem 1rem 1.5rem;
   }
