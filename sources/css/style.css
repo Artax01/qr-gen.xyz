@@ -373,6 +373,7 @@ nav a, nav p, nav center{
 .nav_info a {
   text-decoration: none;
   margin-bottom: 2rem;
+  transition: .3s;
 }
 
 .nav_info a:hover {
