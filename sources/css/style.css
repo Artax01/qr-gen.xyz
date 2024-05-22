@@ -468,6 +468,10 @@ nav a, nav p, nav center{
   .navbar {
     padding: 1rem 1.5rem 1rem 1.5rem;
   }
+
+  .burger-menu:hover {
+    background: var(--invert-neutral);
+  }
     
   .content {
     display: flex;
