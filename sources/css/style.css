@@ -345,7 +345,6 @@ nav {
   margin-left: 100%;
   background: var(--background-color);
   color: var(--text-color);
-  border-right: 2px solid var(--smooth-border-color);
   flex-direction: column;
   justify-content: center;
   transition-property: all;
@@ -354,26 +353,37 @@ nav {
   z-index: 1;
 }
 
+nav.active {
+  visibility: visible;
+  margin-left: calc(100% - 590px);
+}
+
 nav a, nav p, nav center{
   background: none;
 }
 
 .nav_info {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   font-size: xx-large;
   font-weight: bold;
-  padding: 0 50px 50px 50px;
+  padding: 0 50px 50px 100px;
   background: none;
 }
 
-.nav_links {
-  padding: 0 50px 0 50px;
-  background: none;
+.nav_info a {
+  text-decoration: none;
+  margin-bottom: 2rem;
 }
 
-nav.active {
-  visibility: visible;
-  margin-left: calc(100% - 590px);
+.nav_info a:hover {
+  color: #2E1D74;
+}
+
+.version {
+  padding: 0 50px 0 100px;
+  background: none;
 }
 
 
