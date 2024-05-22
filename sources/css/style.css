@@ -27,7 +27,6 @@ body {
   --invert-neutral: #000;
   --text-color: #212121;
   --background-color: #F3F7FA;
-  --alert-color: red;
   /* -------OTHER-------- */
   --selection-color: hsla(340, 100%, 75%, 0.5);
   --smooth-border-color: #E3ECF2;
