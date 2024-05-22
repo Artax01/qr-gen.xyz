@@ -13,13 +13,19 @@
 <body>
   <header>
     <div class="navbar">
-      <div class="burger-menu" id="burger-menu">
-        <span></span>
-      </div>
+
+      <div></div>
 
       <h1>Qrcode creation</h1>
 
-      <img src="./sources/images/moon.svg" id="theme-color">
+      <!-- <div class="darkMode__container" id="darkMode">
+        <span></span>
+      </div> -->
+      
+      <div class="burger-menu" id="burger-menu">
+        <span></span>
+      </div>
+      
     </div>
   </header>
   
@@ -39,9 +45,10 @@
           </div>
           
         </div>
-      </div>
+      </div> 
+    </div>
 
-      <div class="input-container">
+    <div class="input-container">
         <label class="file-select-btn">
           <img src="./sources/images/add-file.svg" class="add-file-img" id="fileSelectorLink">
           <input type="file" id="hiddenFileInput" style="display: none;">
@@ -52,26 +59,25 @@
           <img src="./sources/images/send-message.png" class="send-btn-icon">
         </div>
       </div>
-      
-    </div>
   </main>
 
-  <footer id="footer">
-    <center>
-      <div class="footer_info">
-        <p>AGPL-3.0 License.</p>
-        <p>All Rights Reserved.</p>
-        <p>2024 / SneaKxyz</p>
-        <p>v1.3.1</p>
-      </div>
-  
-      <div class="footer_links">
-        <a href="https://github.com/SneaKxyz/qrcode-generator-website" target="_blank">Github page of this site.</a>
-        <p>Github page of qrcode.js <a href="https://github.com/davidshimjs/qrcodejs" target="_blank">here</a>.</p>
-        <p>QR Code is a registered trademark of DENSO WAVE INCORPORATED</p>
-      </div>
-    </center>
-  </footer>
+  <div id="blur" class="blur"></div>
+
+  <nav id="nav">
+    <div class="nav_info">
+      <p>AGPL-3.0 License.</p>
+      <p>All Rights Reserved.</p>
+      <p>2024 / SneaKxyz</p>
+    </div>
+
+    <div class="nav_links">
+      <a href="https://github.com/SneaKxyz/qrcode-generator-website" target="_blank">Github page of this site.</a>
+      <p>Github page of qrcode.js <a href="https://github.com/davidshimjs/qrcodejs" target="_blank">here</a>.</p>
+      <p>QR Code is a registered trademark of DENSO WAVE INCORPORATED</p>
+      <br>
+      <p>v1.3.1</p>
+    </div>
+  </nav>
   
 </body>
 </html>
