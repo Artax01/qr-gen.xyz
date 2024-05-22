@@ -528,11 +528,13 @@ nav a, nav p, nav center{
 }
 
 
-/* @media only screen and (max-width: 355px) {
-  .nav_info {
+@media only screen and (max-width: 400px) {
+  .navbar h1 {
+    width: 20px;
+    margin-left: calc(-100% + 22%);
     font-size: large;
   }
-} */
+}
 
 @media only screen and (max-width: 300px) {
   .file-select-btn {
