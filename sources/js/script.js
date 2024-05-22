@@ -16,11 +16,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
   // const removeInputLink = document.getElementById('removeInputLink'); // clears the value entered in the input
   const download_btn  = document.getElementById('download_btn'); // suggests saving the qrcode
-  const moon = document.getElementById('theme-color'); // dark-theme
+  // const darkMode = document.getElementById('darkMode'); // dark-theme
   const burger_menu = document.getElementById('burger-menu'); // burger menu
 
   // element
-  const footer = document.getElementById('footer');
+  const side_menu = document.getElementById('side_menu');
+  const blur = document.getElementById('blur');
   
   // qrcode stats
   const qrcode_size = document.getElementById('qrcode_size');
@@ -38,27 +39,27 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   burger_menu.addEventListener('click', () => {
     burger_menu.classList.toggle('active');
-    footer.classList.toggle('visible');
+    side_menu.classList.toggle('active');
+    blur.classList.toggle('active')
   });
   
-  moon.addEventListener('click', () => {
-    document.body.classList.toggle('dark_theme');
+  // darkMode.addEventListener('click', () => {
+  //   document.body.classList.toggle('dark_theme');
+  //   darkMode.classList.toggle('active');
     
-    if (document.body.classList.contains("dark_theme")) {
-      moon.src = "./sources/images/sun.png";
-      
-      moon.classList.add('invert_icon');
-      fileSelectorLink.classList.add('invert_icon');
-      download_btn.classList.add('invert_icon');
+  //   if (document.body.classList.contains("dark_theme")) {
+  //     // darkMode.src = "./sources/images/sun.png";
 
-    } else {
-      moon.src = "./sources/images/moon.svg";
-      
-      moon.classList.remove('invert_icon');
-      fileSelectorLink.classList.remove('invert_icon');
-      download_btn.classList.remove('invert_icon');
-    }
-  });
+  //     fileSelectorLink.classList.add('invert_icon');
+  //     download_btn.classList.add('invert_icon');
+
+  //   } else {
+  //     // darkMode.src = "./sources/images/moon.svg";
+
+  //     fileSelectorLink.classList.remove('invert_icon');
+  //     download_btn.classList.remove('invert_icon');
+  //   }
+  // });
   
   fileNameDisplayInput.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
@@ -85,11 +86,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       qrcodeActions(get_size=true);
 
-      qrcodeFrame.classList.add('visible');
+      qrcodeFrame.classList.add('active');
       
     } else {
       
-      qrcodeFrame.classList.remove('visible');
+      qrcodeFrame.classList.remove('active');
     
       qrCodeContainer.innerHTML = '';
       alert('Please enter a value to generate a qrcode.');
