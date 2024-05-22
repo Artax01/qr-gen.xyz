@@ -515,26 +515,22 @@ nav a, nav p, nav center{
 
   .nav_info {
     padding-left: 50px;
-    font-size: large;
+    font-size: x-large;
   }
   
   .version {
     padding-left: 50px;
+    font-size: medium;
   }
     
 }
 
-@media only screen and (max-width: 465px) {
-  .footer_info {
-    font-size: x-large;
-  }
-}
 
-@media only screen and (max-width: 355px) {
-  .footer_info {
+/* @media only screen and (max-width: 355px) {
+  .nav_info {
     font-size: large;
   }
-}
+} */
 
 @media only screen and (max-width: 300px) {
   .file-select-btn {
@@ -545,7 +541,13 @@ nav a, nav p, nav center{
     display: none;
   }
 
-  .footer_info {
-    font-size: smaller;
+  .nav_info {
+    padding-left: 5px;
+    font-size: large;
+  }
+
+  .version {
+    padding-left: 5px;
+    font-size: medium;
   }
 }
