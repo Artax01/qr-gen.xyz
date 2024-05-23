@@ -534,6 +534,10 @@ nav a, nav p, nav center{
     padding-left: 50px;
     font-size: medium;
   }
+
+  .text_zone {
+    margin-right: 2rem;
+  }
     
 }
 
