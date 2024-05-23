@@ -92,6 +92,9 @@ body {
   font-size: x-large;
 }
 
+.navbar h1 a {
+  text-decoration: none;
+}
 
 
 .burger-menu {
