@@ -17,11 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // const removeInputLink = document.getElementById('removeInputLink'); // clears the value entered in the input
   const download_btn  = document.getElementById('download_btn'); // suggests saving the qrcode
   // const darkMode = document.getElementById('darkMode'); // dark-theme
-  const burger_menu = document.getElementById('burger-menu'); // burger menu
-
-  // element
-  const side_menu = document.getElementById('side_menu');
-  const blur = document.getElementById('blur');
   
   // qrcode stats
   const qrcode_size = document.getElementById('qrcode_size');
@@ -35,13 +30,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
   resetInput()
-  
-
-  burger_menu.addEventListener('click', () => {
-    burger_menu.classList.toggle('active');
-    side_menu.classList.toggle('active');
-    blur.classList.toggle('active')
-  });
   
   // darkMode.addEventListener('click', () => {
   //   document.body.classList.toggle('dark_theme');
