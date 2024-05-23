@@ -27,6 +27,7 @@ body {
   --invert-neutral: #000;
   --text-color: #212121;
   --background-color: #F3F7FA;
+  --contrast-color: #2E1D74;
   /* -------OTHER-------- */
   --selection-color: hsla(340, 100%, 75%, 0.5);
   --smooth-border-color: #E3ECF2;
@@ -69,7 +70,7 @@ body {
 }
 
 .text_zone a {
-  color: #2E1D74;
+  color: var(--contrast-color);
   text-decoration: none;
 }
 
@@ -147,7 +148,7 @@ body {
 }
 
 .burger-menu:hover {
-  background: #2E1D74;
+  background: var(--contrast-color);
 }
 
 .burger-menu.active span {
@@ -388,7 +389,7 @@ nav a, nav p, nav center{
 }
 
 .nav_info a:hover {
-  color: #2E1D74;
+  color: var(--contrast-color);
 }
 
 .version {
