@@ -64,7 +64,10 @@ body {
 }
 
 .text_zone {
-  margin: 5rem, 10rem, 5rem, 10rem;
+  margin-top: 5rem;
+  margin-right: 10rem;
+  margin-bottom: 5rem;
+  margin-left: 10rem;
 }
 
 .text_zone a {
