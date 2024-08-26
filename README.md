@@ -2,7 +2,7 @@
 
 A website for generating qrcode.
 
-## How do you use it ?
+## How you use it ?
 
 It's simple, just put a value in the input field and press enter or click on "generate qrcode" button on the right.
 
@@ -10,7 +10,7 @@ Once you've done that, you'll see your qrcode appear.
 
 > You must enter a value in the input field, otherwise you won't be able to generate qrcode.
 
-## How do I save it ?
+## How I save it ?
 
 Below the qrcode you have a button to download the qrcode, by clicking on it you will open a window to save the qrcode on your computer or on your phone.
 
