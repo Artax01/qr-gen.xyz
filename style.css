@@ -35,7 +35,6 @@ body {
   --bg-1: #100F14; /* main background */
   --bg-2: #1C1B20; /* box background */
   --bg-3: rgba(255,255,255,1); /* burger menu background */
-  --bg-translucid: #eae9ee;
   --bg-blur: rgba(255,255,255,.3);
 
   --spacing-7: 7px;
@@ -52,8 +51,6 @@ body {
   --selection-color: hsla(340, 100%, 75%, 0.5);
   --send-button: #007bff;
   --send-button-hover: #0056b3;
-  --switch-background: #fff;
-  --switch-btn-background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
   --selected-border-color:rgba(255,255,255,.75);
 }
 
