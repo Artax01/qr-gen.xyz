@@ -2,7 +2,7 @@
 // The github page of 'qrcode.js' => 'https://github.com/davidshimjs/qrcodejs'.
 
 
-// QRCODE PANEL
+// QRCODE PANEL 
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
