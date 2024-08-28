@@ -444,6 +444,7 @@ footer {
   padding: 150px 75px;
   z-index: 1;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: .3s;
   transform: scale(0);
 }
