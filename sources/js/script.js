@@ -99,6 +99,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     event.preventDefault();
 
     card.classList.add('delete');
+    cardContainer.classList.remove('active');
+    status_msg.classList.remove('hide'); // show the status message
     qrCodeContainer.innerHTML = '';
   });
 
