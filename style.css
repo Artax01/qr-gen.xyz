@@ -220,11 +220,17 @@ header {
 
 
 main {
+  position: relative;
   display: flex;
   width: 100%;
   height: var(--main-height);
   align-content: center;
   flex-direction: column;
+  justify-content: center;
+}
+
+main.active {
+  justify-content: normal;
 }
 
 .status-msg {
