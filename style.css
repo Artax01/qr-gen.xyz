@@ -240,6 +240,7 @@ main.active {
   padding: var(--spacing-15);
   gap: var(--spacing-10);
   opacity: 0.45;
+  transform: translateY(55px);
   transition: .3s;
 }
 
@@ -258,7 +259,7 @@ main.active {
   min-width: 300px;
   gap: var(--spacing-15);
   opacity: 0;
-  transition: .3s;
+  transition: .2s;
 }
 
 .card-container.active {
@@ -340,6 +341,10 @@ main.active {
 
 .qrcode_actions svg:hover {
   transform: scale(0.90);
+}
+
+.trash_icon:hover {
+  box-shadow: rgba(255,0,0,.35) 0px 5px 30px;
 }
 
 .qrcode_date_time {
@@ -505,6 +510,17 @@ footer {
   transform: scale(1.25);
   border: var(--border) solid 1px;
   border-radius: 20px;
+}
+
+.zoom_qrcode {
+  padding: var(--spacing-10);
+}
+
+.zoom_title {
+  position: relative;
+  top: 15%;
+  left: 35%;
+  display: flex;
 }
 
 
