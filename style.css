@@ -240,7 +240,10 @@ main.active {
 }
 
 .status-msg.hide {
-  display: none;
+  visibility: hidden;
+  transform: translateY(-25px);
+  max-height: 0;
+  opacity: 0;
   transition: .3s;
 }
 
@@ -258,6 +261,7 @@ main.active {
 
 .card-container.active {
   visibility: visible;
+  transform: translateY(-25px);
 }
 
 .card-container h2 {
@@ -545,7 +549,11 @@ footer {
 
 .blur.active {
   visibility: visible;
-  transition: .3s;
+  -webkit-animation: fadein .3s;
+    -moz-animation: fadein .3s;
+      -ms-animation: fadein .3s;
+        -o-animation: fadein .3s;
+          animation: fadein .3s;
 }
 
 nav {
@@ -558,7 +566,7 @@ nav {
   top: 0;
   left: 0;
   margin-left: 100%;
-  background: var(--bg-2);
+  background: var(--bg-1);
   flex-direction: column;
   justify-content: center;
   transition-property: all;
