@@ -240,11 +240,8 @@ main.active {
 }
 
 .status-msg.hide {
-  visibility: hidden;
-  transform: translateY(-25px);
-  max-height: 0;
-  opacity: 0;
-  transition: .3s;
+  display: none;
+  transition: .1s;
 }
 
 /* CARD */
@@ -256,12 +253,14 @@ main.active {
   margin: var(--spacing-10);
   min-width: 300px;
   gap: var(--spacing-15);
+  opacity: 0;
   transition: .3s;
 }
 
 .card-container.active {
   visibility: visible;
-  transform: translateY(-25px);
+  transform: translateY(-4px);
+  opacity: 1;
 }
 
 .card-container h2 {
