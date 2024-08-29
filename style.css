@@ -603,7 +603,7 @@ nav a, nav p, nav center {
 }
 
 
-.darkMode, .old_interface {
+.darkMode, .old_ui {
   position: absolute;
   top: 1.78rem;
   right: 5rem;
@@ -619,15 +619,15 @@ nav a, nav p, nav center {
   transition: .3s;
 }
 
-.old_interface {
+.old_ui {
   margin-right: 4rem;
 }
 
-.darkMode:hover, .old_interface:hover {
+.darkMode:hover, .old_ui:hover {
   background: var(--selected-border-color);
 }
 
-.darkMode_icon, .old_interface_icon {
+.darkMode_icon, .old_ui_icon {
   height: 25px;
   margin-left: 7px;
   margin-top: 2px;
@@ -781,7 +781,7 @@ nav a, nav p, nav center {
     margin-right: .4rem;
   }
 
-  .old_interface {
+  .old_ui {
     margin-right: 3.5rem;
   }
 
@@ -823,7 +823,7 @@ nav a, nav p, nav center {
     font-size: large;
   }
 
-  .darkMode, .old_interface {
+  .darkMode, .old_ui {
     top: 1.85rem;
   }
 }
