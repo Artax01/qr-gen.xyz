@@ -239,7 +239,7 @@ main.active {
   transition: .3s;
 }
 
-.status-msg.active {
+.status-msg.hide {
   display: none;
   transition: .3s;
 }
@@ -248,13 +248,20 @@ main.active {
 
 .card-container {
   visibility: hidden;
+  display: flex;
+  flex-direction: column;
   margin: var(--spacing-10);
   min-width: 300px;
-  transition: .1s;
+  gap: var(--spacing-15);
+  transition: .3s;
 }
 
 .card-container.active {
   visibility: visible;
+}
+
+.card-container h2 {
+  margin: 5px var(--spacing-10) 15px var(--spacing-10);
 }
 
 .card {
@@ -267,6 +274,14 @@ main.active {
   gap: 20px;
   background: var(--bg-2);
   box-shadow: rgba(255,255,255,0.10) 0px 5px 30px;
+  transform: scale(1);
+  transition: .3s;
+}
+
+.card.delete {
+  visibility: hidden;
+  transform: scale(0);
+  transition: .3s;
 }
 
 .qrcode {
@@ -306,7 +321,6 @@ main.active {
   min-width: 120px;
   margin-left: var(--spacing-10);
   align-items: center;
-  /* gap: 20px; */
 }
 
 .qrcode_actions svg {
@@ -350,8 +364,10 @@ main.active {
 
 
 footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
   padding: var(--spacing-7);
   background: var(--bg-1);
 }
@@ -422,6 +438,10 @@ footer {
   height: var(--spacing-15);
   filter: invert();
 }
+
+
+
+
 
 
 
@@ -625,6 +645,14 @@ nav a, nav p, nav center {
 
 
 
+
+
+
+
+
+
+
+
 .text_zone {
   margin-top: 5rem;
   margin-right: 10rem;
@@ -636,8 +664,6 @@ nav a, nav p, nav center {
   color: blue;
   text-decoration: none;
 }
-
-
 
 
 
