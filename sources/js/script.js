@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
 
-  const main = document.getElementById('main'); // main (between header and footer)
   const cardContainer = document.getElementById('card-container');
   const card = document.getElementById('card');
   const qrCodeContainer = document.getElementById('qrcode');
@@ -150,7 +149,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       qrcodeActions(get_size=true);
 
-      statusMessageActive();
+      statusMessageHide();
 
       setInfos()
 
@@ -230,9 +229,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
 
-  function statusMessageActive() {
+  function statusMessageHide() {
     status_msg.classList.add('hide'); // hide the status message
-    main.classList.add('active'); // remove align-content propreties
   }
 
 });
