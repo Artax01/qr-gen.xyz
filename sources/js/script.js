@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
 
+  const main = document.getElementById('main');
   const cardContainer = document.getElementById('card-container');
   const card = document.getElementById('card');
   const qrCodeContainer = document.getElementById('qrcode');
@@ -47,8 +48,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   resetInput() 
-
-
 
 
 
@@ -101,6 +100,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     card.classList.add('delete');
     cardContainer.classList.remove('active');
     status_msg.classList.remove('hide'); // show the status message
+    
     qrCodeContainer.innerHTML = '';
   });
 
@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       setInfos()
 
+      main.classList.add('active');
       cardContainer.classList.add('active');
       card.classList.remove('delete');
 
