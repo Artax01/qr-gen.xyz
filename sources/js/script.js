@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
+
+  const main = document.getElementById('main'); // main (between header and footer)
   const cardContainer = document.getElementById('card-container');
+  const card = document.getElementById('card');
   const qrCodeContainer = document.getElementById('qrcode');
 
   // buttons
@@ -17,10 +20,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const deleteQRLink = document.getElementById('deleteQRLink'); // clears the value entered in the input
   const downloadQRLink  = document.getElementById('downloadQRLink'); // suggests saving the qrcode
 
-  const main = document.getElementById('main'); // main (between header and footer)
-  const status_msg = document.getElementById('status-msg');
-
   // qrcode stats
+  const status_msg = document.getElementById('status-msg');
   const qrcode_name = document.getElementById('qrcode_name'); // qrcode name field info 
   const qrcode_size = document.getElementById('qrcode_size'); // qrcode size field info
   const qrcode_date_time = document.getElementById('qrcode_date_time'); // qrcode date and time generation
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   deleteQRLink.addEventListener('click', function(event) {
     event.preventDefault();
 
-    cardContainer.classList.remove('active');
+    card.classList.add('delete');
     qrCodeContainer.innerHTML = '';
   });
 
@@ -154,11 +155,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
       setInfos()
 
       cardContainer.classList.add('active');
-
+      card.classList.remove('delete');
 
     } else {
-
-      cardContainer.classList.remove('active');
 
       qrCodeContainer.innerHTML = '';
       alert('Please enter a value to generate a qrcode.');
@@ -232,7 +231,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
   function statusMessageActive() {
-    status_msg.classList.add('active'); // hide the status message
+    status_msg.classList.add('hide'); // hide the status message
     main.classList.add('active'); // remove align-content propreties
   }
 
