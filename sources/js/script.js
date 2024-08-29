@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const main = document.getElementById('main');
   const cardContainer = document.getElementById('card-container');
   const card = document.getElementById('card');
-  const qrCodeContainer = document.getElementById('qrcode');
+  const qrcodeImage = document.getElementById('qrcode');
+  const zoom_qrcodeImage = document.getElementById('zoom_qrcode');
 
   // buttons
   const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // qrcode stats
   const status_msg = document.getElementById('status-msg');
   const qrcode_name = document.getElementById('qrcode_name'); // qrcode name field info 
+  const zoom_qrcode_name = document.getElementById('zoom_title'); // zoom qrcode name field info
   const qrcode_size = document.getElementById('qrcode_size'); // qrcode size field info
   const qrcode_date_time = document.getElementById('qrcode_date_time'); // qrcode date and time generation
   const units = {
@@ -101,7 +103,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     cardContainer.classList.remove('active');
     status_msg.classList.remove('hide'); // show the status message
     
-    qrCodeContainer.innerHTML = '';
+    qrcodeImage.innerHTML = '';
   });
 
   fileSelectorLink.addEventListener('click', (e) => {
@@ -146,8 +148,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     if (value.trim() !== '') {
 
-      qrCodeContainer.innerHTML = ''; // delete previous qrcode
-      new QRCode(qrCodeContainer, value); // Generate new qrcode
+      qrcodeImage.innerHTML = ''; // delete previous qrcode
+      new QRCode(qrcodeImage, value); // Generate new qrcode
+      new QRCode(zoom_qrcodeImage, value); // Generate new zoom qrcode
 
       qrcodeActions(get_size=true);
 
@@ -161,7 +164,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     } else {
 
-      qrCodeContainer.innerHTML = '';
+      // qrcodeImage.innerHTML = '';
       alert('Please enter a value to generate a qrcode.');
 
     }
@@ -171,7 +174,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function qrcodeActions(get_size=false) {
     setTimeout(() => {
-      const qrCodeImage = qrCodeContainer.querySelector('img').src;
+      const qrCodeImage = qrcodeImage.querySelector('img').src;
 
       fetch(qrCodeImage)
         .then(response => response.blob())
@@ -225,12 +228,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     return months[nbr]
   }
 
-  function setInfos() {
-    qrcode_name.innerText = fileNameDisplayInput.value;
-
-    qrcode_date_time.innerText = String(`At ${new Date().getHours()}:${new Date().getMinutes()}, ${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
+  function fixMinutes(minutes) {
+    if (minutes < 10) {
+      return `0${minutes}`;
+    } else {
+      return minutes;
+    }
   }
 
+  function setInfos() {
+    qrcode_name.innerText = fileNameDisplayInput.value;
+    zoom_qrcode_name.innerText = fileNameDisplayInput.value;
+
+    qrcode_date_time.innerText = String(`At ${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}, ${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
+  }
 
   function statusMessageHide() {
     status_msg.classList.add('hide'); // hide the status message
