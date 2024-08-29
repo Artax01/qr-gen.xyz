@@ -220,18 +220,16 @@ header {
 
 
 main {
+  display: flex;
+  width: 100%;
   height: var(--main-height);
   align-content: center;
-}
-
-main.active {
-  align-content: normal;
+  flex-direction: column;
 }
 
 .status-msg {
   display: flex;
   flex-direction: column;
-  align-content: center;
   text-align: center;
   padding: var(--spacing-15);
   gap: var(--spacing-10);
