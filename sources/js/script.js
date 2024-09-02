@@ -83,20 +83,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                                                                                                                  
 
 
-  // class ZoomMenu {
-  //   constructor() {
-  //     this.zoomImage = NaN;
-  //     this.zoomName = ""; 
-  //   }
 
-  //   show() {
-
-  //   }
-
-  //   hide() {
-
-  //   }
-  // }
 
 
   class Card {
