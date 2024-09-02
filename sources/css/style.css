@@ -27,8 +27,8 @@ body {
 }
 
 :root {
-  --font: "Montserrat", sans-serif;
-  --font-code: "Source Code Pro", sans-serif;
+  --font: "Montserrat", sans-serif !important;
+  --font-code: "Source Code Pro", sans-serif !important;
 
   --text-color: #000; /* main text color */
   --text-color-2: #F3F7FA;
