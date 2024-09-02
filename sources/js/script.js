@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     status_msg.classList.remove('hide'); // show the status message
     
     qrcodeImage.innerHTML = '';
+    zoom_qrcodeImage.innerHTML = '';
   });
 
   fileSelectorLink.addEventListener('click', (e) => {
@@ -150,6 +151,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       qrcodeImage.innerHTML = ''; // delete previous qrcode
       new QRCode(qrcodeImage, value); // Generate new qrcode
+      zoom_qrcodeImage.innerHTML = ''; // delete previous zoom qrcode
       new QRCode(zoom_qrcodeImage, value); // Generate new zoom qrcode
 
       qrcodeActions(get_size=true);
