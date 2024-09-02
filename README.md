@@ -2,7 +2,7 @@
 
 A website for generating qrcode.
 
-## How you use it ?
+## How to you use it ?
 
 It's simple, just put a value in the input field and press enter or click on "generate qrcode" button on the right.
 
@@ -16,7 +16,7 @@ Below the qrcode you have a button to download the qrcode, by clicking on it you
 
 > If you haven't created a qrcode yet, you won't be able to download it.
 
-## How do I delete the qrcode I've generated ?
+## How delete the qrcode I've generated ?
 
 Simply press the "delete qrcode" button to reset the process.
 
