@@ -214,6 +214,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       newCard.id = id;
       this.cardList[id] = newCard;
 
+      resetInput();
       this.checkLength();
     }
 
@@ -224,7 +225,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         this.cardList.length = Number(this.cardList.length) - 1
       }
 
-      resetInput();
       this.checkLength();
     }
   };
