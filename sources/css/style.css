@@ -359,6 +359,7 @@ main.active {
 }
 
 .qrcode_date_time {
+  font-family: var(--font-code);
   opacity: 0.75;
   padding: 0 0 var(--spacing-10) var(--spacing-10);
 }
