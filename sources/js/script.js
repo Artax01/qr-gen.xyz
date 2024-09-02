@@ -262,14 +262,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // input field
 
   fileNameDisplayInput.addEventListener('keypress', function(event) {
-    console.log('fileNameDisplayInput');
     if (event.key === 'Enter') {
       cardContainer.addCard();
     }
   });
 
   hiddenFileInput.addEventListener('change', (e) => {
-    console.log('hiddenFileInput');
     const file = e.target.files[0];
 
     if (file) {
@@ -283,7 +281,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // buttons
 
   fileSelectorLink.addEventListener('click', (event) => {
-    console.log('fileSelectorLink2');
     event.preventDefault();
     hiddenFileInput.click();
   });
