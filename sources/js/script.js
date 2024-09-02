@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // buttons
 
   fileSelectorLink.addEventListener('click', (event) => {
-    console.log('fileSelectorLink');
+    console.log('fileSelectorLink2');
     event.preventDefault();
     hiddenFileInput.click();
   });
