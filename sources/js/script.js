@@ -296,11 +296,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // zoom menu
 
   exitButton.addEventListener('click', () => {
-    zoom_menu.classList.remove('active');
+    zoomMenu.classList.remove('active');
   });
 
   zoomMenu.addEventListener('click', () => {
-    zoom_menu.classList.remove('active');
+    zoomMenu.classList.remove('active');
   });
 
 
