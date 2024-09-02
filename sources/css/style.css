@@ -11,12 +11,12 @@
 }
 
 html, body {
+  overflow-x: hidden;
   min-width: 350px;
   min-height: 500px;
 }
 
 body {
-  overflow-x: hidden;
   background: var(--bg-1);
   max-height: 100vh;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -233,6 +233,9 @@ main {
   align-content: center;
   flex-direction: column;
   justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: .3s;
 }
 
 main.active {
@@ -244,15 +247,20 @@ main.active {
   flex-direction: column;
   text-align: center;
   padding: var(--spacing-15);
-  gap: var(--spacing-10);
+  gap: var(--spacing-7);
   opacity: 0.45;
   transform: translateY(55px);
   transition: .3s;
 }
 
-.status-msg.hide {
-  display: none;
-  transition: .1s;
+.status-msg.active {
+  text-align: left;
+  opacity: 1;
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 5px;
+  transform: translateY(0px);
+  transition: .3s ease-in-out;
 }
 
 /* CARD */
@@ -268,18 +276,15 @@ main.active {
   transition: .2s;
 }
 
-.card-container.active {
+.card-container.visible {
   visibility: visible;
   transform: translateY(-4px);
   opacity: 1;
-}
-
-.card-container h2 {
-  margin: 5px var(--spacing-10) 15px var(--spacing-10);
+  transition: .2s;
 }
 
 .card {
-  display: flex;
+  display: none;
   flex-direction: row;
   min-width: 340px;
   padding: 0 1rem 0 1rem;
@@ -288,14 +293,13 @@ main.active {
   gap: 20px;
   background: var(--bg-2);
   box-shadow: rgba(255,255,255,0.10) 0px 5px 30px;
-  transform: scale(1);
+  transform: scale(0);
   transition: .3s;
 }
 
-.card.delete {
-  visibility: hidden;
-  transform: scale(0);
-  transition: .3s;
+.card.visible {
+  display: flex;
+  transform: scale(1);
 }
 
 .qrcode {
@@ -309,6 +313,7 @@ main.active {
 }
 
 .qrcode_info {
+  width: 100%;
   padding: var(--spacing-10);
   border-radius: 20px;
   background: transparent;
@@ -519,14 +524,17 @@ footer {
 }
 
 .zoom_qrcode {
+  display: flex;
   padding: var(--spacing-10);
+  justify-content: center;
 }
 
 .zoom_title {
   position: relative;
-  top: 15%;
-  left: 35%;
   display: flex;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
 }
 
 
