@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         zoomImage.innerHTML = this.image;
         zoomName.innerText = this.name;
-        zoom_menu.classList.toggle('active');
+        zoomMenu.classList.toggle('active');
       });
     }
 
