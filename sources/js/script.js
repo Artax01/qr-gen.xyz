@@ -224,6 +224,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         this.cardList.length = Number(this.cardList.length) - 1
       }
 
+      resetInput();
       this.checkLength();
     }
   };
