@@ -114,7 +114,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       this.zoomButton = this.card.querySelector('#zoomQRLink');
       this.deleteButton = this.card.querySelector('#deleteQRLink');
 
-      this.downloadButton.addEventListener('click', () => {
+      this.downloadButton.addEventListener('click', function(event) {
+        event.preventDefault();
         this.sizeAndDownLoad('download');
       });
 
@@ -280,7 +281,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // buttons
 
-  fileSelectorLink.addEventListener('click', () => {
+  fileSelectorLink.addEventListener('click', (event) => {
+    event.preventDefault();
     hiddenFileInput.click();
   });
 
