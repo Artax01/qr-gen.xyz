@@ -118,6 +118,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         this.sizeAndDownLoad('download');
       });
 
+      this.deleteButton.addEventListener('click', () => {
+        removeCardCall(this.id);
+      });
+
       this.zoomButton.addEventListener('click', () => {
         this.image = this.card.querySelector('.qrcode').innerHTML;
         
@@ -205,12 +209,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     addCard() {
       const newCard = new Card();
-      this.cardList[this.cardList.length] = newCard;
+      let id = Number(this.cardList.length);
+
+      newCard.id = id;
+      this.cardList[id] = newCard;
 
       this.checkLength();
     }
 
     removeCard() {
+      delete this.cardList[id];
+
+      if (this.cardList.length > 0) {
+        this.cardList.length = Number(this.cardList.length) - 1
+      }
+
       this.checkLength();
     }
   };
@@ -345,7 +358,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function resetInput() {
     fileNameDisplayInput.value = '';
     hiddenFileInput.value = '';
-  }
+  };
 
   function findUnit(size) {
     let k = 0;
@@ -358,11 +371,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     value = value.toFixed(2)
 
     return value + ' ' + units[k-3];
-  }
+  };
 
   function findMonth(nbr) {
     return months[nbr]
-  }
+  };
 
   function fixMinutes(minutes) {
     if (minutes < 10) {
@@ -370,16 +383,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     } else {
       return minutes;
     }
-  }
+  };
 
   function statusMessageChange() {
     status_msg.classList.add('active'); // hide the status message
     status_msg.innerText = "Aujourd'hui";
-  }
+  };
 
   function statusMessageReset() {
     status_msg.classList.remove('active'); // show the status message
     status_msg.innerHTML = status_value;
-  }
+  };
+
+  function removeCardCall(id) {
+    cardContainer.removeCard(id);
+  };
 
 });
