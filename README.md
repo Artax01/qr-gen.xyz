@@ -30,7 +30,7 @@ Simply press the "delete qrcode" button to reset the process.
 
 ## Contribution
 
-This website was developed by SneaKxyz.
+This website was developed by Artax01.
 
 This website uses a file called "qrcode.js" which comes from this github : https://github.com/davidshimjs/qrcodejs  
 
