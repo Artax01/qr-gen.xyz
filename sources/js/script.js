@@ -217,7 +217,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       this.checkLength();
     }
 
-    removeCard() {
+    removeCard(id) {
       delete this.cardList[id];
 
       if (this.cardList.length > 0) {
