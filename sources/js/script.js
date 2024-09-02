@@ -114,8 +114,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       this.zoomButton = this.card.querySelector('#zoomQRLink');
       this.deleteButton = this.card.querySelector('#deleteQRLink');
 
-      this.downloadButton.addEventListener('click', function(event) {
-        event.preventDefault();
+      this.downloadButton.addEventListener('click', () => {
         this.sizeAndDownLoad('download');
       });
 
