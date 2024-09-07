@@ -698,7 +698,7 @@ nav {
   justify-content: center;
   background: var(--bg-1);
   box-shadow: var(--dark-soft-shadow);
-  transform: translateX(100vw);
+  transform: translateX(150vw);
   transition: .4s;
   z-index: 100;
 }
