@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         
         optImage.innerHTML = this.image;
         optName.innerText = this.name;
-        optDate.innerText = `${this.time}, ${this.date}`;
+        optDate.innerText = `${this.time}, ${this.fullDate}`;
         optMenu.classList.toggle('active');
       });
     }
