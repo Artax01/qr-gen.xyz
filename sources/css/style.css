@@ -616,7 +616,8 @@ body {
   height: 100%;
   background: var(--bg-2);
   border: var(--border) solid 1px;
-  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   z-index: 1;
   transition: .3s;
 }
