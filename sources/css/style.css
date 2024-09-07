@@ -969,9 +969,9 @@ nav a, nav p, nav center {
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .zoom_menu {
-    padding: 150px 75px;
+@media only screen and (max-width: 750px) {
+  #main {
+    height: calc(100% - 30%);
   }
 }
 
