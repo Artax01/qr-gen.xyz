@@ -162,7 +162,6 @@ body {
 .navbar {
   position: fixed;
   display: flex;
-  top: var(--spacing-15);
   left: 0;
   right: 0;
   width: 100%;
