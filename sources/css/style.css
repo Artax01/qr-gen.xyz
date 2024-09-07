@@ -276,7 +276,7 @@ body {
   gap: var(--spacing-10);
   border: var(--border-3) solid 1px;
   border-radius: 40px;
-  background:  var(--bg-2);
+  background:  none;
   box-shadow: var(--dark-soft-shadow);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
@@ -307,7 +307,7 @@ body {
   border-radius: var(--spacing-15);
   text-decoration: none;
   border: 1px solid var(--border);
-  background: transparent;
+  background: none;
   transition: .3s;
 }
 
