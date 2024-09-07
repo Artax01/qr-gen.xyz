@@ -12,118 +12,135 @@
 </head>
 
 <body>
-  <!-- navbar -->  
-  <header>
-    <div class="navbar">
+<div class="global_header">
+  <!-- Navbar -->
+  <div class="navbar">
+    <div></div>
 
-      <div></div>
+    <h1><a href="./index.html" title="Home">Qrcode Generator</a></h1>
 
-      <h1><a href="./index.html">Qrcode Generator</a></h1>
-
-      <div class="burger-menu" id="burger-menu">
-        <span></span>
-      </div>
-
+    <div id="burger-menu" title="Open Menu">
+      <span></span>
     </div>
-  </header>
-
-  <!-- qrcode card component -->
-  <main id="main">
-    <!-- Status Message -->
-    <div class="status-msg" id="status-msg">
-      <p>No QRCode generated.</p>
-      <p>To generate a QRCode, simply enter something in the search bar below.</p>
-    </div>
-
-    <div class="card-container" id="card-container">
-      <!-- qrcode card -->
-      <!-- ... -->
-      <div class="card" id="card">
-        <div class="row_container space_between">
-          <div class="column_container">
-            <div class="row_container">
-              <!-- QRCode Image -->
-              <div class="qrcode"></div>
-              <!-- QRCode Info -->
-              <div class="qrcode_info">
-                <p class="qrcode_name" id="qrcode_name"></p>
-                <p class="qrcode_size" id="qrcode_size"></p>
-              </div>
-
-              <!-- QRCode Actions -->
-              <div class="qrcode_actions">
-                <!-- Download Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="downloadQRLink">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25" />
-                </svg>
-                <!-- Zoom Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="zoomQRLink">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-                </svg> 
-                <!-- Trash Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 trash_icon" id="deleteQRLink">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                </svg> 
-              </div>
-
-            </div>
-            <!-- QRCode Time Generate -->
-            <p class="qrcode_date_time" id="qrcode_date_time"></p>
-          </div>
-        </div>
-
-      </div>
-      <!-- ... -->
-    </div>
-  </main>
-
-  <!-- input field --> 
-  <footer>
-    <!-- input field component --> 
-    <div class="input-container">
-      <label class="file-select-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="fileSelectorLink">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
-        </svg>
-
+  </div>
+  <!-- Search -->
+  <div class="search">
+    <a href="/" class="file-select-btn" title="Browse File">
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke-width="1.5" 
+        stroke="currentColor" 
+        class="size-6" 
+        id="fileSelectorLink"><path stroke-linecap="round" stroke-linejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" /></svg>
         <input type="file" id="hiddenFileInput" style="display: none;">
-      </label>
-      <input type="text" class="message-input" id="fileNameDisplayInput" placeholder="Write here to generate a qrcode..." spellcheck="false">
-
+    </a>
+    <input type="text" class="message-input" id="fileNameDisplayInput" placeholder="Write here to generate a qrcode..." spellcheck="false" title="Write here to generate a qrcode...">
+    <a href="/" title="Generate QRCode">
       <div class="send-btn" id="generateQRLink">
         <img src="./sources/images/send.svg" alt="send">
       </div>
+    </a>
+  </div>
+</div>
+
+
+
+
+
+<div id="main">
+  <!-- Status Message -->
+  <div id="tagContainer">
+    <div id="versionTag">
+      <p>v1.4.0</p>
     </div>
-  </footer>
-
-  <!-- zoom menu --> 
-  <div class="zoom_menu" id="zoom_menu">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="zoomQRLink_2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-    </svg>
-
-    <div class="zoom_zone">
-      <div class="zoom_qrcode" id="zoom_qrcode"></div>
-
-      <p class="zoom_title" id="zoom_title"></p>
+    <div id="githubTag">
+      <p>Github</p>
+    </div>
+    <div id="latestTag">
+      <p>Latest Release</p>
     </div>
   </div>
+  <div class="status-msg" id="status-msg">
+    <p>No QRCode generated.</p>
+    <p>To generate a QRCode, simply enter something in the search bar below.</p>
+  </div>
+  <!-- Card component -->
+  <div class="card-container" id="card-container">
+    <!-- ... -->
+    <div class="card" id="card">
+      <div class="row_container">
+        <!-- QRCode Image -->
+        <div class="qrcode"></div>
+        <!-- QRCode Info -->
+        <div class="qrcode_info">
+          <p id="name"></p>
+          <p id="size"></p>
+          <p id="date_time"></p>
+        </div>
+        <!-- QRCode Options -->
+        <div class="optionsBtn" title="Options">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" id="zoomQRLink"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" /></svg>             
+        </div>
+      </div>
+    </div>
+    <!-- ... -->
+  </div>
+</div>
 
-  <!-- side menu -->
+
+
+
+
+<div class="global_menu">
+  <!-- Options menu -->
+  <div class="optMenu" id="optMenu">
+    <div class="optForeground">
+      <div class="optTitle">
+        <div></div>
+  
+        <p><strong>${optTitle}</strong></p>
+  
+        <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke-width="1.5" 
+        stroke="currentColor" 
+        id="zoomQRLink_2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+      </div>
+  
+      <div class="optImage" id="optImage"></div>
+  
+      <p id="optName"></p>
+      <p id="optDate"></p>
+    </div>
+  </div>  
+
+  <!-- Side Menu -->
   <div id="blur" class="blur"></div>
 
   <nav id="side_menu">
     <!-- dark mode btn -->
     <div class="darkMode" id="darkMode">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 darkMode_icon">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 darkMode_icon"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
     </div>
     <!-- old ui btn -->
     <div class="old_ui" id="old_ui">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 old_ui_icon">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
-      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6 old_ui_icon"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>
     </div>
 
     <div class="nav_info">
@@ -134,10 +151,12 @@
       <a href="./sources/html/credits.html">Credits</a>
     </div>
 
-    <div class="version">
-      <p>2024 / v1.4.0</p>
+    <div class="year_production">
+      <p>Artax / 2024</p>
     </div>
   </nav>
+</div>
 
+  
 </body>
 </html>
