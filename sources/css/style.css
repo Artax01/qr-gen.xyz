@@ -366,6 +366,7 @@ body {
   border: var(--border-2) solid 1px;
   background: none;
   box-shadow: var(--dark-soft-shadow);
+  overflow-y: scroll;
   transition: .3s;
 }
 
