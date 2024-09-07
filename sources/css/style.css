@@ -588,7 +588,6 @@ body {
 
 
 .optMenu {
-  visibility: hidden;
   position: absolute;
   width: 100%;
   height: 0;
@@ -596,14 +595,14 @@ body {
   left: 0;
   padding-top: 35px;
   background: transparent;
+  overflow-x: hidden;
+  overflow-y: hidden;
   z-index: 500;
   transition: .3s;
 }
 
 .optMenu.active {
-  visibility: visible;
   height: 100%;
-  transition: .3s;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
