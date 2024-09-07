@@ -6,33 +6,34 @@
 
 
 document.addEventListener('DOMContentLoaded', (event) => {
+  // SearchBarContent
   const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
   const hiddenFileInput = document.getElementById('hiddenFileInput');
   const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
+  const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
   
   const main = document.getElementById('main');
+  const tagContainer = document.getElementById('tagContainer');
   const status_msg = document.getElementById('status-msg');
   const status_value = status_msg.innerHTML;
 
   const container = document.getElementById('card-container');
   const card = document.getElementById('card');
 
-  // buttons
-  const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
-
-  // zoomMenuContent
-  const zoomMenu = document.getElementById('zoom_menu');
-  const zoomImage = document.getElementById('zoom_qrcode');
-  const zoomName = document.getElementById('zoom_title');
+  // optionsMenuContent
+  const optMenu = document.getElementById('optMenu');
+  const optImage = document.getElementById('optImage');
+  const optName = document.getElementById('optName');
+  const optDate = document.getElementById('optDate');
   const exitButton = document.getElementById('zoomQRLink_2');
 
   // dictionnary
   const units = {
-    0: 'bytes',
-    3: 'Ko',
-    6: 'Mo',
-    9: 'Go',
-    12: 'To'
+    0: 'Bytes',
+    3: 'KB',
+    6: 'MB',
+    9: 'GB',
+    12: 'TB'
   };
   const months = {
     1: 'January',
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       this.size = NaN;
       this.time = "";
       this.date = "";
+      this.fullDate = "";
       this.downloadButton = NaN;
       this.zoomButton = NaN;
       this.deleteButton = NaN;
@@ -106,28 +108,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setInfos() {
       this.name = fileNameDisplayInput.value;
       this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`);
-      this.date = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
+      this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}.`)
+      this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
     }
 
     setButtons() {
-      this.downloadButton = this.card.querySelector('#downloadQRLink');
+      // this.downloadButton = this.card.querySelector('#downloadQRLink');
       this.zoomButton = this.card.querySelector('#zoomQRLink');
-      this.deleteButton = this.card.querySelector('#deleteQRLink');
+      // this.deleteButton = this.card.querySelector('#deleteQRLink');
 
-      this.downloadButton.addEventListener('click', () => {
-        this.sizeAndDownLoad('download');
-      });
+      // this.downloadButton.addEventListener('click', () => {
+      //   this.sizeAndDownLoad('download');
+      // });
 
-      this.deleteButton.addEventListener('click', () => {
-        removeCardCall(this.id);
-      });
+      // this.deleteButton.addEventListener('click', () => {
+      //   removeCardCall(this.id);
+      // });
 
       this.zoomButton.addEventListener('click', () => {
         this.image = this.card.querySelector('.qrcode').innerHTML;
         
-        zoomImage.innerHTML = this.image;
-        zoomName.innerText = this.name;
-        zoomMenu.classList.toggle('active');
+        optImage.innerHTML = this.image;
+        optName.innerText = this.name;
+        optDate.innerText = `${this.time}, ${this.date}`;
+        optMenu.classList.toggle('active');
       });
     }
 
@@ -153,7 +157,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             if (String(action) === 'size') {
               this.size = findUnit(blob.size);
-              this.card.querySelector('#qrcode_size').innerText = this.size;
+              this.card.querySelector('#size').innerText = this.size;
 
             } else if (String(action) === 'download') {
 
@@ -175,8 +179,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const newCard = card.cloneNode(true);
 
       this.setInfos();
-      newCard.querySelector('#qrcode_name').innerText = this.name;
-      newCard.querySelector('#qrcode_date_time').innerText = `At ${this.time}, ${this.date}`;
+      newCard.querySelector('#name').innerText = this.name;
+      newCard.querySelector('#date_time').innerText = `At ${this.time}, ${this.date}`;
 
       container.insertBefore(newCard, container.firstChild);
       newCard.classList.add('visible');
@@ -203,6 +207,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       } else {
         statusMessageChange();
         main.classList.add('active');
+        tagContainer.classList.add('visible');
         container.classList.add('visible');
       }
     }
@@ -222,7 +227,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       delete this.cardList[id];
 
       if (this.cardList.length > 0) {
-        this.cardList.length = Number(this.cardList.length) - 1
+        this.cardList.length = Number(this.cardList.length) - 1;
       }
 
       this.checkLength();
@@ -288,7 +293,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
       resetInput();
       
       fileNameDisplayInput.value = file.name;
-      cardContainer.addCard();
+      if (fileNameDisplayInput.value.trim() !== '') {
+        cardContainer.addCard();
+      } else {
+        alert('Please enter a value to generate a qrcode.');
+      }
     }
   });
 
@@ -300,21 +309,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   generateQRLink.addEventListener('click', () => {
-    cardContainer.addCard();
+    if (fileNameDisplayInput.value.trim() !== '') {
+      cardContainer.addCard();
+    } else {
+      alert('Please enter a value to generate a qrcode.');
+    }
   });
 
-  deleteQRLink.addEventListener('click', () => {
-    cardContainer.removeCard();
-  });
+  // deleteQRLink.addEventListener('click', () => {
+  //   cardContainer.removeCard();
+  // });
 
   // zoom menu
 
   exitButton.addEventListener('click', () => {
-    zoomMenu.classList.remove('active');
+    optMenu.classList.remove('active');
   });
 
-  zoomMenu.addEventListener('click', () => {
-    zoomMenu.classList.remove('active');
+  optMenu.addEventListener('click', () => {
+    optMenu.classList.remove('active');
   });
 
 
