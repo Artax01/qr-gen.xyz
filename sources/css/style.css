@@ -282,7 +282,7 @@ body {
   max-width: 44%;
   align-items: center;
   gap: var(--spacing-10);
-  border: var(--border-3) solid 1px;
+  border: var(--border-2) solid 1px;
   border-radius: 40px;
   background:  none;
   box-shadow: var(--dark-soft-shadow);
