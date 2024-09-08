@@ -175,6 +175,7 @@ body {
   border-radius: 20px;
   background: none;
   box-shadow: var(--dark-soft-shadow);
+  transition: .3s;
 }
 
 .navbar h1 {
