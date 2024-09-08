@@ -626,7 +626,7 @@ body {
   width: 100%;
   height: calc(100% - 60px);
   padding: var(--spacing-10);
-  border-top: var(--border) solid 1px;
+  border: var(--border-2) solid 1px;
   border-radius: 20px;
   background: none;
   box-shadow: var(--dark-soft-shadow);
