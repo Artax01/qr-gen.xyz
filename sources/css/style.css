@@ -131,6 +131,12 @@ body {
   padding: var(--spacing-10);
 }
 
+.navbar, #main {
+  max-width: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 
 
 
@@ -273,7 +279,7 @@ body {
   padding: 7px 10px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 83%;
+  max-width: 44%;
   align-items: center;
   gap: var(--spacing-10);
   border: var(--border-3) solid 1px;
@@ -354,7 +360,7 @@ body {
 #main {
   position: fixed;
   display: flex;
-  top: calc(90px + var(--spacing-15));
+  top: calc(85px + var(--spacing-15));
   left: 0;
   right: 0;
   width: 100%;
@@ -369,8 +375,8 @@ body {
   border-radius: 20px;
   border: var(--border-2) solid 1px;
   background: none;
-  box-shadow: var(--dark-soft-shadow);
   overflow-y: scroll;
+  box-shadow: var(--dark-soft-shadow);
   transition: .3s;
 }
 
@@ -594,33 +600,38 @@ body {
 
 
 .optMenu {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 0;
+  height: 100%;
   bottom: 0;
   left: 0;
-  padding-top: 35px;
+  padding: 35px;
+  padding-top: 100px;
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto;
   background: transparent;
   overflow-x: hidden;
   overflow-y: hidden;
-  z-index: 9999;
+  transform: scale(0);
   transition: .3s;
 }
 
 .optMenu.active {
-  height: 100%;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  transform: scale(1);
 }
 
 .optForeground {
   position: relative;
   width: 100%;
-  height: 100%;
-  background: var(--bg-2);
-  border: var(--border) solid 1px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  height: calc(100% - 60px);
+  padding: var(--spacing-10);
+  border-top: var(--border) solid 1px;
+  border-radius: 20px;
+  background: none;
+  box-shadow: var(--dark-soft-shadow);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 1;
   transition: .3s;
 }
@@ -632,7 +643,7 @@ body {
   top: 0;
   right: 0;
   margin: var(--spacing-15);
-  background: var(--bg-2);
+  background: none;
   transition: .2s;
   z-index: 2;
   justify-content: space-around;
@@ -905,6 +916,38 @@ nav a, nav p, nav center {
 /* RESPONSIVE */
 
 
+@media only screen and (max-width: 1500px) {
+  .optMenu {
+    right: 0;
+    padding-bottom: 10px;
+    max-width: 40%;
+    transform: translateX(0) translateY(150vh);
+    z-index: 9999;
+  }
+
+  .optMenu.active {
+    transform: translateY(0);
+  }
+
+  .optForeground {
+    height: 100%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar, #main {
+    max-width: 95% !important;
+  }
+
+  .search {
+    max-width: 83% !important;
+  }
+
+  .optMenu {
+    max-width: 60% !important;
+  }
+}
+
 @media only screen and (max-width: 1024px){
   .navbar {
     justify-content: space-between;
@@ -916,10 +959,6 @@ nav a, nav p, nav center {
     
   #burger-menu:hover {
     background: var(--selected-border-color);
-  }
-
-  #main {
-    padding: 3px;
   }
 
   .card-container {
@@ -976,12 +1015,27 @@ nav a, nav p, nav center {
     font-size: large;
   }
 
+  #main {
+    padding: 3px;
+  }
+
   .search {
     border-radius: 20px;
   }
 
   .text_zone {
     margin-left: calc(100% - 90%);
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .optMenu {
+    padding: 35px 0 0 0;
+    max-width: 100% !important;
+  }
+
+  .optForeground {
+    background: var(--bg-2);
   }
 }
 
