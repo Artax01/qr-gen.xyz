@@ -504,6 +504,10 @@ body {
   cursor: pointer;
 }
 
+.qrcode canvas {
+  display: none;
+}
+
 .qrcode img {
   height: 50px;
   width: 50px;
