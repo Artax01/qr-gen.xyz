@@ -199,7 +199,7 @@ body {
   background: var(--bg-3);
   border-radius: 40px;
   cursor: pointer;
-  z-index: 9999;
+  z-index: 5000;
 }
 
 #burger-menu span {
@@ -601,7 +601,7 @@ body {
   background: transparent;
   overflow-x: hidden;
   overflow-y: hidden;
-  z-index: 500;
+  z-index: 9999;
   transition: .3s;
 }
 
@@ -755,8 +755,8 @@ nav a, nav p, nav center {
 
 .darkMode, .old_ui {
   position: absolute;
-  top: 1.78rem;
-  right: 5rem;
+  top: 1.8rem;
+  right: 4.6rem;
   height: 2.5rem;
   width: 2.5rem;
   margin-right: .8rem;
