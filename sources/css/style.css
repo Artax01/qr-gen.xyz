@@ -748,7 +748,7 @@ nav a, nav p, nav center {
 .year_production {
   padding: 0 50px 0 100px;
   background: none;
-  font-size: 10px;
+  font-size: medium;
   font-style: italic;
 }
 
@@ -945,7 +945,6 @@ nav a, nav p, nav center {
   
   .year_production {
     padding-left: 50px;
-    font-size: medium;
   }
 
   .text_zone {
