@@ -170,7 +170,7 @@ body {
   max-width: 95%;
   padding: 1.5rem 2rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border: var(--border-2) solid 1px;
   border-radius: 20px;
   background: none;
@@ -179,7 +179,7 @@ body {
 
 .navbar h1 {
   background: transparent;
-  margin-left: 1.5rem;
+  margin-left: 0;
   transition: 0.3s ease;
   font-size: x-large;
 }
@@ -904,6 +904,14 @@ nav a, nav p, nav center {
 
 
 @media only screen and (max-width: 1024px){
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .navbar h1 {
+    margin-left: 1.5rem;
+  }
+    
   #burger-menu:hover {
     background: var(--selected-border-color);
   }
