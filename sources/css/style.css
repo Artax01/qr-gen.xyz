@@ -192,7 +192,7 @@ body {
 #burger-menu {
   display: flex;
   position: fixed;
-  top: 1.4rem;
+  top: 1.8rem;
   right: 2rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -358,6 +358,7 @@ body {
   right: 0;
   width: 100%;
   height: calc(100% - 20px - 78px - 63px - 30px);
+  padding: 20px;
   margin-left: auto;
   margin-right: auto;
   max-width: 95%;
@@ -916,6 +917,10 @@ nav a, nav p, nav center {
     background: var(--selected-border-color);
   }
 
+  #main {
+    padding: 3px;
+  }
+
   .card-container {
     margin: var(--spacing-10);
   }
@@ -968,10 +973,6 @@ nav a, nav p, nav center {
   .navbar h1 {
     width: 20px;
     font-size: large;
-  }
-
-  #burger-menu {
-    top: 1.8rem;
   }
 
   .search {
