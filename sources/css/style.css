@@ -168,7 +168,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 95%;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1.5rem 2rem;
   align-items: center;
   justify-content: space-between;
   border: var(--border-2) solid 1px;
@@ -179,7 +179,7 @@ body {
 
 .navbar h1 {
   background: transparent;
-  margin-left: 2.5rem;
+  margin-left: 1.5rem;
   transition: 0.3s ease;
   font-size: x-large;
 }
@@ -191,7 +191,9 @@ body {
 
 #burger-menu {
   display: flex;
-  position: relative;
+  position: fixed;
+  top: 1.4rem;
+  right: 2rem;
   width: 2.5rem;
   height: 2.5rem;
   background: var(--bg-3);
@@ -482,9 +484,9 @@ body {
 }
 
 .card {
-  display: none;
+  display: flex;
   flex-direction: row;
-  padding: 0 .5rem 0 .5rem;
+  padding: 0 .5rem;
   border: 1px solid var(--border);
   border-radius: 15px;
   gap: 20px;
@@ -495,7 +497,6 @@ body {
 }
 
 .card.visible {
-  display: flex;
   transform: scale(1);
 }
 
@@ -903,11 +904,7 @@ nav a, nav p, nav center {
 
 
 @media only screen and (max-width: 1024px){
-  .navbar {
-    padding: 1rem 1.5rem 1rem 1.5rem;
-  }
-
-  .burger-menu:hover {
+  #burger-menu:hover {
     background: var(--selected-border-color);
   }
 
@@ -957,10 +954,17 @@ nav a, nav p, nav center {
 }
 
 @media only screen and (max-width: 800px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+  
   .navbar h1 {
     width: 20px;
-    margin-left: calc(-100% + 22%);
     font-size: large;
+  }
+
+  #burger-menu {
+    top: 1.8rem;
   }
 
   .search {
