@@ -88,7 +88,7 @@ body {
   --light-dark: var(--border); /* light dark color (invert) */
 
   --bg-1: #100F14; /* main background */
-  --bg-2: none; /* second background */
+  --bg-2: #1C1B20; /* second background */
   --bg-3: rgba(255,255,255,1); /* burger menu background */
   --bg-blur: rgba(255,255,255,.3);
 
