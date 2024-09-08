@@ -756,7 +756,7 @@ nav a, nav p, nav center {
 .darkMode, .old_ui {
   position: absolute;
   top: 1.8rem;
-  right: 4.6rem;
+  right: 5rem;
   height: 2.5rem;
   width: 2.5rem;
   margin-right: .8rem;
@@ -921,7 +921,7 @@ nav a, nav p, nav center {
   }
 
   .darkMode {
-    margin-right: .4rem;
+    margin-right: 0;
   }
 
   .old_ui {
@@ -973,12 +973,6 @@ nav a, nav p, nav center {
 
   .text_zone {
     margin-left: calc(100% - 90%);
-  }
-}
-
-@media only screen and (max-width: 420px) {
-  .darkMode, .old_ui {
-    top: 1.85rem;
   }
 }
 
