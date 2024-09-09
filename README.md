@@ -1,4 +1,4 @@
-# qrcode-generator-website
+# qr-gen
 
 A website for generating qrcode.
 
