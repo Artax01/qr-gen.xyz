@@ -1043,7 +1043,7 @@ nav a, nav p, nav center {
   .search {
     transform: scale(1.25);
     transition: .3s;
-    max-width: calc(100% - 25%);
+    max-width: calc(100% - 25%) !important;
     border-radius: 20px;
   }
 }
