@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       this.date = "";
       this.fullDate = "";
       this.downloadButton = NaN;
-      this.zoomButton = NaN;
+      this.optionsButton = NaN;
       this.deleteButton = NaN;
       this.card = this.render();
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     setButtons() {
       // this.downloadButton = this.card.querySelector('#downloadQRLink');
-      this.zoomButton = this.card.querySelector('#zoomQRLink');
+      this.optionsButton = this.card.querySelector('#optionsBtn');
       // this.deleteButton = this.card.querySelector('#deleteQRLink');
 
       // this.downloadButton.addEventListener('click', () => {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       //   removeCardCall(this.id);
       // });
 
-      this.zoomButton.addEventListener('click', () => {
+      this.optionsButton.addEventListener('click', () => {
         this.image = this.card.querySelector('.qrcode').innerHTML;
         
         optImage.innerHTML = this.image;
