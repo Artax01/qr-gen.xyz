@@ -92,13 +92,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
       this.id = NaN;
       // this.image = NaN;
       this.name = "";
-      this.size = NaN;
+      this.size = "";
       this.time = "";
       this.date = "";
       this.fullDate = "";
-      this.downloadButton = NaN;
-      this.optionsButton = NaN;
-      this.deleteButton = NaN;
+      this.downloadButton = null;
+      this.optionsButton = null;
+      this.deleteButton = null;
       this.card = this.render();
 
       this.generateQRCode();
