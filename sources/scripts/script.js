@@ -7,35 +7,35 @@
 
 document.addEventListener('DOMContentLoaded', (event) => {
   // SearchBarContent
-  const fileSelectorLink  = document.getElementById('fileSelectorLink'); // file import button
-  const hiddenFileInput = document.getElementById('hiddenFileInput');
-  const fileNameDisplayInput = document.getElementById('fileNameDisplayInput'); // text field for qrcode value
-  const generateQRLink = document.getElementById('generateQRLink'); // generate qrcode based on the input value
+  var fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
+  var hiddenFileInput = document.getElementById('hiddenFileInput');
+  var messageInput = document.getElementById('messageInput'); // text field for qrcode value
+  var generateButton = document.getElementById('generateButton'); // generate qrcode based on the input value
   
-  const main = document.getElementById('main');
-  const tagContainer = document.getElementById('tagContainer');
-  const status_msg = document.getElementById('status-msg');
-  const status_value = status_msg.innerHTML;
+  var main = document.getElementById('main');
+  var tagContainer = document.getElementById('tagContainer');
+  var status_msg = document.getElementById('status-msg');
+  var status_value = status_msg.innerHTML;
 
-  const container = document.getElementById('card-container');
-  const card = document.getElementById('card');
+  var container = document.getElementById('card-container');
+  var card = document.getElementById('card');
 
   // optionsMenuContent
-  const optMenu = document.getElementById('optMenu');
-  const optImage = document.getElementById('optImage');
-  const optName = document.getElementById('optName');
-  const optDate = document.getElementById('optDate');
-  const exitButton = document.getElementById('zoomQRLink_2');
+  var optMenu = document.getElementById('optMenu');
+  var optImage = document.getElementById('optImage');
+  var optName = document.getElementById('optName');
+  var optDate = document.getElementById('optDate');
+  var exitButton = document.getElementById('zoomQRLink_2');
 
   // dictionnary
-  const units = {
+  var units = {
     0: 'Bytes',
     3: 'KB',
     6: 'MB',
     9: 'GB',
     12: 'TB'
   };
-  const months = {
+  var months = {
     1: 'January',
     2: 'Febuary',
     3: 'March',
@@ -87,10 +87,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-  class Card {
-    constructor() {
+  var Card = /** @class */ (function () {
+    function Card() {
       this.id = NaN;
-      // this.image = NaN;
       this.name = "";
       this.size = "";
       this.time = "";
@@ -103,16 +102,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
       this.generateQRCode();
       this.setButtons();
-    }
-
-    setInfos() {
-      this.name = fileNameDisplayInput.value;
-      this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`);
-      this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}.`)
-      this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
-    }
-
-    setButtons() {
+    };
+    
+    Card.prototype.setInfos = function () {
+      this.name = String(messageInput.value);
+      this.time = String("".concat(new Date().getHours(), ":").concat(fixMinutes(new Date().getMinutes()));
+      this.date = String("".concat(new Date().getMonth() + 1, "/").concat(new Date().getDate(), "/").concat(new Date().getFullYear(), "."));
+      this.fullDate = String("".concat(findMonth(new Date().getMonth() + 1), " ").concat(new Date().getDate(), ", ").concat(new Date().getFullYear(), "."));
+    };
+    
+    Card.prototype.setButtons = function () {
+      var _this = this;
       // this.downloadButton = this.card.querySelector('#downloadQRLink');
       this.optionsButton = this.card.querySelector('#optionsBtn');
       // this.deleteButton = this.card.querySelector('#deleteQRLink');
@@ -125,68 +125,64 @@ document.addEventListener('DOMContentLoaded', (event) => {
       //   removeCardCall(this.id);
       // });
 
-      this.optionsButton.addEventListener('click', () => {
-        this.image = this.card.querySelector('.qrcode').innerHTML;
+      this.optionsButton.addEventListener('click', function () {
+        _this.image = _this.card.querySelector('.qrcode').innerHTML;
         
-        optImage.innerHTML = this.image;
-        optName.innerText = this.name;
-        optDate.innerText = `${this.time}, ${this.fullDate}`;
-        optMenu.classList.toggle('active');
+        optImage.innerHTML = _this.image;
+        optName.innerText = _this.name;
+        optDate.innerText = String("".concat(_this.time, ", ").concat(_this.fullDate));
+        optMenu.classList.add('active');
       });
-    }
-
-    generateQRCode() {
-      let value = String(fileNameDisplayInput.value);
-      let container = this.card.querySelector('.qrcode');
+    };
+    
+    Card.prototype.generateQRCode = function () {
+      var value = String(messageInput.value);
+      var container = this.card.querySelector('.qrcode');
   
       if (value.trim() !== '') {
-
         new QRCode(container, value); // new qrcode generation
         this.sizeAndDownLoad('size'); // qrcode size calculation
-  
       } else {
         alert('Please enter a value to generate a qrcode.');
       }
-    }
+    };
 
-    sizeAndDownLoad(action) {
-      setTimeout(() => {
-        let qrcodeImage = this.card.querySelector('.qrcode img').src;
-
-        fetch(qrcodeImage).then(response => response.blob()).then(blob => {
-
+    Card.prototype.sizeAndDownLoad = function (action) {
+      var _this = this;
+      setTimeout( function () {
+        var qrcodeImage = _this.card.querySelector('.qrcode img').src;
+        
+        fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
             if (String(action) === 'size') {
-              this.size = findUnit(blob.size);
-              this.card.querySelector('#size').innerText = this.size;
-
-            } else if (String(action) === 'download') {
-
-              let link = document.createElement('a');
-
+              _this.size = findUnit(blob.size);
+              _this.card.querySelector('#size').innerText = _this.size;
+            }
+            else if (String(action) === 'download') {
+              var link = document.createElement('a');
               link.href = URL.createObjectURL(blob);
-              link.download = this.name;
+              link.download = _this.name;
               link.click();
-
               URL.revokeObjectURL(link.href);
-            } else {
+            }
+            else {
               return;
             }
         });
       }, 100);
-    }
+    };
 
-    render() {
-      const newCard = card.cloneNode(true);
-
+    Card.prototype.render = function () {
+      var newCard = card.cloneNode(true);
       this.setInfos();
+      
       newCard.querySelector('#name').innerText = this.name;
-      newCard.querySelector('#date_time').innerText = `At ${this.time}, ${this.date}`;
-
+      newCard.querySelector('#date_time').innerText = String("At ".concat(this.time, ", ").concat(this.date));
       container.insertBefore(newCard, container.firstChild);
       newCard.classList.add('visible');
       return newCard;
-    }
-  };
+    };
+    return Card;
+  }());
 
 
 
@@ -194,45 +190,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-  class CardContainer {
-    constructor() {
+  var CardContainer = /** @class */ (function () {
+    function CardContainer() {
       this.cardList = [];
     }
 
-    checkLength() {
+    CardContainer.prototype.checkLength = function () {
       if (this.cardList.length === 0) {
         statusMessageReset();
         main.classList.remove('active');
         container.classList.remove('visible');
-      } else {
+      }
+      else {
         statusMessageChange();
         main.classList.add('active');
         tagContainer.classList.add('visible');
         container.classList.add('visible');
       }
-    }
+    };
 
-    addCard() {
-      const newCard = new Card();
-      let id = Number(this.cardList.length);
-
+    CardContainer.prototype.addCard = function () {
+      var newCard = new Card();
+      var id = Number(this.cardList.length);
+      
       newCard.id = id;
       this.cardList[id] = newCard;
-
       resetInput();
       this.checkLength();
-    }
+    };
 
-    removeCard(id) {
+    CardContainer.prototype.removeCard = funnction (id) {
       delete this.cardList[id];
-
+      
       if (this.cardList.length > 0) {
         this.cardList.length = Number(this.cardList.length) - 1;
       }
-
       this.checkLength();
-    }
-  };
+    };
+    return CardContainer;
+  }());
 
   cardContainer = new CardContainer();
 
@@ -280,38 +276,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // input field
 
-  fileNameDisplayInput.addEventListener('keypress', function(event) {
+  messageInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
       cardContainer.addCard();
     }
   });
-
-  hiddenFileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-
+  
+  hiddenFileInput.addEventListener('change', function (e) {
+    var file = e.target.files[0];
     if (file) {
       resetInput();
       
-      fileNameDisplayInput.value = file.name;
-      if (fileNameDisplayInput.value.trim() !== '') {
+      messageInput.value = file.name;
+      if (messageInput.value.trim() !== '') {
         cardContainer.addCard();
-      } else {
+      }
+      else {
         alert('Please enter a value to generate a qrcode.');
       }
     }
   });
 
   // buttons
-
-  fileSelectorLink.addEventListener('click', (event) => {
+  fileSelectButton.addEventListener('click', function (event) => {
     event.preventDefault();
     hiddenFileInput.click();
   });
 
-  generateQRLink.addEventListener('click', () => {
-    if (fileNameDisplayInput.value.trim() !== '') {
+  generateButton.addEventListener('click', function () {
+    if (messageInput.value.trim() !== '') {
       cardContainer.addCard();
-    } else {
+    }
+    else {
       alert('Please enter a value to generate a qrcode.');
     }
   });
@@ -322,11 +318,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // zoom menu
 
-  exitButton.addEventListener('click', () => {
-    optMenu.classList.remove('active');
-  });
-
-  optMenu.addEventListener('click', () => {
+  exitButton.addEventListener('click', function () {
     optMenu.classList.remove('active');
   });
 
@@ -370,21 +362,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                                                                                                                                                 
   function resetInput() {
-    fileNameDisplayInput.value = '';
-    hiddenFileInput.value = '';
+    messageInput.value = "";
+    hiddenFileInput.value = "";
   };
 
   function findUnit(size) {
-    let k = 0;
-
+    var k = 0;
     while (size >= Math.pow(10, k)) {
       k += 3;
     }
-
-    let value = size / Math.pow(10, k-3);
+    var value = size / Math.pow(10, k-3);
     value = value.toFixed(2)
-
-    return value + ' ' + units[k-3];
+    return value + " " + units[k-3];
   };
 
   function findMonth(nbr) {
@@ -393,8 +382,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function fixMinutes(minutes) {
     if (minutes < 10) {
-      return `0${minutes}`;
-    } else {
+      return String("0".concat(minutes));
+    }
+    else {
       return minutes;
     }
   };
