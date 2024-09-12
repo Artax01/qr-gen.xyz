@@ -128,16 +128,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         optName.innerText = _this.name;
         optDate.innerText = String("".concat(_this.time, ", ").concat(_this.fullDate));
 
-        if (_this.optionsButton != null && _this.optionsButton.classList.contains('open')) {
-          optMenu.classList.remove('active');
-          _this.optionsButton.classList.remove('open');
-        }
-        else {
-          optMenu.classList.toggle('active');
-          await new Promise(r => setTimeout(r, 200));
-          optMenu.classList.add('active');
-          _this.optionsButton.classList.add('open');
-        }
+        optMenu.classList.toggle('active');
+        await new Promise(r => setTimeout(r, 200));
+        optMenu.classList.add('active');
       });
     };
     
