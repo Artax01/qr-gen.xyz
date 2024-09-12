@@ -2,9 +2,6 @@
 // The github page of 'qrcode.js' => 'https://github.com/davidshimjs/qrcodejs'.
 
 
-// QRCODE PANEL
-
-
 document.addEventListener('DOMContentLoaded', (event) => {
   // SearchBarContent
   var fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
