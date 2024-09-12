@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var burger_menu = document.getElementById('burger-menu'); // burger menu
-    var darkMode = document.getElementById('darkMode'); // dark-theme
-    // element
+    var burger_menu = document.getElementById('burger-menu');
+    var darkMode = document.getElementById('darkMode');
     var side_menu = document.getElementById('side_menu');
     var blur = document.getElementById('blur');
     if (burger_menu && side_menu && blur) {
