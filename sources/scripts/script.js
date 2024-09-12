@@ -125,13 +125,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
       //   removeCardCall(this.id);
       // });
 
-      this.optionsButton.addEventListener('click', function () {
+      this.optionsButton.addEventListener('click', async function () {
         _this.image = _this.card.querySelector('.qrcode').innerHTML;
-        
         optImage.innerHTML = _this.image;
         optName.innerText = _this.name;
         optDate.innerText = String("".concat(_this.time, ", ").concat(_this.fullDate));
-        optMenu.classList.add('active');
+
+        if (_this.optionsButton != null && _this.optionsButton.classList.contains('open')) {
+          optMenu.classList.remove('active');
+          _this.optionsButton.classList.remove('open');
+        }
+        else {
+          optMenu.classList.toggle('active');
+          await new Promise(r => setTimeout(r, 200));
+          optMenu.classList.add('active');
+          _this.optionsButton.classList.add('open');
+        }
       });
     };
     
@@ -316,7 +325,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //   cardContainer.removeCard();
   // });
 
-  // zoom menu
+  // options menu
 
   exitButton.addEventListener('click', function () {
     optMenu.classList.remove('active');
