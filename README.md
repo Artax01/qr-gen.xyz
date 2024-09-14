@@ -18,9 +18,9 @@ On the right of card you have a 3 dotted button. By clicking on it, it will open
 
 ## How delete the qrcode I've generated ?
 
-Simply press the "delete qrcode" button to reset the process.
+Same as for download.
 
-> If you haven't created a qrcode yet, you won't be able to save it.
+> If you haven't created a qrcode yet, you won't be able to delete it.
 
 ## Created with
 
