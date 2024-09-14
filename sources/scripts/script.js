@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       this.generateQRCode();
       this.setButtons();
-    };
+    }
     
     Card.prototype.setInfos = function () {
       this.name = String(messageInput.value);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     Card.prototype.sizeAndDownLoad = function (action) {
       var _this = this;
-      setTimeout( function () {
+      setTimeout(function () {
         var qrcodeImage = _this.card.querySelector('.qrcode img').src;
         
         fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.checkLength();
     };
 
-    CardContainer.prototype.removeCard = funnction (id) {
+    CardContainer.prototype.removeCard = function (id) {
       delete this.cardList[id];
       
       if (this.cardList.length > 0) {
