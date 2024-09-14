@@ -275,13 +275,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   
-  hiddenFileInput.addEventListener('change', function (event) {
-    var file = event.target.files[0];
+  hiddenFileInput.addEventListener('change', function (e) {
+    var file = e.target.files[0];
     if (file) {
       resetInput();
       messageInput.value = file.name; 
       
-      if (messageInput.value.trim() !== '') {
+      if (messageInput.value.trim() !== '' || messageInput.value.trim() !== null) {
         cardContainer.addCard();
       }
       else {
