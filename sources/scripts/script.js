@@ -2,7 +2,7 @@
 // The github page of 'qrcode.js' => 'https://github.com/davidshimjs/qrcodejs'.
 
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', function () {
   // SearchBarContent
   var fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
   var hiddenFileInput = document.getElementById('hiddenFileInput');
