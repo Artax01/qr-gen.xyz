@@ -279,9 +279,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var file = event.target.files[0];
     if (file) {
       resetInput();
+      messageInput.value = file.name; 
       
-      if (hiddenFileInput.value.trim() !== '') {
-        messageInput.value = file.name;
+      if (messageInput.value.trim() !== '') {
         cardContainer.addCard();
       }
       else {
