@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     setInfos() {
       this.name = String(messageInput.value);
-      this.time = String("".concat(new Date().getHours(), ":").concat(fixMinutes(new Date().getMinutes()));
-      this.date = String("".concat(new Date().getMonth() + 1, "/").concat(new Date().getDate(), "/").concat(new Date().getFullYear(), "."));
-      this.fullDate = String("".concat(findMonth(new Date().getMonth() + 1), " ").concat(new Date().getDate(), ", ").concat(new Date().getFullYear(), "."));
+      this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`);
+      this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}.`);
+      this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
     }
     
     setButtons() {
@@ -126,13 +126,13 @@ document.addEventListener('DOMContentLoaded', function () {
         var image = this.card.querySelector('.qrcode').innerHTML;
         optImage.innerHTML = image;
         optName.innerText = this.name;
-        optDate.innerText = String("".concat(_this.time, ", ").concat(_this.fullDate));
+        optDate.innerText = String(`${this.time}, ${this.fullDate}`);
 
         optMenu.classList.toggle('active');
         await new Promise(r => setTimeout(r, 200));
         optMenu.classList.add('active');
       });
-    };
+    }
     
     generateQRCode() {
       var value = String(messageInput.value);
@@ -141,10 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (value.trim() !== '') {
         new QRCode(container, value); // new qrcode generation
         this.sizeAndDownLoad('size'); // qrcode size calculation
-      } else {
+      } 
+      else {
         alert('Please enter a value to generate a qrcode.');
       }
-    };
+    }
 
     sizeAndDownLoad(action) {
       setTimeout(function () {
@@ -158,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
             else if (String(action) === 'download') {
               var link = document.createElement('a');
               link.href = URL.createObjectURL(blob);
-              link.download = _this.name;
+              link.download = this.name;
               link.click();
               URL.revokeObjectURL(link.href);
             }
@@ -167,19 +168,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
       }, 100);
-    };
+    }
 
     render() {
       var newCard = card.cloneNode(true);
       this.setInfos();
       
       newCard.querySelector('#name').innerText = this.name;
-      newCard.querySelector('#date_time').innerText = String("At ".concat(this.time, ", ").concat(this.date));
+      newCard.querySelector('#date_time').innerText = String(`At ${this.time}, ${this.date}`);
       container.insertBefore(newCard, container.firstChild);
       newCard.classList.add('visible');
       return newCard;
-    };
-  };
+    }
+  }
 
 
 
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
         tagContainer.classList.add('visible');
         container.classList.add('visible');
       }
-    };
+    }
 
     addCard() {
       var id = Number(this.cardList.length);
@@ -210,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.cardList[id] = newCard;
       resetInput();
       this.checkLength();
-    };
+    }
 
     removeCard(id) {
       delete this.cardList[id];
@@ -220,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       this.checkLength();
     };
-  };
+  }
 
   cardContainer = new CardContainer();
 
@@ -356,43 +357,45 @@ document.addEventListener('DOMContentLoaded', function () {
   function resetInput() {
     messageInput.value = "";
     hiddenFileInput.value = "";
-  };
+  }
 
   function findUnit(size) {
     var k = 0;
+    
     while (size >= Math.pow(10, k)) {
       k += 3;
     }
+    
     var value = size / Math.pow(10, k-3);
-    value = value.toFixed(2)
+    value = value.toFixed(2);
     return value + " " + units[k-3];
-  };
+  }
 
   function findMonth(nbr) {
-    return months[nbr]
-  };
+    return months[nbr];
+  }
 
   function fixMinutes(minutes) {
     if (minutes < 10) {
-      return String("0".concat(minutes));
+      return String(`0${minutes}`);
     }
     else {
       return minutes;
     }
-  };
+  }
 
   function statusMessageChange() {
     status_msg.classList.add('active'); // hide the status message
     status_msg.innerText = "Aujourd'hui";
-  };
+  }
 
   function statusMessageReset() {
     status_msg.classList.remove('active'); // show the status message
     status_msg.innerHTML = status_value;
-  };
+  }
 
   function removeCardCall(id) {
     cardContainer.removeCard(id);
-  };
+  }
 
 });
