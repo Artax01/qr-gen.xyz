@@ -84,9 +84,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  var Card = /** @class */ (function () {
-    function Card() {
-      this.id = NaN;
+  class Card {
+    constructor(id) {
+      this.id = id;
+      console.log(this.id);
       this.name = "";
       this.size = "";
       this.time = "";
@@ -101,15 +102,14 @@ document.addEventListener('DOMContentLoaded', function () {
       this.setButtons();
     }
     
-    Card.prototype.setInfos = function () {
+    setInfos() {
       this.name = String(messageInput.value);
       this.time = String("".concat(new Date().getHours(), ":").concat(fixMinutes(new Date().getMinutes()));
       this.date = String("".concat(new Date().getMonth() + 1, "/").concat(new Date().getDate(), "/").concat(new Date().getFullYear(), "."));
       this.fullDate = String("".concat(findMonth(new Date().getMonth() + 1), " ").concat(new Date().getDate(), ", ").concat(new Date().getFullYear(), "."));
-    };
+    }
     
-    Card.prototype.setButtons = function () {
-      var _this = this;
+    setButtons() {
       // this.downloadButton = this.card.querySelector('#downloadQRLink');
       this.optionsButton = this.card.querySelector('#optionsBtn');
       // this.deleteButton = this.card.querySelector('#deleteQRLink');
@@ -123,9 +123,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // });
 
       this.optionsButton.addEventListener('click', async function () {
-        _this.image = _this.card.querySelector('.qrcode').innerHTML;
-        optImage.innerHTML = _this.image;
-        optName.innerText = _this.name;
+        var image = this.card.querySelector('.qrcode').innerHTML;
+        optImage.innerHTML = image;
+        optName.innerText = this.name;
         optDate.innerText = String("".concat(_this.time, ", ").concat(_this.fullDate));
 
         optMenu.classList.toggle('active');
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     };
     
-    Card.prototype.generateQRCode = function () {
+    generateQRCode() {
       var value = String(messageInput.value);
       var container = this.card.querySelector('.qrcode');
   
@@ -146,15 +146,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-    Card.prototype.sizeAndDownLoad = function (action) {
-      var _this = this;
+    sizeAndDownLoad(action) {
       setTimeout(function () {
-        var qrcodeImage = _this.card.querySelector('.qrcode img').src;
+        var qrcodeImage = this.card.querySelector('.qrcode img').src;
         
         fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
             if (String(action) === 'size') {
-              _this.size = findUnit(blob.size);
-              _this.card.querySelector('#size').innerText = _this.size;
+              this.size = findUnit(blob.size);
+              this.card.querySelector('#size').innerText = this.size;
             }
             else if (String(action) === 'download') {
               var link = document.createElement('a');
@@ -170,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 100);
     };
 
-    Card.prototype.render = function () {
+    render() {
       var newCard = card.cloneNode(true);
       this.setInfos();
       
@@ -180,26 +179,22 @@ document.addEventListener('DOMContentLoaded', function () {
       newCard.classList.add('visible');
       return newCard;
     };
-    return Card;
-  }());
+  };
 
 
 
 
-
-
-
-  var CardContainer = /** @class */ (function () {
-    function CardContainer() {
+  class CardContainer {
+    constructor() {
       this.cardList = [];
     }
 
-    CardContainer.prototype.checkLength = function () {
+    checkLength() {
       if (this.cardList.length === 0) {
         statusMessageReset();
         main.classList.remove('active');
         container.classList.remove('visible');
-      }
+      } 
       else {
         statusMessageChange();
         main.classList.add('active');
@@ -208,17 +203,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
-    CardContainer.prototype.addCard = function () {
-      var newCard = new Card();
+    addCard() {
       var id = Number(this.cardList.length);
+      var newCard = new Card(id);
       
-      newCard.id = id;
       this.cardList[id] = newCard;
       resetInput();
       this.checkLength();
     };
 
-    CardContainer.prototype.removeCard = function (id) {
+    removeCard(id) {
       delete this.cardList[id];
       
       if (this.cardList.length > 0) {
@@ -226,8 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       this.checkLength();
     };
-    return CardContainer;
-  }());
+  };
 
   cardContainer = new CardContainer();
 
@@ -281,13 +274,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
   
-  hiddenFileInput.addEventListener('change', function (e) {
-    var file = e.target.files[0];
+  hiddenFileInput.addEventListener('change', function (event) {
+    var file = event.target.files[0];
     if (file) {
       resetInput();
       
-      messageInput.value = file.name;
       if (messageInput.value.trim() !== '') {
+        messageInput.value = file.name;
         cardContainer.addCard();
       }
       else {
