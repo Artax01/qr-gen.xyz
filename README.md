@@ -1,6 +1,6 @@
 # qr-gen.xyz
 
-**A website for generating qrcode.**
+A website for generating qrcode.
 
 ## How to you use it ?
 
