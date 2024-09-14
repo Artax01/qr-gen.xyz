@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // buttons
-  fileSelectButton.addEventListener('click', function (event) => {
+  fileSelectButton.addEventListener('click', function (event) {
     event.preventDefault();
     hiddenFileInput.click();
   });
