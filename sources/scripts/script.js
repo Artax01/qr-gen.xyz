@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var value = String(messageInput.value);
       var container = this.card.querySelector('.qrcode');
   
-      if (value.trim() !== '') {
+      if (value.trim() !== '' || value.trim() !== null) {
         new QRCode(container, value); // new qrcode generation
         this.sizeAndDownLoad('size'); // qrcode size calculation
       } 
