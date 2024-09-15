@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var optName = document.getElementById('optName');
   var optDate = document.getElementById('optDate');
   var exitButton = document.getElementById('zoomQRLink_2');
+  // var downloadButton = document.getElementById('downloadBtn');
 
   // dictionnary
   var units = {
@@ -92,9 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.time = "";
       this.date = "";
       this.fullDate = "";
-      this.downloadButton = null;
       this.optionsButton = null;
-      this.deleteButton = null;
       this.card = this.render();
 
       this.generateQRCode();
@@ -111,16 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setButtons() {
       var _this = this;
       this.optionsButton = this.card.querySelector('#optionsBtn');
-      // this.downloadButton = this.card.querySelector('#downloadQRLink');
-      // this.deleteButton = this.card.querySelector('#deleteQRLink');
-
-      // this.downloadButton.addEventListener('click', () => {
-      //   this.sizeAndDownLoad('download');
-      // });
-
-      // this.deleteButton.addEventListener('click', () => {
-      //   removeCardCall(this.id);
-      // });
 
       this.optionsButton.addEventListener('click', async function () {
         var image = _this.card.querySelector('.qrcode').innerHTML;
@@ -132,6 +121,14 @@ document.addEventListener('DOMContentLoaded', function () {
         await new Promise(r => setTimeout(r, 200));
         optMenu.classList.add('active');
       });
+
+      // downloadButton.addEventListener('click', function () {
+      //   _this.sizeAndDownLoad('download');
+      // });
+
+      // deleteButton.addEventListener('click', function () {
+      //   removeCardCall(_this.id);
+      // });
     }
     
     generateQRCode() {
