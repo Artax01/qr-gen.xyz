@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
   class Card {
     constructor(id) {
       this.id = id;
-      console.log(this.id);
       this.name = "";
       this.size = "";
       this.time = "";
@@ -110,8 +109,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     setButtons() {
-      // this.downloadButton = this.card.querySelector('#downloadQRLink');
+      var _this = this;
       this.optionsButton = this.card.querySelector('#optionsBtn');
+      // this.downloadButton = this.card.querySelector('#downloadQRLink');
       // this.deleteButton = this.card.querySelector('#deleteQRLink');
 
       // this.downloadButton.addEventListener('click', () => {
@@ -123,10 +123,10 @@ document.addEventListener('DOMContentLoaded', function () {
       // });
 
       this.optionsButton.addEventListener('click', async function () {
-        var image = this.card.querySelector('.qrcode').innerHTML;
+        var image = _this.card.querySelector('.qrcode').innerHTML;
         optImage.innerHTML = image;
-        optName.innerText = this.name;
-        optDate.innerText = String(`${this.time}, ${this.fullDate}`);
+        optName.innerText = _this.name;
+        optDate.innerText = String(`${_this.time}, ${_this.fullDate}`);
 
         optMenu.classList.toggle('active');
         await new Promise(r => setTimeout(r, 200));
@@ -149,17 +149,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sizeAndDownLoad(action) {
       setTimeout(function () {
+        var _this = this;
         var qrcodeImage = this.card.querySelector('.qrcode img').src;
         
         fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
             if (String(action) === 'size') {
-              this.size = findUnit(blob.size);
-              this.card.querySelector('#size').innerText = this.size;
+              _this.size = findUnit(blob.size);
+              _this.card.querySelector('#size').innerText = _this.size;
             }
             else if (String(action) === 'download') {
               var link = document.createElement('a');
               link.href = URL.createObjectURL(blob);
-              link.download = this.name;
+              link.download = _this.name;
               link.click();
               URL.revokeObjectURL(link.href);
             }
