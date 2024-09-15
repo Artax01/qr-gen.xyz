@@ -368,11 +368,11 @@ document.addEventListener('DOMContentLoaded', function () {
     
     var value = size / Math.pow(10, k-3);
     value = value.toFixed(2);
-    return value + " " + units[k-3];
+    return String(value + " " + units[k-3]);
   }
 
   function findMonth(nbr) {
-    return months[nbr];
+    return String(months[nbr]);
   }
 
   function fixMinutes(minutes) {
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return String(`0${minutes}`);
     }
     else {
-      return minutes;
+      return String(minutes);
     }
   }
 
