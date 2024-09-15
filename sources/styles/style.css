@@ -1030,7 +1030,7 @@ nav a, nav p, nav center {
 
 @media only screen and (max-width: 750px) {
   .optMenu {
-    padding: 35px 0 0 0;
+    padding: 35px 10px 10px 10px;
     max-width: 100% !important;
   }
 
