@@ -685,17 +685,18 @@ body {
 #downloadBtn,  #deleteBtn {
   display: flex;
   width: 100%;
-  padding: var(--spacing-7);
+  padding: var(--spacing-7) var(--spacing-15);
   flex-direction: row;
   align-items: center;
   border: var(--border-2) solid 1px;
   border-radius: 12px;
+  gap: 15px;
   cursor: pointer;
 }
 
 #downloadBtn svg,  #deleteBtn svg {
   height: 50px;
-  width: 50px;
+  width: 35px;
 }
 
 
