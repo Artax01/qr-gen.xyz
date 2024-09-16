@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     sizeAndDownLoad(action) {
+      var _this = this;
       setTimeout(function () {
-        var _this = this;
-        var qrcodeImage = this.card.querySelector('.qrcode img').src;
+        var qrcodeImage = _this.card.querySelector('.qrcode img').src;
         
         fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
             if (String(action) === 'size') {
