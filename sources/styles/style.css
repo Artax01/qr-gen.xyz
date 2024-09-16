@@ -678,7 +678,7 @@ body {
   padding: var(--spacing-15);
   flex-direction: column;
   gap: 20px;
-  bottom: 50px;
+  bottom: 0;
   left: 0;
 }
 
