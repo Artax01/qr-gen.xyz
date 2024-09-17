@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var optName = document.getElementById('optName');
   var optDate = document.getElementById('optDate');
   var exitButton = document.getElementById('zoomQRLink_2');
-  // var downloadButton = document.getElementById('downloadBtn');
+  var downloadButton = document.getElementById('downloadBtn');
 
   // dictionnary
   var units = {
@@ -122,9 +122,9 @@ document.addEventListener('DOMContentLoaded', function () {
         optMenu.classList.add('active');
       });
 
-      // downloadButton.addEventListener('click', function () {
-      //   _this.sizeAndDownLoad('download');
-      // });
+      downloadButton.addEventListener('click', function () {
+        _this.sizeAndDownLoad('download');
+      });
 
       // deleteButton.addEventListener('click', function () {
       //   removeCardCall(_this.id);
