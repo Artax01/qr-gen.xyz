@@ -646,6 +646,7 @@ body {
   background: none;
   transition: .2s;
   z-index: 2;
+  font-size: 1.25em;
   justify-content: space-around;
 }
 
@@ -675,11 +676,12 @@ body {
   position: fixed;
   display: flex;
   width: 100%;
+  bottom: 0;
+  left: 0;
   padding: var(--spacing-15);
   flex-direction: column;
   gap: var(--spacing-10);
-  bottom: 0;
-  left: 0;
+  font-size: 1.25em;
 }
 
 #downloadBtn,  #deleteBtn {
@@ -766,7 +768,7 @@ nav a, nav p, nav center {
   width: 100%;
   padding: 0 50px 0 100px;
   margin-bottom: 1.25rem;
-  font-size: xx-large;
+  font-size: 2em;
   font-weight: bold;
   flex-direction: column;
   background: none;
@@ -1026,7 +1028,7 @@ nav a, nav p, nav center {
 
   .nav_info {
     padding-left: 50px;
-    font-size: x-large;
+    font-size: 1.75em;
   }
   
   .year_production {
@@ -1088,12 +1090,20 @@ nav a, nav p, nav center {
 
   .nav_info {
     padding-left: 30px;
-    font-size: large;
+    font-size: 1.5em;
+    align-items: center;
+  }
+
+  .nav_info a {
+    padding: var(--spacing-15) 0;
+    margin: var(--spacing-10) 0;
+    text-align: center;
   }
 
   .year_production {
     padding-left: 30px;
     font-size: medium;
+    text-align: center;
   }
 }
 
