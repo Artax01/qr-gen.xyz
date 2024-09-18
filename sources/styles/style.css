@@ -692,6 +692,12 @@ body {
   border-radius: 12px;
   gap: 15px;
   cursor: pointer;
+  transition: .3s;
+}
+
+#downloadBtn:hover,  #deleteBtn:hover {
+  transform: scale(1.015);
+  background: rgba(0,0,0,.075);
 }
 
 #downloadBtn svg,  #deleteBtn svg {
@@ -759,6 +765,7 @@ nav a, nav p, nav center {
   display: flex;
   width: 100%;
   padding: 0 50px 0 100px;
+  margin-bottom: 1.25rem;
   font-size: xx-large;
   font-weight: bold;
   flex-direction: column;
@@ -766,9 +773,11 @@ nav a, nav p, nav center {
 }
 
 .nav_info a {
+  width: fit-content;
+  padding: var(--spacing-15) var(--spacing-15) var(--spacing-15) 0;
+  margin: 5px 5px 5px 0;
   text-decoration: none;
   color: var(--text-color);
-  margin-bottom: 2rem;
   transition: .3s;
 }
 
@@ -983,10 +992,6 @@ nav a, nav p, nav center {
 
   .navbar h1 {
     margin-left: 1.5rem;
-  }
-    
-  #burger-menu:hover {
-    background: var(--selected-border-color);
   }
 
   .card-container {
