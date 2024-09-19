@@ -1011,6 +1011,10 @@ nav a, nav p, nav center {
   .file-select-btn {
     margin-left: 0;
   }
+  
+  .optImage {
+    height: 30px;
+  }
 
   .darkMode {
     margin-right: 0;
