@@ -685,7 +685,7 @@ body {
   padding: var(--spacing-15);
   flex-direction: column;
   gap: var(--spacing-10);
-  font-size: 1.25em;
+  font-size: 1.15em;
 }
 
 #downloadBtn,  #deleteBtn {
