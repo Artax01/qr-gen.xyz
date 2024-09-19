@@ -672,6 +672,10 @@ body {
   justify-content: center;
 }
 
+#optName {
+  font-weight: bold;
+}
+
 .optButtons {
   position: fixed;
   display: flex;
