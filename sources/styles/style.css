@@ -520,6 +520,8 @@ body {
 .qrcode img {
   height: 50px;
   width: 50px;
+  border-radius: 5px;
+  border: 3px solid var(--bg-3);
 }
 
 .qrcode_info {
@@ -662,6 +664,14 @@ body {
 .optImage {
   display: flex;
   justify-content: center;
+  height: 210px;
+  margin-bottom: var(--spacing-7);
+  transition: .3s;
+}
+
+#optImage img {
+  border-radius: 13px;
+  border: 8px solid var(--bg-3);
 }
 
 #optName, #optDate {
@@ -675,6 +685,7 @@ body {
 #optName {
   font-weight: bold;
   font-size: 1.25em;
+  margin-bottom: 5px;
 }
 
 .optButtons {
