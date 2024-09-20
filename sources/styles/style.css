@@ -521,7 +521,7 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 5px;
-  border: 3px solid var(--bg-3);
+  border: 3px solid #fff;
 }
 
 .qrcode_info {
@@ -671,7 +671,7 @@ body {
 
 #optImage img {
   border-radius: 13px;
-  border: 8px solid var(--bg-3);
+  border: 8px solid #fff;
 }
 
 #optName, #optDate {
