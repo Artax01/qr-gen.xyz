@@ -314,8 +314,8 @@ body {
   width: 100%;
   border-radius: var(--spacing-15);
   text-decoration: none;
-  border: 1px solid var(--border);
-  background: none;
+  border: 1px solid var(--border-2);
+  background: var(--bg-2);
   transition: .3s;
 }
 
