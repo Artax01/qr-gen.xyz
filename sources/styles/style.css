@@ -283,7 +283,7 @@ body {
   align-items: center;
   gap: var(--spacing-10);
   border: var(--border-2) solid 1px;
-  border-radius: 40px;
+  border-radius: 20px;
   background:  none;
   box-shadow: var(--dark-soft-shadow);
   backdrop-filter: blur(30px);
