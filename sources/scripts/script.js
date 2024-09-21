@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
       newCard.querySelector('#name').innerText = this.name;
       newCard.querySelector('#date_time').innerText = String(`At ${this.time}, ${this.date}`);
       container.insertBefore(newCard, container.firstChild);
+      newCard.id = String(`card${this.id}`);
       newCard.classList.add('visible');
       return newCard;
     }
