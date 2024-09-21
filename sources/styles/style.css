@@ -53,7 +53,7 @@ body {
 
   --text-color: #000; /* main text color */
   --text-color-2: #F3F7FA;
-  --light-dark: rgba(0,0,0,.3); /* light dark color */
+  --light-dark: rgba(0,0,0,.1); /* light dark color */
 
   --bg-1: #F3F7FA; /* main background */
   --bg-2: #fff; /* second background */
@@ -180,7 +180,7 @@ body {
   border: var(--border-2) solid 1px;
   border-radius: 20px;
   background: none;
-  box-shadow: var(--dark-soft-shadow);
+  box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
   transition: .3s;
 }
 
@@ -285,7 +285,7 @@ body {
   border: var(--border-2) solid 1px;
   border-radius: 20px;
   background:  none;
-  box-shadow: var(--dark-soft-shadow);
+  box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   transition: .3s;
@@ -376,7 +376,7 @@ body {
   border: var(--border-2) solid 1px;
   background: none;
   overflow-y: scroll;
-  box-shadow: var(--dark-soft-shadow);
+  box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
   transition: .3s;
 }
 
