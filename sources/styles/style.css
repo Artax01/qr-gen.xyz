@@ -364,7 +364,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  height: calc(100% - 20px - 78px - 63px - 25px);
+  height: calc(100% - 20px - 78px - 63px - 15px);
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
