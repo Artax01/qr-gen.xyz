@@ -85,7 +85,7 @@ body {
 .dark_theme {
   --text-color: #F3F7FA; /* main text color */
   --text-color-2: #000;
-  --light-dark: var(--border); /* light dark color (invert) */
+  --light-dark: rgba(255,255,255,.03); /* light dark color (invert) */
 
   --bg-1: #100F14; /* main background */
   --bg-2: #1C1B20; /* second background */
