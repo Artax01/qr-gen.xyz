@@ -26,5 +26,4 @@ Same as for download.
 
 This website was developed by Artax01.
 
-> This website uses a file called "qrcode.js" which comes from this github : https://github.com/davidshimjs/qrcodejs  
-> QR Code is a registered trademark of DENSO WAVE INCORPORATED
+> This website uses a file called « qrcode.js » which comes from this github : [qrcodejs](https://github.com/davidshimjs/qrcodejs). QR Code is a registered trademark of DENSO WAVE INCORPORATED.
