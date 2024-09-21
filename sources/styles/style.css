@@ -827,7 +827,6 @@ nav a, nav p, nav center {
   right: 5.5rem;
   height: 2.5rem;
   width: 2.5rem;
-  margin-right: .8rem;
   background: var(--bg-3);
   border: none;
   border-radius: 9999px;
@@ -838,7 +837,7 @@ nav a, nav p, nav center {
 }
 
 #languageBtn {
-  margin-right: 4rem;
+  margin-right: 3.5rem;
   text-align: center;
   font-size: 1.5em;
   background: none;
@@ -1029,14 +1028,6 @@ nav a, nav p, nav center {
   
   .optImage {
     height: 150px;
-  }
-
-  .darkMode {
-    margin-right: 0;
-  }
-
-  #languageBtn {
-    margin-right: 3.5rem;
   }
 
   nav {
