@@ -207,6 +207,7 @@ body {
   border-radius: 40px;
   cursor: pointer;
   z-index: 5000;
+  transition: .3s;
 }
 
 #burger-menu span {
@@ -999,12 +1000,20 @@ nav a, nav p, nav center {
     max-width: 95% !important;
   }
 
+  #burger-menu {
+    right: 3rem;
+  }
+
   .search {
     max-width: 83% !important;
   }
 
   .optMenu {
     max-width: 60% !important;
+  }
+
+  .darkMode {
+    right: 6.5rem;
   }
 }
 
@@ -1067,12 +1076,20 @@ nav a, nav p, nav center {
     font-size: large;
   }
 
+  #burger-menu {
+    right: 2rem;
+  }
+
   #main {
     padding: 3px;
   }
 
   .search {
     border-radius: 20px;
+  }
+
+  .darkMode {
+    right: 5.5rem;
   }
 
   .text_zone {
