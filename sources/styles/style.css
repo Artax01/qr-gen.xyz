@@ -407,7 +407,7 @@ body {
   border-radius: 20px;
   color: #000;
   border: #fff solid 3px;
-  outline: var(--light-dark) solid 1px;
+  outline: var(--border) solid 1px;
   align-content: center;
   box-shadow: var(--dark-soft-shadow);
   transition: .3s;
