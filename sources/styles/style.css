@@ -508,6 +508,7 @@ body {
   gap: 20px;
   background: var(--bg-2);
   box-shadow: var(--light-soft-shadow);
+  cursor: pointer;
   transform: scale(0);
   transition: .3s;
 }
@@ -989,8 +990,8 @@ nav a, nav p, nav center {
 @media only screen and (max-width: 1500px) {
   .optMenu {
     right: 0;
-    padding-bottom: 10px;
-    max-width: 40%;
+    padding: 100px 0 10px 0;
+    max-width: 35%;
     transform: translateX(0) translateY(150vh);
     z-index: 9999;
   }
