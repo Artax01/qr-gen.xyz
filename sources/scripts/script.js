@@ -109,19 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     setButtons() {
       var _this = this;
-      this.optionsButton = this.card.querySelector('#optionsBtn');
-
-      this.optionsButton.addEventListener('click', async function () {
-        var image = _this.card.querySelector('.qrcode').innerHTML;
-        optImage.innerHTML = image;
-        optName.innerText = _this.name;
-        optDate.innerText = String(`${_this.time}, ${_this.fullDate}`);
-
-        optMenu.classList.toggle('active');
-        await new Promise(r => setTimeout(r, 200));
-        optMenu.classList.add('active');
-      });
-
       downloadButton.addEventListener('click', function () {
         _this.sizeAndDownLoad('download');
       });
@@ -135,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var value = String(messageInput.value);
       var container = this.card.querySelector('.qrcode');
   
-      if (value.trim() !== '' || value.trim() !== null) {
+      if (value.trim() !== '' && value.trim() !== null) {
         new QRCode(container, value); // new qrcode generation
         this.sizeAndDownLoad('size'); // qrcode size calculation
       } 
@@ -203,11 +190,29 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    setEventListener(element) {
+      // obtain the targeted card
+      var targetedCard = document.getElementById(String(`card${element.id}`));
+
+      // open/close optionsMenu + Load Content
+      element.card.addEventListener('click', function() {
+        if (!optMenu.classList.contains('active')) {
+          var image = targetedCard.querySelector('.qrcode').innerHTML;
+          optImage.innerHTML = image;
+          optName.innerText = element.name;
+          optDate.innerText = String(`${element.time}, ${element.fullDate}`);
+        }
+        optMenu.classList.toggle('active');
+      });
+    }
+
     addCard() {
       var id = Number(this.cardList.length);
       var newCard = new Card(id);
-      
+
+      this.setEventListener(newCard);
       this.cardList[id] = newCard;
+      
       resetInput();
       this.checkLength();
     }
@@ -216,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
       delete this.cardList[id];
       
       if (this.cardList.length > 0) {
-        this.cardList.length = Number(this.cardList.length) - 1;
+        this.cardList.length -= 1;
       }
       this.checkLength();
     };
@@ -270,7 +275,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   messageInput.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
-      cardContainer.addCard();
+      if (messageInput.value.trim() !== "" && messageInput.value.trim() !== null) {
+        cardContainer.addCard();
+      } 
+      else {
+        alert('Please enter a value to generate a qrcode.');
+      }
     }
   });
   
@@ -280,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
       resetInput();
       messageInput.value = file.name; 
       
-      if (messageInput.value.trim() !== '' || messageInput.value.trim() !== null) {
+      if (messageInput.value.trim() !== '' && messageInput.value.trim() !== null) {
         cardContainer.addCard();
       }
       else {
