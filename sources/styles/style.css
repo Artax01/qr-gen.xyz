@@ -405,7 +405,7 @@ body {
   height: fit-content;
   width: fit-content;
   border-radius: 20px;
-  color: var(--light-dark);
+  color: #000;
   border: #fff solid 3px;
   outline: var(--light-dark) solid 1px;
   align-content: center;
