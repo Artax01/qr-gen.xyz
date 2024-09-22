@@ -405,12 +405,15 @@ body {
   height: fit-content;
   width: fit-content;
   border-radius: 20px;
-  color: #000;
-  border: transparent solid 3px;
-  outline: var(--border) solid 1px;
+  border: var(--bg-1) solid 3px;
+  outline: var(--border-2) solid 1px;
   align-content: center;
   box-shadow: var(--dark-soft-shadow);
   transition: .3s;
+}
+
+#versionTag p, #githubTag p, #latestTag p {
+  color: #000;
 }
 
 #versionTag {
