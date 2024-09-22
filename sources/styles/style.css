@@ -673,7 +673,7 @@ body {
 .optImage {
   display: flex;
   justify-content: center;
-  height: 210px;
+  height: 200px;
   margin-bottom: var(--spacing-7);
   transition: .3s;
 }
