@@ -844,14 +844,7 @@ nav a, nav p, nav center {
   transition: .3s;
 }
 
-#languageBtn {
-  left: 2rem;
-  text-align: center;
-  font-size: 1.5em;
-  background: none;
-}
-
-.darkMode:hover, #languageBtn:hover {
+.darkMode:hover {
   background: var(--selected-border-color);
 }
 
@@ -862,6 +855,18 @@ nav a, nav p, nav center {
   background: transparent;
   filter: invert();
   transition: .3s;
+}
+
+#languageBtn {
+  left: 2rem;
+  text-align: center;
+  font-size: 1.5em;
+  background: none;
+  transition: .3s;
+}
+
+#languageBtn:hover {
+  font-size: 1.65em;
 }
 
 
