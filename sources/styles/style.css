@@ -119,13 +119,6 @@ body {
   width: 100%;
 }
 
-
-
-
-
-
-
-
 .global_header {
   display: flex;
   padding: var(--spacing-10);
@@ -385,8 +378,35 @@ body {
   justify-content: normal;
 }
 
-#tagContainer {
+.main_header {
   display: flex;
+  justify-content: space-between;
+  transition: .3s;
+}
+
+.status-msg {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 10%;
+  padding: var(--spacing-15);
+  gap: var(--spacing-7);
+  opacity: 0.45;
+  transition: .3s;
+}
+
+.status-msg.active {
+  text-align: left;
+  opacity: 1;
+  font-weight: 700;
+  font-size: 24px;
+  margin-left: 5px;
+  transform: translateY(0px);
+  transition: .3s ease-in-out;
+}
+
+#tagContainer {
+  display: none;
   flex-direction: row;
   margin: var(--spacing-15) var(--spacing-10);
   margin-bottom: 0;
@@ -399,6 +419,7 @@ body {
 
 #tagContainer.visible {
   transform: scale(1);
+  display: flex;
 }
 
 #versionTag, #githubTag, #latestTag {
@@ -427,27 +448,6 @@ body {
 
 #latestTag {
   background: #d7a2b2;
-}
-
-.status-msg {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 0 10%;
-  padding: var(--spacing-15);
-  gap: var(--spacing-7);
-  opacity: 0.45;
-  transition: .3s;
-}
-
-.status-msg.active {
-  text-align: left;
-  opacity: 1;
-  font-weight: 700;
-  font-size: 24px;
-  margin-left: 5px;
-  transform: translateY(0px);
-  transition: .3s ease-in-out;
 }
 
 
@@ -1080,6 +1080,7 @@ nav a, nav p, nav center {
 @media only screen and (max-width: 800px) {
   body, html {
     display: flex;
+    height: 100%;
     gap: var(--spacing-10);
     flex-direction: column;
   }
@@ -1126,6 +1127,7 @@ nav a, nav p, nav center {
     border-bottom: 1px solid var(--border);
     transform: scale(1);
     box-shadow: none;
+    transition: .3s;
     z-index: 1;
   }
 
@@ -1158,10 +1160,6 @@ nav a, nav p, nav center {
     border-bottom: 1px solid var(--border);
   }
 
-  #tagContainer {
-    display: none;
-  }
-
   .darkMode {
     top: 1.2rem;
     right: 5.5rem;
@@ -1184,6 +1182,18 @@ nav a, nav p, nav center {
 
   .optForeground {
     background: var(--bg-2);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #latestTag {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 385px) {
+  #githubTag {
+    display: none;
   }
 }
 
