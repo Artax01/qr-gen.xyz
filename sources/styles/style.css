@@ -1159,6 +1159,10 @@ nav a, nav p, nav center {
     border-bottom: 1px solid var(--border);
   }
 
+  #tagContainer {
+    display: none;
+  }
+
   .darkMode {
     top: 1.2rem;
     right: 5.5rem;
