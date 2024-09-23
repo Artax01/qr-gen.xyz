@@ -1081,7 +1081,7 @@ nav a, nav p, nav center {
   body, html {
     height: 100%;
     max-height: 100dvh !important;
-    overflow-y: scroll;
+    overflow-y: hidden;
   }
   
   .global_header {
