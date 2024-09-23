@@ -1076,9 +1076,25 @@ nav a, nav p, nav center {
   }
 }
 
+/* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
+  .global_header {
+    position: relative;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+  }
+  
   .navbar {
+    position: relative;
     padding: 1rem 0;
+    max-width: 100% !important;
+    background: #F2F2F2;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    z-index: 1;
   }
   
   .navbar h1 {
@@ -1087,19 +1103,63 @@ nav a, nav p, nav center {
   }
 
   #burger-menu {
+    top: 1.2rem;
     right: 2rem;
   }
 
-  #main {
-    padding: 3px;
+  .search {
+    position: relative;
+    bottom: auto;
+    max-width: 100% !important;
+    height: 4rem;
+    padding: 0;
+    margin: 0;
+    margin-bottom: var(--spacing-10);
+    background: var(--bg-2);
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    transform: scale(1);
+    box-shadow: none;
+    z-index: 1;
   }
 
-  .search {
-    border-radius: 20px;
+  .message-input {
+    height: 100%;
+    max-width: 100% !important;
+    padding-left: 2rem;
+    background: transparent;
+    font-size: .9em;
+    font-weight: bold;
+    color: #7E7E7E;
+    border: none;
+  }
+
+  .file-select-btn, .send-btn {
+    display: none;
+  }
+
+  #main {
+    position: relative;
+    top: auto;
+    height: 100%;
+    max-width: 100% !important;
+    padding: 3px;
+    background: var(--bg-2);
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .darkMode {
+    top: 1.2rem;
     right: 5.5rem;
+  }
+
+  #languageBtn {
+    top: 1.2rem;
   }
 
   .text_zone {
@@ -1115,15 +1175,6 @@ nav a, nav p, nav center {
 
   .optForeground {
     background: var(--bg-2);
-  }
-}
-
-@media only screen and (max-width: 385px) {
-  .search {
-    transform: scale(1.25);
-    transition: .3s;
-    max-width: calc(100% - 25%) !important;
-    border-radius: 20px;
   }
 }
 
