@@ -378,9 +378,13 @@ body {
   justify-content: normal;
 }
 
+#main.active .main_header {
+  justify-content: space-between;
+}
+
 .main_header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   transition: .3s;
 }
 
