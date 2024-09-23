@@ -1087,6 +1087,7 @@ nav a, nav p, nav center {
   .global_header {
     position: relative;
     display: flex;
+    margin-bottom: var(--spacing-10);
     padding: 0;
     flex-direction: column;
   }
@@ -1120,7 +1121,6 @@ nav a, nav p, nav center {
     height: 4rem;
     padding: 0;
     margin: 0;
-    margin-bottom: var(--spacing-10);
     background: var(--bg-2);
     border-radius: 0;
     border: none;
