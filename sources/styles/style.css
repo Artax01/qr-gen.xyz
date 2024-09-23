@@ -1084,7 +1084,6 @@ nav a, nav p, nav center {
 @media only screen and (max-width: 800px) {
   body, html {
     display: flex;
-    height: 100%;
     gap: var(--spacing-10);
     flex-direction: column;
   }
@@ -1153,7 +1152,7 @@ nav a, nav p, nav center {
   #main {
     position: relative;
     top: auto;
-    height: calc(100dvh - 141px 10px);
+    height: calc(100% - 141px 10px);
     max-width: 100% !important;
     padding: 3px;
     background: var(--bg-2);
