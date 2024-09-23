@@ -1078,6 +1078,11 @@ nav a, nav p, nav center {
 
 /* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
+  body, html {
+    height: 100%;
+    max-height: 100dvh !important;
+  }
+  
   .global_header {
     position: relative;
     display: flex;
@@ -1089,7 +1094,7 @@ nav a, nav p, nav center {
     position: relative;
     padding: 1rem 0;
     max-width: 100% !important;
-    background: #F2F2F2;
+    background: var(--bg-1);
     border-radius: 0;
     box-shadow: none;
     border: none;
