@@ -1163,6 +1163,19 @@ nav a, nav p, nav center {
     border-bottom: 1px solid var(--border);
   }
 
+  .main_header {
+    padding: 15px 20px;
+  }
+
+  .status-msg {
+    padding: 0;
+    margin: 0;
+  }
+
+  #tagContainer {
+    margin: 0;
+  }
+
   .darkMode {
     top: 1.2rem;
     right: 5.5rem;
@@ -1189,12 +1202,16 @@ nav a, nav p, nav center {
 }
 
 @media only screen and (max-width: 600px) {
+  .main_header {
+    padding: 15px;
+  }
+  
   #latestTag {
     display: none;
   }
 }
 
-@media only screen and (max-width: 385px) {
+@media only screen and (max-width: 349px) {
   #githubTag {
     display: none;
   }
