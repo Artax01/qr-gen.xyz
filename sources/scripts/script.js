@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var messageInput = document.getElementById('messageInput'); // text field for qrcode value
   var generateButton = document.getElementById('generateButton'); // generate qrcode based on the input value
   
-  var main = document.getElementById('main');
-  var tagContainer = document.getElementById('tagContainer');
   var status_msg = document.getElementById('status-msg');
   var status_value = status_msg.innerHTML;
+  var tagContainer = document.getElementById('tagContainer');
 
-  var container = document.getElementById('card-container');
+  var qrcode = document.getElementById('qrcode');
+  var container = document.getElementById('card-container'); // card container inside qrcode block
   var card = document.getElementById('card');
 
   // optionsMenuContent
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     generateQRCode() {
       var value = String(messageInput.value);
-      var container = this.card.querySelector('.qrcode');
+      var container = this.card.querySelector('.image');
   
       if (value.trim() !== '' && value.trim() !== null) {
         new QRCode(container, value); // new qrcode generation
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     sizeAndDownLoad(action) {
       var _this = this;
       setTimeout(function () {
-        var qrcodeImage = _this.card.querySelector('.qrcode img').src;
+        var qrcodeImage = _this.card.querySelector('.image img').src;
         
         fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
             if (String(action) === 'size') {
@@ -179,12 +179,12 @@ document.addEventListener('DOMContentLoaded', function () {
     checkLength() {
       if (this.cardList.length === 0) {
         statusMessageReset();
-        main.classList.remove('active');
+        qrcode.classList.remove('active');
         container.classList.remove('visible');
       } 
       else {
         statusMessageChange();
-        main.classList.add('active');
+        qrcode.classList.add('active');
         tagContainer.classList.add('visible');
         container.classList.add('visible');
       }
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // open/close optionsMenu + Load Content
       element.card.addEventListener('click', function() {
         if (!optMenu.classList.contains('active')) {
-          var image = targetedCard.querySelector('.qrcode').innerHTML;
+          var image = targetedCard.querySelector('.image').innerHTML;
           optImage.innerHTML = image;
           optName.innerText = element.name;
           optDate.innerText = String(`${element.time}, ${element.fullDate}`);
