@@ -41,48 +41,52 @@
 
 
 
-<div id="main">
-  <!-- Header -->
-  <div class="main_header">
-    <!-- Status Message -->
-    <div class="status-msg" id="status-msg">
-      <p>No QRCode generated.</p>
-      <p>To generate a QRCode, simply enter something in the search bar below.</p>
-    </div>
-    <!-- Tag Container -->
-    <div id="tagContainer">
-      <div id="versionTag">
-        <p>v1.4.0</p>
+<div id="global_feed">
+  <!-- Generated qrcode block -->
+  <div id="qrcode">
+    <!-- Header -->
+    <div class="main_header">
+      <!-- Status Message -->
+      <div class="status-msg" id="status-msg">
+        <p>No QRCode generated.</p>
+        <p>To generate a QRCode, simply enter something in the search bar below.</p>
       </div>
-      <div id="githubTag">
-        <p>Github</p>
-      </div>
-      <div id="latestTag">
-        <p>Latest Release</p>
-      </div>
-    </div>
-  </div>
-  <!-- Card component -->
-  <div class="card-container" id="card-container">
-    <!-- ... -->
-    <div class="card" id="card">
-      <div class="row_container">
-        <!-- QRCode Image -->
-        <div class="qrcode"></div>
-        <!-- QRCode Info -->
-        <div class="qrcode_info">
-          <p id="name"></p>
-          <p id="size"></p>
-          <p id="date_time"></p>
+      <!-- Tag Container -->
+      <div id="tagContainer">
+        <div id="versionTag">
+          <p>v1.4.0</p>
         </div>
-        <!-- QRCode Options -->
-        <div class="optionsBtn" title="Options">
-          <svg id="optionsBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" /></svg>             
+        <div id="githubTag">
+          <p>Github</p>
+        </div>
+        <div id="latestTag">
+          <p>Latest Release</p>
         </div>
       </div>
     </div>
-    <!-- ... -->
+    <!-- Card component -->
+    <div id="card-container">
+      <!-- ... -->
+      <div class="card" id="card">
+        <div class="row_container">
+          <!-- QRCode Image -->
+          <div class="image"></div>
+          <!-- QRCode Info -->
+          <div class="infos">
+            <p id="name"></p>
+            <p id="size"></p>
+            <p id="date_time"></p>
+          </div>
+          <!-- QRCode Options -->
+          <div class="optionsBtn" title="Options">
+            <svg id="optionsBtn" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" /></svg>             
+          </div>
+        </div>
+      </div>
+      <!-- ... -->
+    </div>
   </div>
+  <!-- ... -->
 </div>
 
 
