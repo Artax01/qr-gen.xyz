@@ -482,7 +482,7 @@ body {
 
 
 
-.card-container {
+#card-container {
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -492,7 +492,7 @@ body {
   transition: .2s;
 }
 
-.card-container.visible {
+#card-container.visible {
   visibility: visible;
   transform: translateY(-4px);
   opacity: 1;
@@ -1040,7 +1040,7 @@ nav a, nav p, nav center {
     margin-left: 1.5rem;
   }
 
-  .card-container {
+  #card-container {
     margin: var(--spacing-10);
   }
 
