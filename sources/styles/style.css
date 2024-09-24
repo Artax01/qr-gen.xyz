@@ -124,7 +124,7 @@ body {
   padding: var(--spacing-10);
 }
 
-.navbar, #main {
+.navbar, #qrcode {
   max-width: 50% !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -351,7 +351,7 @@ body {
 
 
 
-#main {
+#qrcode {
   position: fixed;
   display: flex;
   top: calc(80px + var(--spacing-15));
@@ -374,11 +374,11 @@ body {
   transition: .3s;
 }
 
-#main.active {
+#qrcode.active {
   justify-content: normal;
 }
 
-#main.active .main_header {
+#qrcode.active .main_header {
   justify-content: space-between;
 }
 
@@ -521,23 +521,23 @@ body {
   transform: scale(1);
 }
 
-.qrcode {
+.image {
   padding: var(--spacing-10);
   cursor: pointer;
 }
 
-.qrcode canvas {
+.image canvas {
   display: none;
 }
 
-.qrcode img {
+.image img {
   height: 50px;
   width: 50px;
   border-radius: 5px;
   border: 3px solid var(--bg-3);
 }
 
-.qrcode_info {
+.infos {
   width: 100%;
   padding-top: 5px;
   background: transparent;
@@ -545,7 +545,7 @@ body {
   overflow: hidden;
 }
 
-.qrcode_info p {
+.infos p {
   background: transparent;
 }
 
@@ -1010,7 +1010,7 @@ nav a, nav p, nav center {
 }
 
 @media only screen and (max-width: 1200px) {
-  .navbar, #main {
+  .navbar, #qrcode {
     max-width: 95% !important;
   }
 
@@ -1149,7 +1149,7 @@ nav a, nav p, nav center {
     display: none;
   }
 
-  #main {
+  #qrcode {
     position: relative;
     top: auto;
     height: calc(100% - 141px 10px);
