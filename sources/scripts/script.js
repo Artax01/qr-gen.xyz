@@ -395,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function statusMessageChange() {
     status_msg.classList.add('active'); // hide the status message
-    status_msg.innerText = "Aujourd'hui";
+    status_msg.innerText = "Today";
   }
 
   function statusMessageReset() {
