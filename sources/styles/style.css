@@ -1294,7 +1294,7 @@ nav a, nav p, nav center {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   .main_header {
     padding: 15px;
   }
