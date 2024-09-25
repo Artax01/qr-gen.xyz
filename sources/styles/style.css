@@ -382,7 +382,8 @@ body {
   padding: var(--spacing-7) 14px;
   margin-left: 5%;
   margin-right: auto;
-  max-width: 20%;
+  min-width: 90px;
+  max-width: 90px;
   align-items: center;
   gap: 16px;
   border: var(--border) solid 1px;
