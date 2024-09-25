@@ -47,6 +47,24 @@ body {
 
 
 
+/* ############################################ */
+/* ##  #####     ######     ######   ######  ## */
+/* ##  ##  ##   ##    ##   ##    ##    ##    ## */
+/* ##  #####   ##      ## ##      ##   ##    ## */
+/* ##  ##  ##   ##    ##   ##    ##    ##    ## */
+/* ##  ##   ##   ######     ######     ##    ## */
+/* ############################################ */
+
+
+
+
+
+/* ################################################################## */
+
+
+
+
+
 :root {
   --font: "Montserrat", sans-serif !important;
   --font-code: "Source Code Pro", sans-serif !important;
@@ -69,6 +87,7 @@ body {
   --border-3: rgba(183, 195, 210, 0.75); /* message input focus border */
   --burger-menu-line: #fff;
 
+  --importBar-btn: invert(); /* invert color to see icon on buttons */
   --selected-border-color:rgba(0,0,0,.25);
   --special-text: rgb(40, 200, 184); /* code text color */
   --special-text-hover: rgb(36, 175, 161); /* hover code text color */
@@ -96,6 +115,7 @@ body {
   --border-2: #333237; /* light border */
   --burger-menu-line: #000;
 
+  --importBar-btn: none; /* invert color to see icon on buttons */
   --selected-border-color:rgba(255,255,255,.75);
   --special-text: turquoise; /* code text color */
   --special-text-hover: rgb(49, 145, 136); /* hover code text color */
@@ -351,6 +371,48 @@ body {
 
 
 
+.importBar {
+  display: none;
+  position: fixed;
+  color: var(--text-color-2);
+  bottom: var(--spacing-15);
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: var(--spacing-7) 14px;
+  margin-left: 5%;
+  margin-right: auto;
+  max-width: 20%;
+  align-items: center;
+  gap: 16px;
+  border: var(--border) solid 1px;
+  border-radius: 40px;
+  background:  #000;
+  box-shadow: var(--dark-soft-shadow);
+  transition: .3s;
+  transform: scale(1.15);
+  z-index: 10;
+}
+
+.importBar svg {
+  filter: var(--importBar-btn);
+}
+
+#imgSelectButton {
+  height: 24px;
+  transform: scale(1.20);
+}
+
+
+
+
+
+/* ################################################################## */
+
+
+
+
+
 #qrcode {
   position: fixed;
   display: flex;
@@ -414,7 +476,7 @@ body {
   flex-direction: row;
   margin: var(--spacing-15) var(--spacing-10);
   margin-bottom: 0;
-  gap: var(--spacing-10	);
+  gap: var(--spacing-10);
   font-size: 13px;
   font-weight: 500;
   transition: .3s;
@@ -581,11 +643,6 @@ body {
 .optionsBtn svg:hover {
   transform: scale(0.90);
 }
-
-.trash_icon:hover {
-  box-shadow: rgba(255,0,0,.35) 0px 5px 30px;
-}
-
 
 
 
@@ -1145,8 +1202,22 @@ nav a, nav p, nav center {
     border: none;
   }
 
-  .file-select-btn, .send-btn {
+  .search .file-select-btn, .search .send-btn {
     display: none;
+  }
+
+  .file-select-btn svg {
+    margin-left: 0;
+  }
+
+  .importBar {
+    display: flex;
+  }
+
+  #global_feed {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-10);
   }
 
   #qrcode {
