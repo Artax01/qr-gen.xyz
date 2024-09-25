@@ -1233,6 +1233,7 @@ nav a, nav p, nav center {
     border-radius: 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
+    overflow-x: hidden;
   }
 
   .main_header {
@@ -1250,9 +1251,15 @@ nav a, nav p, nav center {
 
   #card-container {
     display: grid;
-    width: max-content;
+    width: 95%;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    column-gap: 160px;
     overflow-x: scroll;
+  }
+
+  .card {
+    width: max-content;
+    padding: 0;
   }
 
   .card:nth-child(2n+1) {
