@@ -1252,7 +1252,9 @@ nav a, nav p, nav center {
 
   #card-container {
     display: grid;
-    width: 95%;
+    width: 100%;
+    margin-left: 0;
+    padding-left: var(--spacing-10);
     grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
     overflow-x: scroll;
   }
