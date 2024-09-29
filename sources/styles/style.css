@@ -1291,6 +1291,8 @@ nav a, nav p, nav center {
   .optMenu {
     padding: 35px 0 0 0;
     max-width: 100% !important;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
   }
 
   .optForeground {
