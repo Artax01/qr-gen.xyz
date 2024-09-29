@@ -763,35 +763,51 @@ body {
   position: fixed;
   display: flex;
   width: 100%;
-  bottom: 0;
+  max-width: 95% !important;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: var(--spacing-7);
   left: 0;
-  padding: var(--spacing-15);
+  right: 0;
+  padding: 25px 30px;
   flex-direction: column;
   gap: var(--spacing-10);
   font-size: 1.05em;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--dark-soft-shadow);
 }
 
 #downloadBtn,  #deleteBtn {
   display: flex;
   width: 100%;
-  padding: var(--spacing-7) var(--spacing-15);
+  padding: var(--spacing-15);
   flex-direction: row;
   align-items: center;
-  border: var(--border-2) solid 1px;
   border-radius: 12px;
   gap: 15px;
+  justify-content: center;
   cursor: pointer;
   transition: .3s;
+}
+
+#downloadBtn {
+  background: var(--bg-2);
+  border: var(--border-2) solid 1px;
+  font-weight: 600;
+}
+
+#deleteBtn {
+  padding: var(--spacing-7);
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  font-weight: 500;
 }
 
 #downloadBtn:hover,  #deleteBtn:hover {
   transform: scale(1.015);
   background: rgba(0,0,0,.075);
-}
-
-#downloadBtn svg,  #deleteBtn svg {
-  height: 50px;
-  width: 35px;
 }
 
 
@@ -1288,11 +1304,17 @@ nav a, nav p, nav center {
 
 @media only screen and (max-width: 750px) {
   .optMenu {
-    padding: 35px 5px 5px 5px;
+    padding: 35px 0 0 0;
     max-width: 100% !important;
   }
 
   .optForeground {
+    background: var(--bg-2);
+  }
+
+  .optButtons {
+    bottom: 1px;
+    max-width: 99% !important;
     background: var(--bg-2);
   }
 }
