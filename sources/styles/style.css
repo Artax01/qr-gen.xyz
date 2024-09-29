@@ -1313,7 +1313,6 @@ nav a, nav p, nav center {
   }
 
   .optButtons {
-    bottom: 1px;
     max-width: 99% !important;
     background: var(--bg-2);
   }
