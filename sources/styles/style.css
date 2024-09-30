@@ -355,7 +355,7 @@ body {
   background-color: var(--send-button-hover);
 }
 
-.send-btn img {
+.send-btn svg {
   background: transparent;
   height: var(--spacing-15);
   filter: invert();
