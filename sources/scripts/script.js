@@ -1,7 +1,3 @@
-// The 'qrcode.js' module is used to generate qrcode.
-// The github page of 'qrcode.js' => 'https://github.com/davidshimjs/qrcodejs'.
-
-
 document.addEventListener('DOMContentLoaded', function () {
   // SearchBarContent
   var fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
@@ -93,18 +89,17 @@ document.addEventListener('DOMContentLoaded', function () {
       this.time = "";
       this.date = "";
       this.fullDate = "";
-      this.optionsButton = null;
       this.card = this.render();
 
-      this.generateQRCode();
+      this.getQR();
       this.setButtons();
     }
     
     setInfos() {
-      this.name = String(messageInput.value);
-      this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`);
-      this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}.`);
-      this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`);
+      if (!this.name) { this.name = String(messageInput.value); }
+      if (!this.time) { this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`); }
+      if (!this.date) { this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}.`); }
+      if (!this.fullDate) { this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`); }
     }
     
     setButtons() {
@@ -118,23 +113,26 @@ document.addEventListener('DOMContentLoaded', function () {
       // });
     }
     
-    generateQRCode() {
-      var value = String(messageInput.value);
-      var container = this.card.querySelector('.image');
+    getQR() {
+      var container = this.card.querySelector('.img_container');
   
-      if (value.trim() !== '' && value.trim() !== null) {
-        new QRCode(container, value); // new qrcode generation
-        this.sizeAndDownLoad('size'); // qrcode size calculation
-      } 
+      if (messageInput.value) { var value = String(messageInput.value); }
       else {
-        alert('Please enter a value to generate a qrcode.');
+        if (this.name) { var value = String(this.name); }
+        else {
+          alert('Please enter a value to generate a qrcode.');
+          return;
+        }
       }
+
+      new genQR(container, value, 128);
+      this.sizeAndDownLoad('size');
     }
 
     sizeAndDownLoad(action) {
       var _this = this;
       setTimeout(function () {
-        var qrcodeImage = _this.card.querySelector('.image img').src;
+        var qrcodeImage = _this.card.querySelector('.img_container img').src;
         
         fetch(qrcodeImage).then(function (response) { return response.blob(); }).then(function (blob) {
             if (String(action) === 'size') {
@@ -158,11 +156,11 @@ document.addEventListener('DOMContentLoaded', function () {
     render() {
       var newCard = card.cloneNode(true);
       this.setInfos();
-      
+
+      newCard.id = String(`card${this.id}`);
       newCard.querySelector('#name').innerText = this.name;
       newCard.querySelector('#date_time').innerText = String(`At ${this.time}, ${this.date}`);
       container.insertBefore(newCard, container.firstChild);
-      newCard.id = String(`card${this.id}`);
       newCard.classList.add('visible');
       return newCard;
     }
@@ -197,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // open/close optionsMenu + Load Content
       element.card.addEventListener('click', function() {
         if (!optMenu.classList.contains('active')) {
-          var image = targetedCard.querySelector('.image').innerHTML;
+          var image = targetedCard.querySelector('.img_container').innerHTML;
           optImage.innerHTML = image;
           optName.innerText = element.name;
           optDate.innerText = String(`${element.time}, ${element.fullDate}`);
