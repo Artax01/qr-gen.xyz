@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
   <link rel="shortcut icon" href="./sources/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="./sources/styles/style.css">
-  <script src="./sources/scripts/script.js"></script>
-  <script src="./sources/scripts/qrcode.js"></script>
-  <script src="./sources/scripts/sideMenu.js"></script>
+  <script type="text/javascript" src="./sources/scripts/script.js"></script>
+  <script type="text/javascript" src="./sources/scripts/sideMenu.js"></script>
+  <script type="text/javascript" src="./sources/api_request/gen.js"></script>
   <title>Qr-Gen.xyz - Generate qrcode.</title>
 </head>
 
@@ -78,7 +78,9 @@
       <div class="card" id="card">
         <div class="row_container">
           <!-- QRCode Image -->
-          <div class="image"></div>
+          <div class="img_container">
+            <img src="" id="image" alt="" title="">
+           </div>
           <!-- QRCode Info -->
           <div class="infos">
             <p id="name"></p>
