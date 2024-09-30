@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     
     getQR() {
-      var container = this.card.querySelector('.img_container');
+      var container = this.card.querySelector('#image');
   
       if (messageInput.value) { var value = String(messageInput.value); }
       else {
