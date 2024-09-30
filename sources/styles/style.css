@@ -1291,16 +1291,18 @@ nav a, nav p, nav center {
   .optMenu {
     padding: 35px 0 0 0;
     max-width: 100% !important;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   .optForeground {
     background: var(--bg-2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .optButtons {
-    bottom: 0;
+    bottom: 2px;
     max-width: 99% !important;
     background: var(--bg-2);
   }
