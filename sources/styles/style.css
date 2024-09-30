@@ -584,20 +584,15 @@ body {
   transform: scale(1);
 }
 
-.image {
+.img_container {
   padding: var(--spacing-10);
   cursor: pointer;
 }
 
-.image canvas {
-  display: none;
-}
-
-.image img {
+.img_container img {
   height: 50px;
   width: 50px;
   border-radius: 5px;
-  border: 3px solid var(--bg-3);
 }
 
 .infos {
@@ -743,6 +738,7 @@ body {
 #optImage img {
   border-radius: 13px;
   border: 8px solid #fff;
+  box-shadow: var(--dark-soft-shadow);
 }
 
 #optName, #optDate {
