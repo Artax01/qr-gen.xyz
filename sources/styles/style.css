@@ -896,13 +896,6 @@ nav a, nav p, nav center {
   color: var(--special-text-hover);
 }
 
-.year_production {
-  padding: 0 50px 0 100px;
-  background: none;
-  font-size: medium;
-  font-style: italic;
-}
-
 
 .darkMode, #languageBtn {
   position: absolute;
@@ -1140,10 +1133,6 @@ nav a, nav p, nav center {
     padding-left: 50px;
     font-size: 1.75em;
   }
-  
-  .year_production {
-    padding-left: 50px;
-  }
 
   .text_zone {
     margin-right: 2rem;
@@ -1347,12 +1336,6 @@ nav a, nav p, nav center {
   .nav_info a {
     padding: var(--spacing-15) 0;
     margin: var(--spacing-10) 0;
-    text-align: center;
-  }
-
-  .year_production {
-    padding-left: 30px;
-    font-size: medium;
     text-align: center;
   }
 }
