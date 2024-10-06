@@ -144,7 +144,7 @@ body {
   padding: var(--spacing-10);
 }
 
-.navbar, #qrcode {
+.navbar, #qrcode, .text_zone {
   max-width: 50% !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -948,10 +948,18 @@ nav a, nav p, nav center {
 
 
 .text_zone {
-  margin-top: 5rem;
-  margin-right: 10rem;
-  margin-bottom: 5rem;
-  margin-left: 10rem;
+  position: fixed;
+  top: calc(80px + var(--spacing-15));
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: calc(100% - 80px - 35px);
+  padding: 50px 35px;
+  border-radius: 20px;
+  border: var(--border-2) solid 1px;
+  background: none;
+  box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
+  transition: .3s;
 }
 
 .text_zone a {
@@ -1074,7 +1082,7 @@ nav a, nav p, nav center {
 }
 
 @media only screen and (max-width: 1200px) {
-  .navbar, #qrcode {
+  .navbar, #qrcode, .text_zone {
     max-width: 95% !important;
   }
 
@@ -1133,10 +1141,6 @@ nav a, nav p, nav center {
   .nav_info {
     padding-left: 50px;
     font-size: 1.75em;
-  }
-
-  .text_zone {
-    margin-right: 2rem;
   }
 }
 
@@ -1302,7 +1306,10 @@ nav a, nav p, nav center {
   }
 
   .text_zone {
-    margin-left: calc(100% - 90%);
+    padding: 50px 20px;
+    background: none;
+    border: none;
+    box-shadow: none;
   }
 }
 
