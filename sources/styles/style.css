@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 
@@ -66,7 +66,7 @@ body {
 
 
 :root {
-  --font: "Montserrat", sans-serif !important;
+  --font: "Bricolage Grotesque", sans-serif !important;
   --font-code: "Source Code Pro", sans-serif !important;
 
   --text-color: #000; /* main text color */
