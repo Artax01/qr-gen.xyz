@@ -255,9 +255,9 @@ body {
 
 /* APRES AVOIR CLICKÉ (ANIMATION) */
 
-#burger-menu:hover {
+/* #burger-menu:hover {
   background: var(--selected-border-color);
-}
+} */
 
 #burger-menu.active span {
   background: transparent;
@@ -912,9 +912,9 @@ nav a, nav p, nav center {
   transition: .3s;
 }
 
-.darkMode:hover {
+/* .darkMode:hover {
   background: var(--selected-border-color);
-}
+} */
 
 .darkMode_icon {
   height: 25px;
