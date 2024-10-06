@@ -1069,6 +1069,7 @@ nav a, nav p, nav center {
 
   .optForeground {
     height: 100%;
+    background: var(--bg-2);
   }
 }
 
@@ -1281,7 +1282,6 @@ nav a, nav p, nav center {
   }
 
   .optForeground {
-    background: var(--bg-2);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
@@ -1313,6 +1313,14 @@ nav a, nav p, nav center {
   
   #latestTag {
     display: none;
+  }
+
+  .nav_info {
+    text-align: center;
+  }
+
+  .nav_info a {
+    width: 100%;
   }
 }
 
