@@ -11,56 +11,59 @@
 </head>
 
 <body>
-  <header>
-    <div class="navbar">
+<div class="global_header">
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1><a href="../../index.html" title="Home">Qrcode Generator</a></h1>
 
-      <div></div>
-
-      <h1><a href="../../index.html">Qrcode Generator</a></h1>
-
-      <div class="burger-menu" id="burger-menu">
-        <span></span>
-      </div>
-
-    </div>
-  </header>
-
-  <div id="main">
-    <div class="text_zone">
-      <h3>Design & concept</h3>
-      <br>
-      <p>Artax01</p>
-      <br>
-      <br>
-      <h3>Technical development</h3>
-      <br>
-      <p>Artax01</p>
-      <br>
-      <br>
-      <h3>External API</h3>
-      <br>
-      <p><a href="https://goqr.me/api/">qoqr.me Api</a></p>
-      <br>
-      <br>
-      <h3>License</h3>
-      <br>
-      <p>AGPL-3.0 License.</p>
-      <p>All Rights Reserved.</p>
-      <br>
-      <br>
-      <h3>Trademark</h3>
-      <br>
-      <p>QR Code is a registered trademark of DENSO WAVE INCORPORATED</p>
-    </div>
+    <div></div>
   </div>
+  <!-- Burger-Menu -->
+  <div id="burger-menu" title="Open Menu">
+    <span></span>
+  </div>
+</div>
 
+<div id="global_feed">
+  <div class="text_zone">
+    <h3>Design & concept</h3>
+    <br>
+    <p>Artax01</p>
+    <br>
+    <br>
+    <h3>Technical development</h3>
+    <br>
+    <p>Artax01</p>
+    <br>
+    <br>
+    <h3>External API</h3>
+    <br>
+    <p><a href="https://goqr.me/api/">qoqr.me Api</a></p>
+    <br>
+    <br>
+    <h3>License</h3>
+    <br>
+    <p>AGPL-3.0 License.</p>
+    <p>All Rights Reserved.</p>
+    <br>
+    <br>
+    <h3>Trademark</h3>
+    <br>
+    <p>QR Code is a registered trademark of DENSO WAVE INCORPORATED</p>
+  </div>
+</div>
+
+<div class="global_menu">
   <div id="blur" class="blur"></div>
 
   <nav id="side_menu">
-    <div class="darkMode" id="darkMode">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 darkMode_icon">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-      </svg> 
+    <!-- dark mode btn -->
+    <div class="darkMode" id="darkMode" title="Change Color">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 darkMode_icon"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+    </div>
+    <!-- language btn -->
+    <div id="languageBtn" title="Change Language">
+      <p id="languageIcon">🇫🇷</p>
     </div>
 
     <div class="nav_info">
@@ -70,6 +73,7 @@
       <a href="./credits.html">Credits</a>
     </div>
   </nav>
+</div>
 
 </body>
 </html>
