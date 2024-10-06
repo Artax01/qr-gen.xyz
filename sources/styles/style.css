@@ -1306,7 +1306,9 @@ nav a, nav p, nav center {
   }
 
   .text_zone {
-    padding: 50px 20px;
+    position: relative;
+    top: 0;
+    padding: 20px;
     background: none;
     border: none;
     box-shadow: none;
