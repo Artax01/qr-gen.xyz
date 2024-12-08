@@ -1150,7 +1150,7 @@ nav a, nav p, nav center {
     display: flex;
     gap: var(--spacing-10);
     flex-direction: column;
-    overflow-y: auto;
+    /*overflow-y: auto;*/
   }
   
   .global_header {
