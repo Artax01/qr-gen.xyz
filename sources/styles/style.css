@@ -343,7 +343,7 @@ body {
   align-items: center;
   height: 37px;
   padding: 0 var(--spacing-15);
-  border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
+  border-radius: var(--spacing-15);
   border: none;
   color: var(--static-neutral);
   background-color: var(--send-button);
@@ -1216,6 +1216,10 @@ nav a, nav p, nav center {
     color: #7E7E7E;*/
     border: none;
     border-radius: 10px 0 0 10px;
+  }
+
+  .send-btn {
+    border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
   }
 
   .search .file-select-btn {
