@@ -85,7 +85,7 @@ body {
   --border: #E3ECF2; /* main border */
   --border-2: rgba(183, 195, 210, 0.5); /* message input focus */
   --border-3: rgba(183, 195, 210, 0.75); /* message input focus border */
-  --burger-menu-line: #fff;
+  --burger-menu-line: #000;
 
   --importBar-btn: invert(); /* invert color to see icon on buttons */
   --selected-border-color:rgba(0,0,0,.25);
@@ -113,7 +113,7 @@ body {
 
   --border: rgba(183, 195, 210, 0.4); /* dark border  */
   --border-2: #333237; /* light border */
-  --burger-menu-line: #000;
+  --burger-menu-line: #fff;
 
   --importBar-btn: none; /* invert color to see icon on buttons */
   --selected-border-color:rgba(255,255,255,.75);
@@ -1177,10 +1177,15 @@ nav a, nav p, nav center {
     font-size: large;
   }
 
+  .navbar h1 a {
+    font-size: 1.1em;
+  }
+
   #burger-menu {
     top: .6rem;
     right: 1.25rem;
-    transform: scale(0.85);
+    transform: scale(0.95);
+    background: none;
   }
 
   .search {
@@ -1211,7 +1216,6 @@ nav a, nav p, nav center {
     color: #7E7E7E;*/
     border: none;
     border-radius: 10px 0 0 10px;
-    font-style: italic;
   }
 
   .search .file-select-btn {
