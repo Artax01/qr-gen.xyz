@@ -1272,8 +1272,8 @@ nav a, nav p, nav center {
     display: grid;
     width: 100%;
     margin-left: 0;
-    padding-left: var(--spacing-10);
-    /* grid-template-columns: repeat(auto-fit, minmax(305px, 1fr)); */
+    padding: 0 var(--spacing-10);
+    grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
     overflow-x: scroll;
   }
 
