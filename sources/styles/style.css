@@ -341,9 +341,9 @@ body {
 .send-btn {
   display: flex;
   align-items: center;
-  height: 34px;
+  height: 37px;
   padding: 0 var(--spacing-15);
-  border-radius: var(--spacing-15);
+  border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
   border: none;
   color: var(--static-neutral);
   background-color: var(--send-button);
@@ -1164,7 +1164,7 @@ nav a, nav p, nav center {
     position: relative;
     padding: 1rem 0;
     max-width: 100% !important;
-    background: var(--bg-1);
+    background: var(--bg-2);
     border-radius: 0;
     box-shadow: none;
     border: none;
@@ -1186,9 +1186,10 @@ nav a, nav p, nav center {
     position: relative;
     bottom: auto;
     max-width: 100% !important;
-    height: 4rem;
-    padding: 0;
+    /*height: 4rem;*/
+    padding: 0 1.25em .5em 1.25em;
     margin: 0;
+    gap: 0;
     background: var(--bg-2);
     border-radius: 0;
     border: none;
@@ -1202,15 +1203,17 @@ nav a, nav p, nav center {
   .message-input {
     height: 100%;
     max-width: 100% !important;
-    padding-left: 2rem;
-    background: transparent;
+    padding-left: 1rem;
+    background: rgba(0,0,0,.05);
     font-size: .9em;
-    font-weight: bold;
-    color: #7E7E7E;
+    /*font-weight: bold;
+    color: #7E7E7E;*/
     border: none;
+    border-radius: 10px 0 0 10px;
+    font-style: italic;
   }
 
-  .search .file-select-btn, .search .send-btn {
+  .search .file-select-btn {
     display: none;
   }
 
