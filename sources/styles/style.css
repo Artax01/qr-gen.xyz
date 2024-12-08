@@ -1168,7 +1168,7 @@ nav a, nav p, nav center {
     border-radius: 0;
     box-shadow: none;
     border: none;
-    border-bottom: 1px solid var(--border);
+    /*border-bottom: 1px solid var(--border);*/
     z-index: 1;
   }
   
@@ -1178,8 +1178,9 @@ nav a, nav p, nav center {
   }
 
   #burger-menu {
-    top: 1.2rem;
-    right: 2rem;
+    top: .6rem;
+    right: 1.25rem;
+    transform: scale(0.85);
   }
 
   .search {
