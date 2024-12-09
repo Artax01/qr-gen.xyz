@@ -290,7 +290,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  padding: 7px 10px;
+  padding: 7px var(--spacing-10);
   margin-left: auto;
   margin-right: auto;
   max-width: 44%;
@@ -421,7 +421,7 @@ body {
   left: 0;
   right: 0;
   width: 100%;
-  height: calc(100% - 20px - 78px - 63px - 15px);
+  height: calc(100% - 20px - 78px - 63px - var(--spacing-15));
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -571,7 +571,7 @@ body {
   flex-direction: row;
   padding: 0 .5rem;
   border: 1px solid var(--border);
-  border-radius: 15px;
+  border-radius: var(--spacing-15);
   gap: 20px;
   background: var(--bg-2);
   box-shadow: var(--light-soft-shadow);
@@ -617,7 +617,7 @@ body {
 }
 
 #date_time {
-  font-size: 15px;
+  font-size: var(--spacing-15);
   font-family: var(--font-code);
   opacity: 0.75;
 }
@@ -781,7 +781,7 @@ body {
   flex-direction: row;
   align-items: center;
   border-radius: 12px;
-  gap: 15px;
+  gap: var(--spacing-15);
   justify-content: center;
   cursor: pointer;
   transition: .3s;
@@ -1065,7 +1065,7 @@ nav a, nav p, nav center {
 @media only screen and (max-width: 1500px) {
   .optMenu {
     right: 0;
-    padding: 100px 0 10px 0;
+    padding: 100px 0 var(--spacing-10) 0;
     max-width: 35%;
     transform: translateX(0) translateY(150vh);
     z-index: 9999;
@@ -1215,7 +1215,7 @@ nav a, nav p, nav center {
     /*font-weight: bold;
     color: #7E7E7E;*/
     border: none;
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--spacing-10) 0 0 var(--spacing-10);
   }
 
   .send-btn {
@@ -1256,16 +1256,18 @@ nav a, nav p, nav center {
   }
 
   .main_header {
-    padding: 15px 20px;
+    padding: var(--spacing-15) 20px;
   }
 
   .status-msg {
     padding: 0;
     margin: 0;
+    font-size: 20px;
   }
 
   #tagContainer {
     margin: 0;
+    font-size: .7em;
   }
 
   #card-container {
@@ -1273,13 +1275,14 @@ nav a, nav p, nav center {
     width: 100%;
     margin-left: 0;
     padding: 0 var(--spacing-10);
-    grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
     overflow-x: scroll;
   }
 
   .card {
-    width: max-content;
+    width: 100%;
     padding: 0;
+    background: rgba(0,0,0,.025);
   }
 
   .card:nth-child(2n+1) {
@@ -1288,6 +1291,22 @@ nav a, nav p, nav center {
 
   .card:nth-child(2n) {
     grid-row: 2;
+  }
+  
+  .img_container {
+    display: flex;
+    margin: 3px var(--spacing-10) 3px 3px;
+    padding: 2px;
+  }
+  
+  .infos {
+    padding-top: 0px;
+    padding-right: var(--spacing-15);
+    align-content: center;
+  }
+  
+  #size, #date_time, .optionsBtn {
+    display: none;
   }
 
   .optMenu {
@@ -1329,7 +1348,7 @@ nav a, nav p, nav center {
 
 @media only screen and (max-width: 500px) {
   .main_header {
-    padding: 15px;
+    padding: var(--spacing-15);
   }
   
   #latestTag {
