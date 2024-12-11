@@ -1282,8 +1282,13 @@ nav a, nav p, nav center {
 
   .card {
     width: 100%;
-    padding: 0;
-    background: rgba(0,0,0,.025);
+    padding: .5em;
+    /*background: rgba(0,0,0,.025);*/
+    background: var(--bg-2);
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    border-radius: 12px;
   }
 
   .card:nth-child(2n+1) {
@@ -1295,7 +1300,8 @@ nav a, nav p, nav center {
   }
   
   .img_container {
-    display: flex;
+    /*display: flex;*/
+    display: none;
     margin: 3px var(--spacing-10) 3px 3px;
     padding: 2px;
   }
@@ -1304,10 +1310,6 @@ nav a, nav p, nav center {
     padding-top: 0px;
     padding-right: var(--spacing-15);
     align-content: center;
-  }
-  
-  #size, #date_time, .optionsBtn {
-    display: none;
   }
 
   .optMenu {
