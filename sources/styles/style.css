@@ -1263,7 +1263,7 @@ nav a, nav p, nav center {
   .status-msg {
     padding: 0;
     margin: 0;
-    font-size: 20px;
+    /*font-size: 20px;*/
   }
 
   #tagContainer {
