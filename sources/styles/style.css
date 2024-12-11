@@ -106,8 +106,8 @@ body {
   --text-color-2: #000;
   --light-dark: rgba(255,255,255,.03); /* light dark color (invert) */
 
-  --bg-1: #100F14; /* main background */
-  --bg-2: #1C1B20; /* second background */
+  --bg-1: #121212; /* main background */
+  --bg-2: #333333; /* second background */
   --bg-3: rgba(255,255,255,1); /* burger menu background */
   --bg-blur: rgba(255,255,255,.3);
 
@@ -1164,7 +1164,7 @@ nav a, nav p, nav center {
     position: relative;
     padding: 1rem 0;
     max-width: 100% !important;
-    background: var(--bg-2);
+    /*background: var(--bg-2);*/
     border-radius: 0;
     box-shadow: none;
     border: none;
@@ -1196,10 +1196,10 @@ nav a, nav p, nav center {
     padding: 0 1.25em .5em 1.25em;
     margin: 0;
     gap: 0;
-    background: var(--bg-2);
+    /*background: var(--bg-2);*/
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid var(--border);
+    /*border-bottom: 1px solid var(--border);*/
     transform: scale(1);
     box-shadow: none;
     transition: .3s;
@@ -1210,7 +1210,8 @@ nav a, nav p, nav center {
     height: 100%;
     max-width: 100% !important;
     padding-left: 1rem;
-    background: rgba(0,0,0,.05);
+    /*background: rgba(0,0,0,.05);*/
+    background: var(--bg-2);
     font-size: .9em;
     /*font-weight: bold;
     color: #7E7E7E;*/
@@ -1246,12 +1247,12 @@ nav a, nav p, nav center {
     height: calc(100% - 141px 10px);
     max-width: 100% !important;
     padding: 3px;
-    background: var(--bg-2);
+    /*background: var(--bg-2);*/
     box-shadow: none;
     border: none;
     border-radius: 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    /*border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);*/
     overflow-x: hidden;
   }
 
