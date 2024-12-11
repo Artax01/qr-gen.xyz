@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // dictionnary
   var units = {
-    0: 'Bytes',
+    0: 'B',
     3: 'KB',
     6: 'MB',
     9: 'GB',
