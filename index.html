@@ -5,7 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
   <link rel="shortcut icon" href="./sources/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="./sources/styles/style.css">
+  <!-- styles -->
+  <link rel="stylesheet" type="text/css" href="./sources/styles/master.css">
+  <!-- scripts -->
   <script type="text/javascript" src="./sources/scripts/script.js"></script>
   <script type="text/javascript" src="./sources/scripts/sideMenu.js"></script>
   <script type="text/javascript" src="./sources/api_request/gen.js"></script>
@@ -18,11 +20,29 @@
   <div class="navbar">
     <h1><a href="index.html" title="Home">qr-gen.xyz</a></h1>
 
-    <div></div>
-  </div>
-  <!-- Burger-Menu -->
-  <div id="burger-menu" title="Open Menu">
-    <span></span>
+    <div id="navbar_links">
+        <!-- Burger-Menu -->
+        <div class="_container burgerMenu">
+            <div id="burger-menu" title="Open Menu">
+                <span></span>
+                
+                <ul>
+                    <li><a href="index.html" title="Go Home">Home</a></li>
+                    <li><a href="https://github.com/Artax01" target="_blank" id="creator" title="See on github">@Artax01</a></li>
+                    <li><a href="https://github.com/Artax01/qrcode-generator-website" target="_blank" title="See Project">Source Code</a></li>
+                    <li><a href="./sources/html/credits.html" title="Show Credits">Credits</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Connexion Button -->
+        <div class="_container connexion">
+            <div id="connexionBtn" title="Connexion">
+                <a href="#">Connexion</a>
+            </div>
+        </div>
+    </div>
+
   </div>
   <!-- Search -->
   <div class="search">
@@ -36,9 +56,6 @@
     </div>
   </div>
   <div class="importBar">
-    <div id="imgSelectButton" class="file-select-btn">
-      <svg title="Browser Image" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>   
-    </div>
     <div id="fileSelectButton" class="file-select-btn">
       <svg title="Browser File" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m6.75 12-3-3m0 0-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>        
     </div>
@@ -49,27 +66,14 @@
 
 
 
-<div id="global_feed">
+<div class="global_feed">
   <!-- Generated qrcode block -->
   <div id="qrcode">
     <!-- Header -->
     <div class="main_header">
       <!-- Status Message -->
       <div class="status-msg" id="status-msg">
-        <p>No QRCode generated.</p>
-        <p>To generate a QRCode, simply enter something in the search bar below.</p>
-      </div>
-      <!-- Tag Container -->
-      <div id="tagContainer">
-        <div id="versionTag">
-          <p>v1.4.0</p>
-        </div>
-        <div id="githubTag">
-          <p>Github</p>
-        </div>
-        <div id="latestTag">
-          <p>Latest Release</p>
-        </div>
+        <p>No QRCode generated yet.</p>
       </div>
     </div>
     <!-- Card component -->
