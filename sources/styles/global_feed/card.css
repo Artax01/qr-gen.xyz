@@ -1,0 +1,159 @@
+#card-container {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: var(--spacing-10);
+    gap: var(--spacing-10);
+    opacity: 0;
+    transition: .2s;
+}
+  
+#card-container.visible {
+    visibility: visible;
+    transform: translateY(-4px);
+    opacity: 1;
+    transition: .2s;
+}
+  
+#card {
+    display: none;
+}
+  
+.card {
+    display: flex;
+    flex-direction: row;
+    padding: 0 .5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--spacing-15);
+    gap: 20px;
+    background: var(--bg-2);
+    box-shadow: var(--light-soft-shadow);
+    cursor: pointer;
+    transform: scale(0);
+    transition: .3s;
+}
+  
+.card.visible {
+    transform: scale(1);
+}
+
+.img_container {
+    padding: var(--spacing-10);
+    cursor: pointer;
+}
+  
+.img_container img {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+  
+.infos {
+    width: 100%;
+    padding-top: 5px;
+    background: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+  
+.infos p {
+    background: transparent;
+}
+  
+#name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+  
+#size {
+    font-weight: bold;
+}
+  
+#date_time {
+    font-size: var(--spacing-15);
+    font-family: var(--font-code);
+    opacity: 0.75;
+}
+
+.optionsBtn {
+    display: flex;
+    margin-left: var(--spacing-10);
+    align-items: center;
+}
+  
+.optionsBtn svg {
+    height: 20px;
+    margin: var(--spacing-10);
+    background: transparent;
+    cursor: pointer;
+    transition: .2s;
+}
+  
+.optionsBtn svg:hover {
+    transform: scale(0.90);
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1024px) {
+    #card-container {
+        margin: var(--spacing-10);
+    }
+    
+    .input-container {
+        background: var(--bg-2);
+    }
+}
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {
+    #card-container {
+        display: grid;
+        width: 100%;
+        margin-left: 0;
+        padding: 0 var(--spacing-15);
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+        overflow-x: scroll;
+    }
+    
+    .card {
+        width: 100%;
+        padding: .5em .2em .5em 1em;
+        background: var(--bg-2);
+        border: none;
+        box-shadow: none;
+        font-weight: bold;
+        border-radius: 12px;
+    }
+    
+    .card:nth-child(2n+1) {
+        grid-column: 1;
+    }
+    
+    .card:nth-child(2n) {
+        grid-column: 2;
+    }
+      
+    .img_container {
+        display: none;
+        margin: 3px var(--spacing-10) 3px 3px;
+        padding: 2px;
+    }
+      
+    .infos {
+        padding-top: 0px;
+        padding-right: var(--spacing-15);
+        align-content: center;
+    }
+    
+    .optionsBtn {
+        margin-left: 0;
+    }
+}
+
+
+@media only screen and (max-width: 330px) {
+    .optionsBtn {
+      margin-left: var(--spacing-10);
+    }
+}

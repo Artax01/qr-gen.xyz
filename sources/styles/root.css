@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* ################################################################## */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-family: var(--font);
+    transition: background 0.3s ease-in-out;
+}
+
+html, body {
+    min-width: 265px;
+    min-height: 775px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+  
+body {
+    background: var(--bg-1);
+    max-height: 100vh;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+      -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+          -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+/* ################################################################## */
+
+:root {
+    --font: "Bricolage Grotesque", sans-serif !important;
+    --font-code: "Source Code Pro", sans-serif !important;
+  
+    --text-color: #000; /* main text color */
+    --text-color-2: #F3F7FA;
+    --light-dark: rgba(0,0,0,.1); /* light dark color */
+  
+    --bg-1: #F3F7FA; /* main background */
+    --bg-2: #fff; /* second background */
+    --bg-3: #000; /* burger menu background */
+    --bg-blur: var(--light-dark);
+  
+    --spacing-7: 7px;
+    --spacing-10: 10px;
+    --spacing-15: 15px;
+  
+    --border: #E3ECF2; /* main border */
+    --border-2: rgba(183, 195, 210, 0.5); /* message input focus */
+    --border-3: rgba(183, 195, 210, 0.75); /* message input focus border */
+    --burger-menu-line: #000;
+  
+    --importBar-btn: invert(); /* invert color to see icon on buttons */
+    --selected-border-color:rgba(0,0,0,.25);
+    --special-text: rgb(40, 200, 184); /* code text color */
+    --special-text-hover: rgb(36, 175, 161); /* hover code text color */
+    --light-soft-shadow: rgba(255,255,255,0.10) 0px 5px 30px; /* light soft shadow */
+    --dark-soft-shadow: var(--light-dark) 0px 5px 30px; /* dark soft shadow */
+  
+    /* ---------CONST---------- */
+    --scrollbar-color: #000;
+    --selection-color: hsla(340, 100%, 75%, 0.5);
+    --send-button: #007bff;
+    --send-button-hover: #0056b3;
+}
+  
+.dark_theme {
+    --text-color: #F3F7FA; /* main text color */
+    --text-color-2: #000;
+    --light-dark: rgba(255,255,255,.03); /* light dark color (invert) */
+  
+    --bg-1: #121212; /* main background */
+    --bg-2: #333333; /* second background */
+    --bg-3: rgba(255,255,255,1); /* burger menu background */
+    --bg-blur: rgba(255,255,255,.3);
+  
+    --border: rgba(183, 195, 210, 0.4); /* dark border  */
+    --border-2: #333237; /* light border */
+    --burger-menu-line: #fff;
+  
+    --importBar-btn: none; /* invert color to see icon on buttons */
+    --selected-border-color:rgba(255,255,255,.75);
+    --special-text: turquoise; /* code text color */
+    --special-text-hover: rgb(49, 145, 136); /* hover code text color */
+    --light-soft-shadow: rgba(255,255,255,.06) 0px 5px 30px; /* dark soft shadow (invert) */
+    --dark-soft-shadow: rgba(255,255,255,0.1) 0px 5px 30px; /* light soft shadow (invert) */
+}
+
+/* ################################################################## */
+
+.row_container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+._container {
+    position: relative;
+    display: flex;
+    left: 0;
+    right: 0;
+    max-width: 95%;
+    padding: .5rem .75rem;
+    align-items: center;
+    border: var(--border-2) solid 1px;
+    border-radius: 20px;
+    background: none;
+    box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
+    transition: .3s;
+}
+  
+.global_header {
+    display: flex;
+    padding: var(--spacing-10);
+}
+
+/* ################################################################## */
+
+/* CUSTOMISATION */
+
+::-moz-selection {
+    color: var(--static-neutral);
+    background-color: var(--selection-color);
+}
+  
+::selection {
+    color: var(--static-neutral);
+    background-color: var(--selection-color);
+}
+
+/* scrollbar total (background et cursor) */
+::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+  
+::-webkit-scrollbar-track {
+    background: transparent
+}
+  
+/* background */
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+    border-radius: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+  
+/* cursor */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color);
+    border-radius: 60px;
+}
+
+/* ################################################################## */
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+  
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+  
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+  
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+  
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+/* RESPONSIVE */
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {
+    body, html {
+      display: flex;
+      /* gap: var(--spacing-10); */
+      flex-direction: column;
+    }
+    
+    .global_header {
+      position: relative;
+      display: flex;
+      padding: 0;
+      flex-direction: column;
+    }
+
+    .global_feed {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-10);
+    }
+}

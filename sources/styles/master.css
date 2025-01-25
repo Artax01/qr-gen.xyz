@@ -1,0 +1,11 @@
+@import './root.css'; /* import common presets for css files */
+@import './global_header/navbar.css'; /* import navbar style */
+@import './global_header/burgerMenu.css'; /* import burger menu style */
+@import './global_header/searchBar.css'; /* import search bar style */
+@import './global_header/importBar.css'; /* import import bar style */
+@import './global_feed/mainHeader.css'; /* import main header style */
+@import './global_feed/qrcode.css'; /* import qrcode style */
+@import './global_feed/card.css'; /* import cards style */
+@import './global_menu/creationMenu.css'; /* import ceration menu style */
+@import './global_menu/optMenu.css'; /* import options menu style */
+@import './global_menu/sideMenu.css'; /* import side menu style */

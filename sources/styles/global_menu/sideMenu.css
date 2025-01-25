@@ -1,0 +1,179 @@
+.blur {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 0;
+    background: var(--bg-blur);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform: translateX(100vw);
+    z-index: 100;
+}
+  
+.blur.active {
+    height: 100%;
+    width: 100%;
+    transform: translateX(0);
+}
+  
+nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    max-width: 590px;
+    width: 100%;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-1);
+    box-shadow: var(--dark-soft-shadow);
+    transform: translateX(150vw);
+    transition: .4s;
+    z-index: 100;
+}
+  
+nav.active {
+    position: fixed;
+    transform: translateX(0);
+}
+  
+nav a, nav p, nav center {
+    background: none;
+}
+  
+.nav_info {
+    display: flex;
+    width: 100%;
+    padding: 0 50px 0 100px;
+    margin-bottom: 1.25rem;
+    font-size: 2em;
+    font-weight: bold;
+    flex-direction: column;
+    background: none;
+}
+  
+.nav_info a {
+    width: fit-content;
+    padding: var(--spacing-15) var(--spacing-15) var(--spacing-15) 0;
+    margin: 5px 5px 5px 0;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: .3s;
+}
+  
+.nav_info a:hover {
+    color: var(--selected-border-color);
+}
+
+#creator {
+    font-family: var(--font-code);
+    font-weight: bold;
+    color: var(--special-text);
+    transition: .3s;
+}
+  
+#creator:hover {
+    color: var(--special-text-hover);
+}
+  
+  
+.darkMode, #languageBtn {
+    position: absolute;
+    top: 1.8rem;
+    right: 5.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    background: var(--bg-3);
+    border: none;
+    border-radius: 9999px;
+    z-index: 9999;
+    align-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+  
+.darkMode_icon {
+    height: 25px;
+    margin-left: 7px;
+    margin-top: 2px;
+    background: transparent;
+    filter: invert();
+    transition: .3s;
+}
+  
+#languageBtn {
+    left: 2rem;
+    text-align: center;
+    font-size: 1.5em;
+    background: none;
+    transition: .3s;
+}
+  
+#languageBtn:hover {
+    font-size: 1.65em;
+}
+
+
+/* RESPONSIVE */
+
+
+@media only screen and (max-width: 1200px) {
+    .darkMode {
+      right: 6.5rem;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    nav {
+      max-width: 100%;
+    }
+  
+    nav.active {
+      margin-left: 0;
+      width: 100%;
+      border-right: none;
+    }
+  
+    .nav_info {
+      padding-left: 50px;
+      font-size: 1.75em;
+    }
+}
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {
+    .darkMode {
+      top: 1.2rem;
+      right: 5.5rem;
+    }
+  
+    #languageBtn {
+      top: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .nav_info {
+      text-align: center;
+    }
+  
+    .nav_info a {
+      width: 100%;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .nav_info {
+      padding-left: 30px;
+      font-size: 1.5em;
+      align-items: center;
+    }
+  
+    .nav_info a {
+      padding: var(--spacing-15) 0;
+      margin: var(--spacing-10) 0;
+      text-align: center;
+    }
+}

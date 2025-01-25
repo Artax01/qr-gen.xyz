@@ -1,0 +1,198 @@
+.optMenu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 35px;
+    padding-top: 100px;
+    max-width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transform: scale(0);
+    transition: .3s ease-in-out;
+}
+  
+.optMenu.active {
+    transform: scale(1);
+}
+  
+.optForeground {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px);
+    padding: var(--spacing-10);
+    border: var(--border-2) solid 1px;
+    border-radius: 20px;
+    background: none;
+    box-shadow: var(--dark-soft-shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1;
+    transition: .3s;
+}
+  
+.optTitle {
+    display: flex;
+    position: relative;
+    width: 100%;
+    top: 0;
+    right: 0;
+    margin: var(--spacing-15);
+    background: none;
+    transition: .2s;
+    z-index: 2;
+    font-size: 1.25em;
+    justify-content: space-around;
+}
+  
+.optTitle svg {
+    height: 23px;
+    border-radius: 20px;
+    transform: scale(1.25);
+    border: var(--border) solid 1px;
+    cursor: pointer;
+    transition: .2s;
+}
+  
+.optImage {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    margin-bottom: var(--spacing-7);
+    transition: .3s;
+}
+  
+#optImage img {
+    border-radius: 13px;
+    border: 8px solid #fff;
+    box-shadow: var(--dark-soft-shadow);
+}
+  
+#optName, #optDate {
+    position: relative;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+}
+  
+#optName {
+    font-weight: bold;
+    font-size: 1.25em;
+    margin-bottom: 5px;
+}
+  
+.optButtons {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    max-width: 95% !important;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: var(--spacing-7);
+    left: 0;
+    right: 0;
+    padding: 25px 30px;
+    flex-direction: column;
+    gap: var(--spacing-10);
+    font-size: 1.05em;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--dark-soft-shadow);
+}
+  
+#downloadBtn,  #deleteBtn {
+    display: flex;
+    width: 100%;
+    padding: var(--spacing-15);
+    flex-direction: row;
+    align-items: center;
+    border-radius: 12px;
+    gap: var(--spacing-15);
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+  
+#downloadBtn {
+    background: var(--bg-2);
+    border: var(--border-2) solid 1px;
+    font-weight: 600;
+}
+  
+#deleteBtn {
+    padding: var(--spacing-7);
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    font-weight: 500;
+}
+  
+#downloadBtn:hover,  #deleteBtn:hover {
+    transform: scale(1.015);
+    background: rgba(0,0,0,.075);
+}
+
+
+/* RESPONSIVE */
+
+
+@media only screen and (max-width: 1500px) {
+    .optMenu {
+        right: 0;
+        padding: 100px 0 var(--spacing-10) 0;
+        max-width: 35%;
+        transform: translateX(0) translateY(150vh);
+        z-index: 9999;
+    }
+  
+    .optMenu.active {
+        transform: translateY(0);
+    }
+  
+    .optForeground {
+        height: 100%;
+        background: var(--bg-2);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .optMenu {
+        max-width: 60% !important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .optImage {
+        height: 150px;
+    }
+}
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {  
+    .optMenu {
+        padding: 35px 0 0 0;
+        max-width: 100% !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+  
+    .optForeground {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+  
+    .optButtons {
+        bottom: 2px;
+        max-width: 99% !important;
+        background: var(--bg-2);
+    }
+
+    #languageBtn {
+        top: 1.2rem;
+    }
+}

@@ -1,0 +1,84 @@
+.navbar {
+    position: fixed;
+    display: flex;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 95%;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    background: none;
+    transition: .3s;
+}
+  
+.navbar h1 {
+    background: transparent;
+    margin-left: 0;
+    transition: 0.3s ease;
+    font-size: x-large;
+}
+  
+.navbar h1 a {
+    text-decoration: none;
+}
+
+#navbar_links {
+    display: flex; 
+    flex-direction: row; 
+    gap: var(--spacing-10);
+}
+
+#connexionBtn {
+    background: #000;
+    border-radius: 12px;
+    padding: .5em 1rem;
+}
+
+#connexionBtn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 1200px) {
+    .navbar {
+      max-width: 95% !important;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .navbar h1 {
+      margin-left: 1.5rem;
+    }
+}
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {
+    .navbar {
+        position: relative;
+        max-width: 100% !important;
+        padding: .15rem;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        z-index: 1;
+    }
+      
+    .navbar h1 {
+        width: 150px;
+        font-size: large;
+    }
+    
+    .navbar h1 a {
+        font-size: 1.1em;
+    }
+
+    ._container[class~=connexion] {
+        display: none;
+    }
+}
