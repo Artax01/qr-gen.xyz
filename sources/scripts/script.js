@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
   
   var status_msg = document.getElementById('status-msg');
   var status_value = status_msg.innerHTML;
-  var tagContainer = document.getElementById('tagContainer');
 
   var qrcode = document.getElementById('qrcode');
   var container = document.getElementById('card-container'); // card container inside qrcode block
@@ -98,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setInfos() {
       if (!this.name) { this.name = String(messageInput.value); }
       if (!this.time) { this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`); }
-      if (!this.date) { this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}.`); }
+      if (!this.date) { this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`); }
       if (!this.fullDate) { this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`); }
     }
     
@@ -159,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       newCard.id = String(`card${this.id}`);
       newCard.querySelector('#name').innerText = this.name;
-      newCard.querySelector('#date_time').innerText = String(`At ${this.time}, ${this.date}`);
+      newCard.querySelector('#date_time').innerText = String(`${this.time}, ${this.date}`);
       container.insertBefore(newCard, container.firstChild);
       newCard.classList.add('visible');
       return newCard;
@@ -183,7 +182,6 @@ document.addEventListener('DOMContentLoaded', function () {
       else {
         statusMessageChange();
         qrcode.classList.add('active');
-        tagContainer.classList.add('visible');
         container.classList.add('visible');
       }
     }
