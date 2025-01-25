@@ -52,7 +52,7 @@
     }
 
     #qrcode.active {
-        display: flex;
+        display: flex !important;
         top: auto;
     }
 }
