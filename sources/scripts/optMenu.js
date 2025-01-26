@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
 
-    updateHeight(95);
+    // updateHeight(95);
+    optContent.style.height = 'fit-content';
     optMenu.addEventListener('mousedown', dragStart);
     optMenu.addEventListener('mousemove', dragging);
     optMenu.addEventListener('mouseup', dragStop);
