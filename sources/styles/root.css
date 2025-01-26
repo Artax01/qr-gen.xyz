@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* ################################################################## */
@@ -13,7 +13,7 @@
 }
 
 html, body {
-    min-width: 265px;
+    min-width: 340px;
     min-height: 775px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -32,7 +32,7 @@ body {
 /* ################################################################## */
 
 :root {
-    --font: "Bricolage Grotesque", sans-serif !important;
+    --font: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     --font-code: "Source Code Pro", sans-serif !important;
   
     --text-color: #000; /* main text color */
@@ -42,6 +42,7 @@ body {
     --bg-1: #F3F7FA; /* main background */
     --bg-2: #fff; /* second background */
     --bg-3: #000; /* burger menu background */
+    --bg-4: #F3F7FA;
     --bg-blur: var(--light-dark);
   
     --spacing-7: 7px;
@@ -49,8 +50,8 @@ body {
     --spacing-15: 15px;
   
     --border: #E3ECF2; /* main border */
-    --border-2: rgba(183, 195, 210, 0.5); /* message input focus */
-    --border-3: rgba(183, 195, 210, 0.75); /* message input focus border */
+    --border-2: rgba(213, 219, 225, 0.75); /* message input focus */
+    --border-3: rgba(211, 218, 227, 0.5); /* message input focus border */
     --burger-menu-line: #000;
   
     --importBar-btn: invert(); /* invert color to see icon on buttons */
@@ -73,20 +74,23 @@ body {
     --light-dark: rgba(255,255,255,.03); /* light dark color (invert) */
   
     --bg-1: #121212; /* main background */
-    --bg-2: #333333; /* second background */
+    --bg-2: #201f1f; /* second background */
     --bg-3: rgba(255,255,255,1); /* burger menu background */
-    --bg-blur: rgba(255,255,255,.3);
+    --bg-4: rgba(29, 29, 29, 0.08);
+    --bg-blur: rgba(102, 98, 98, 0.3);
   
-    --border: rgba(183, 195, 210, 0.4); /* dark border  */
-    --border-2: #333237; /* light border */
+    --border: rgba(78, 78, 79, 0.4); /* dark border  */
+    --border-2: #262629; /* darker border */
+    --border-3: #1e1e1f; /* darker+ border */
     --burger-menu-line: #fff;
   
     --importBar-btn: none; /* invert color to see icon on buttons */
+    --selection-color: hsla(340.2, 100%, 75.1%, 0.66);
     --selected-border-color:rgba(255,255,255,.75);
     --special-text: turquoise; /* code text color */
     --special-text-hover: rgb(49, 145, 136); /* hover code text color */
     --light-soft-shadow: rgba(255,255,255,.06) 0px 5px 30px; /* dark soft shadow (invert) */
-    --dark-soft-shadow: rgba(255,255,255,0.1) 0px 5px 30px; /* light soft shadow (invert) */
+    --dark-soft-shadow: rgba(92,83,86,0.1) 0px 8px 30px; /* light soft shadow (invert) */
 }
 
 /* ################################################################## */
@@ -111,10 +115,31 @@ body {
     box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
     transition: .3s;
 }
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
   
 .global_header {
     display: flex;
     padding: var(--spacing-10);
+}
+
+.sphere {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(128,0,255,.075);
+    border-radius: 9999px;
+    filter: blur(99px);
+    bottom: 0;
+    right: -50px;
+    z-index: -1;
 }
 
 /* ################################################################## */

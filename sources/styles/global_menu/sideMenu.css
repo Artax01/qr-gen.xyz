@@ -2,17 +2,17 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 0;
+    height: 100%;
     width: 0;
     background: var(--bg-blur);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transform: translateX(100vw);
     z-index: 100;
+    transition: .3s;
 }
   
 .blur.active {
-    height: 100%;
     width: 100%;
     transform: translateX(0);
 }
@@ -31,6 +31,7 @@ nav {
     box-shadow: var(--dark-soft-shadow);
     transform: translateX(150vw);
     transition: .4s;
+    transition-delay: .15s;
     z-index: 100;
 }
   
@@ -110,10 +111,6 @@ nav a, nav p, nav center {
     background: none;
     transition: .3s;
 }
-  
-#languageBtn:hover {
-    font-size: 1.65em;
-}
 
 
 /* RESPONSIVE */
@@ -139,18 +136,21 @@ nav a, nav p, nav center {
     .nav_info {
       padding-left: 50px;
       font-size: 1.75em;
+      align-items: center;
     }
 }
 
 /* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
     .darkMode {
-      top: 1.2rem;
+      top: 0.75rem;
       right: 5.5rem;
+      background: none;
+      filter: invert();
     }
   
     #languageBtn {
-      top: 1.2rem;
+      top: 0.8rem;
     }
 }
 

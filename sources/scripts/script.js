@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var optImage = document.getElementById('optImage');
   var optName = document.getElementById('optName');
   var optDate = document.getElementById('optDate');
-  var exitButton = document.getElementById('zoomQRLink_2');
   var downloadButton = document.getElementById('downloadBtn');
 
   // dictionnary
@@ -158,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       newCard.id = String(`card${this.id}`);
       newCard.querySelector('#name').innerText = this.name;
-      newCard.querySelector('#date_time').innerText = String(`${this.time}, ${this.date}`);
+      newCard.querySelector('#date_time').innerText = String(`${this.time}`);
       container.insertBefore(newCard, container.firstChild);
       newCard.classList.add('visible');
       return newCard;
@@ -313,12 +312,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // deleteQRLink.addEventListener('click', () => {
   //   cardContainer.removeCard();
   // });
-
-  // options menu
-
-  exitButton.addEventListener('click', function () {
-    optMenu.classList.remove('active');
-  });
 
 
 

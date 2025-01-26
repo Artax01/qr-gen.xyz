@@ -1,7 +1,8 @@
-.search {
+#search {
     position: fixed;
     display: flex;
     bottom: var(--spacing-15);
+    /* bottom: -100px; */
     left: 0;
     right: 0;
     width: 100%;
@@ -15,10 +16,12 @@
     border-radius: 20px;
     background:  none;
     box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    transition: .3s;
+    transition: .3s cubic-bezier(.18,.89,.32,1.28);
     transform: scale(1.15);
+}
+
+#search.show {
+    bottom: var(--spacing-15);
 }
 
 .file-select-btn {
@@ -34,11 +37,7 @@
     transition: .2s;
 }
   
-.file-select-btn svg:hover {
-    transform: scale(0.90);
-}
-  
-.message-input {
+#messageInput {
     padding: var(--spacing-10);
     width: 100%;
     border-radius: var(--spacing-15);
@@ -48,7 +47,7 @@
     transition: .3s;
 }
   
-.message-input:focus {
+#messageInput:focus {
     border-color: var(--border-3);
     outline: none;
 }
@@ -78,7 +77,7 @@
 
 /* RESPONSIVE */
 @media only screen and (max-width: 1200px) {
-    .search {
+    #search {
         max-width: 83% !important;
     }
 }
@@ -91,7 +90,7 @@
 
 /* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
-    .search {
+    #search {
         position: relative;
         bottom: auto;
         max-width: 100% !important;
@@ -103,10 +102,9 @@
         transform: scale(1);
         box-shadow: none;
         transition: .3s;
-        z-index: 1;
     }
 
-    .message-input {
+    #messageInput {
         height: 100%;
         max-width: 100% !important;
         padding-left: 1rem;
@@ -120,7 +118,7 @@
         border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
     }
     
-    .search .file-select-btn {
+    #search .file-select-btn {
         display: none;
     }
     
