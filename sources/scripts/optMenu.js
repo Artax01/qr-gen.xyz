@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var optMenu = document.getElementById('optMenu');
     var overlay = document.querySelector('.overlay');
     var optContent = document.querySelector('.optContent');
+    const originalHeight = optContent.style.height;
 
     let isDragging = false, startY, startHeight;
 
@@ -39,12 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let menuHeight = parseInt(optContent.style.height);
 
-        menuHeight < 50 ? hideOptMenu() : menuHeight > 65 ? updateHeight(95) : updateHeight(95);
+        menuHeight < 55 ? hideOptMenu() : menuHeight > 65 ? updateHeight(55) : updateHeight(55);
     };
 
 
     // updateHeight(95);
-    optContent.style.height = 'fit-content';
+    // optContent.style.height = 'fit-content';
+    // updateHeight(originalHeight);
     optMenu.addEventListener('mousedown', dragStart);
     optMenu.addEventListener('mousemove', dragging);
     optMenu.addEventListener('mouseup', dragStop);

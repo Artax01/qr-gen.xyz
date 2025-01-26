@@ -77,12 +77,13 @@ body {
     --bg-1: #121212; /* main background */
     --bg-2: #201f1f; /* second background */
     --bg-3: rgba(255,255,255,1); /* burger menu background */
-    --bg-4: rgba(29, 29, 29, 0.08);
+    /* --bg-4: rgba(29, 29, 29, 0.08); */
+    --bg-4: #201f1f;
     --bg-blur: rgba(102, 98, 98, 0.3);
   
     --border: rgba(78, 78, 79, 0.4); /* dark border  */
     --border-2: #262629; /* darker border */
-    --border-3: #1e1e1f; /* darker+ border */
+    --border-3: #252526; /* darker+ border */
     --burger-menu-line: #fff;
   
     --importBar-btn: none; /* invert color to see icon on buttons */

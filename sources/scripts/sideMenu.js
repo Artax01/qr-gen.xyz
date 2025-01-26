@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // element
     var burger_menu = document.getElementById('burger-menu'); // burger-menu
     var darkMode = document.getElementById('darkMode'); // theme switch button
-    // element
+    // menu
     var side_menu = document.getElementById('side_menu');
     var blur = document.getElementById('blur');
     

@@ -19,7 +19,6 @@
     box-shadow: var(--dark-soft-shadow);
     transition: .3s;
     transform: scale(1.15);
-    z-index: 10;
 }
   
 .importBar svg {

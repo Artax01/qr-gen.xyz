@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!this.name) { this.name = String(messageInput.value); }
       if (!this.time) { this.time = String(`${new Date().getHours()}:${fixMinutes(new Date().getMinutes())}`); }
       if (!this.date) { this.date = String(`${new Date().getMonth()+1}/${new Date().getDate()}/${new Date().getFullYear()}`); }
-      if (!this.fullDate) { this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}.`); }
+      if (!this.fullDate) { this.fullDate = String(`${findMonth(new Date().getMonth()+1)} ${new Date().getDate()}, ${new Date().getFullYear()}`); }
     }
     
     setButtons() {
