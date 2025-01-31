@@ -1,3 +1,5 @@
+// import { fupdateHeight } from './optMenu.js';
+
 document.addEventListener('DOMContentLoaded', function () {
   // SearchBarContent
   var fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
@@ -14,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // optionsMenuContent
   var optMenu = document.getElementById('optMenu');
+  // var optContent = document.querySelector('.optContent');
   var optImage = document.getElementById('optImage');
   var optName = document.getElementById('optName');
   var optDate = document.getElementById('optDate');
@@ -196,6 +199,8 @@ document.addEventListener('DOMContentLoaded', function () {
           optImage.innerHTML = image;
           optName.innerText = element.name;
           optDate.innerText = String(`${element.time}, ${element.fullDate}`);
+          // let optMenuHeight = parseInt(optContent.style.height);
+          // fupdateHeight(optMenuHeight);
         }
         optMenu.classList.toggle('active');
       });

@@ -156,7 +156,7 @@
     background: var(--bg-4);
 }
   
-#downloadBtn,  #deleteBtn {
+#downloadBtn {
     display: flex;
     width: 100%;
     padding: var(--spacing-10);
@@ -165,32 +165,46 @@
     border-radius: 12px;
     gap: var(--spacing-15);
     justify-content: center;
+    background: var(--accent-color);
+    border: var(--border) solid 1px;
+    font-weight: 600;
     cursor: pointer;
     transition: .3s;
 }
-  
-#downloadBtn {
-    background: var(--bg-2);
-    border: var(--border) solid 1px;
-    font-weight: 600;
+
+#downloadBtn p {
+    color: #fff;
+}
+
+#downloadBtn:hover {
+    background: var(--accent-color-hover);
 }
   
 #deleteBtn {
+    display: flex;
+    width: fit-content;
     padding: var(--spacing-7);
     margin-left: auto;
     margin-right: auto;
-    width: fit-content;
+    gap: var(--spacing-15);
+    align-items: center;
     font-weight: 500;
+    border-radius: 12px;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
 }
 
 #deleteBtn p {
-    color: #ef6060;
+    color: var(--accent-color);
     margin: 0 2rem;
 }
+
+#deleteBtn p:hover {
+    color: var(--accent-color-hover);
+}
   
-#downloadBtn:hover,  #deleteBtn:hover {
-    background: var(--bg-1);
-} 
 
 
 /* RESPONSIVE */

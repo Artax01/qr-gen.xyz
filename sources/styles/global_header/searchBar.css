@@ -60,13 +60,13 @@
     border-radius: var(--spacing-15);
     border: none;
     color: var(--static-neutral);
-    background-color: var(--send-button);
+    background-color: var(--accent-color);
     box-shadow: var(--dark-soft-shadow);
     cursor: pointer;
 }
   
 .send-btn:hover {
-    background-color: var(--send-button-hover);
+    background-color: var(--accent-color-hover);
 }
   
 .send-btn svg {

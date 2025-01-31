@@ -5,13 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     var optMenu = document.getElementById('optMenu');
     var overlay = document.querySelector('.overlay');
     var optContent = document.querySelector('.optContent');
-    const originalHeight = optContent.style.height;
+    const originalHeight = parseInt(optContent.style.height);
 
     let isDragging = false, startY, startHeight;
 
     let updateHeight = (height) => {
         optContent.style.height = `${height}vh`;
     };
+
+    // export function fupdateHeight (height) {
+    //     updateHeight(height);
+    // };
 
     let hideOptMenu = () => {
         optMenu.classList.remove('active');

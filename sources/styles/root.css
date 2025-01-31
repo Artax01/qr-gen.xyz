@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 /* ################################################################## */
 
@@ -16,8 +17,8 @@ html, body {
     min-width: 340px;
     max-width: 100vw;
     min-height: 775px;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    /* overflow-x: hidden; */
 }
   
 body {
@@ -33,6 +34,7 @@ body {
 /* ################################################################## */
 
 :root {
+    /* --font: "Ubuntu", sans-serif !important;; */
     --font: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     --font-code: "Source Code Pro", sans-serif !important;
   
@@ -65,10 +67,12 @@ body {
     /* ---------CONST---------- */
     --scrollbar-color: #000;
     --selection-color: hsla(340, 100%, 75%, 0.5);
-    --send-button: #007bff;
-    --send-button-hover: #0056b3;
+    --accent-color: #007bff;
+    --accent-color-hover: #0056b3;
 }
   
+/* #dc314e */
+
 .dark_theme {
     --text-color: #F3F7FA; /* main text color */
     --text-color-2: #000;
