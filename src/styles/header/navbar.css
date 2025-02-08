@@ -1,21 +1,22 @@
 .navbar {
     position: fixed;
     display: flex;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;
+    padding: .75rem 2rem;
     margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 95%;
+    /* max-width: 95%; */
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
-    background: none;
+    background: #fff;
+    box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
     transition: .3s;
 }
   
 .navbar h1 {
-    /* background: var(--selection-color); */
     margin-left: 0;
     transition: 0.3s ease;
     font-size: x-large;
@@ -27,7 +28,6 @@
     width: 100%;
     height: 3px;
     background-color: var(--selection-color);
-    z-index: -1;
 }
   
 .navbar h1 a {
@@ -54,12 +54,6 @@
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 1200px) {
-    .navbar {
-      max-width: 95% !important;
-    }
-}
-
 @media only screen and (max-width: 1024px){
     .navbar h1 {
       margin-left: 1.5rem;
@@ -72,9 +66,11 @@
         position: relative;
         max-width: 100% !important;
         padding: .15rem;
+        margin-bottom: 0 0.5rem;
         border-radius: 0;
         box-shadow: none;
         border: none;
+        background: none;
     }
       
     .navbar h1 {

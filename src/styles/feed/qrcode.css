@@ -14,10 +14,7 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 20px !important;
-    /* border: var(--border-2) solid 1px; */
     background: none;
-    /* overflow-y: scroll; */
-    /* box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark); */
     transition: .3s;
 }
   
