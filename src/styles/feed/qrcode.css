@@ -15,7 +15,6 @@
     justify-content: center;
     border-radius: 20px !important;
     background: none;
-    z-index: -1;
     overflow-y: scroll;
     transition: .3s;
 }
