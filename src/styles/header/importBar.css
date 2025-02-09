@@ -9,11 +9,9 @@
     padding: var(--spacing-7) 14px;
     margin-left: 5%;
     margin-right: auto;
-    /* min-width: 90px; */
     max-width: 90px;
     align-items: center;
     gap: 16px;
-    /* border: var(--border) solid 1px; */
     border-radius: 40px;
     background:  #000;
     box-shadow: var(--dark-soft-shadow);
@@ -40,3 +38,4 @@
       display: flex;
     }
 }
+
