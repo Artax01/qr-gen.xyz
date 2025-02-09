@@ -14,7 +14,7 @@
     gap: var(--spacing-10);
     border: var(--border-2) solid 1px;
     border-radius: 20px;
-    background:  none;
+    background:  var(--bg-1);
     box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
     transition: .3s cubic-bezier(.18,.89,.32,1.28);
     transform: scale(1.15);
@@ -76,12 +76,6 @@
 }
 
 /* RESPONSIVE */
-@media only screen and (max-width: 1200px) {
-    #search {
-        max-width: 83% !important;
-    }
-}
-
 @media only screen and (max-width: 1024px) {
     .file-select-btn {
         margin-left: 0;
@@ -94,7 +88,7 @@
         position: relative;
         bottom: auto;
         max-width: 100% !important;
-        padding: 0 1.25em .5em 1.25em;
+        padding: 0 1.25em 0.5em 1.25em;
         margin: 0;
         gap: 0;
         border-radius: 0;

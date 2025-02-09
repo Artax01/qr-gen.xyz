@@ -8,11 +8,11 @@
     padding: .75rem 2rem;
     margin-left: auto !important;
     margin-right: auto !important;
-    /* max-width: 95%; */
     align-items: center;
     justify-content: space-between;
-    background: #fff;
-    box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark);
+    background: var(--bg-1);
+    border-bottom: 1px solid var(--light-dark);
+    /* box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark); */
     transition: .3s;
 }
   

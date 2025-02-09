@@ -1,9 +1,13 @@
 #card-container {
     visibility: hidden;
     display: flex;
-    flex-direction: column;
-    margin: var(--spacing-10);
+    width: 100%;
+    max-width: 50% !important;
+    /* margin: var(--spacing-10); */
+    margin-left: auto;
+    margin-right: auto;
     gap: var(--spacing-10);
+    flex-direction: column;
     opacity: 0;
     transition: .2s;
 }
@@ -96,10 +100,6 @@
 /* RESPONSIVE */
 
 @media only screen and (max-width: 1024px) {
-    #card-container {
-        margin: var(--spacing-10);
-    }
-    
     .input-container {
         background: var(--bg-2);
     }
@@ -110,6 +110,7 @@
     #card-container {
         display: grid;
         width: 100%;
+        max-width: 100% !important;
         margin-left: 0;
         padding: 0 var(--spacing-15);
         grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
