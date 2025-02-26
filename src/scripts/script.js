@@ -1,6 +1,3 @@
-// import { fupdateHeight } from './optMenu.js';
-
-document.addEventListener('DOMContentLoaded', function () {
   // SearchBarContent
   var fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
   var hiddenFileInput = document.getElementById('hiddenFileInput');
@@ -389,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function statusMessageChange() {
     status_msg.classList.add('active'); // hide the status message
-    status_msg.innerText = "Today";
+    status_msg.innerText = "Library";
   }
 
   function statusMessageReset() {
@@ -401,4 +398,3 @@ document.addEventListener('DOMContentLoaded', function () {
     cardContainer.removeCard(id);
   }
 
-});

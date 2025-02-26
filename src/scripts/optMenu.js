@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
     // optMenu is open when clicked on a card
     // the eventListener is in script.js file in CardContainer class
     
@@ -60,4 +59,3 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('touchend', dragStop);
 
     overlay.addEventListener('click', hideOptMenu);
-});

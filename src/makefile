@@ -1,10 +1,10 @@
-header_dir = header
-feed_dir = feed
-menu_dir = menu
+header_dir = styles/header
+feed_dir = styles/feed
+menu_dir = styles/menu
 
-output_file = style.css
+output_file = styles/style.css
 
-css_files = root.css \
+css_files = styles/root.css \
 			$(header_dir)/burgerMenu.css \
 			$(header_dir)/importBar.css \
 			$(header_dir)/navbar.css \
@@ -12,7 +12,7 @@ css_files = root.css \
 			$(feed_dir)/card.css \
 			$(feed_dir)/mainHeader.css \
 			$(feed_dir)/qrcode.css \
-			$(menu_dir)/creationMenu.css \
+			$(feed_dir)/sideBar.css \
 			$(menu_dir)/optMenu.css \
 			$(menu_dir)/sideMenu.css
 

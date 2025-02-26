@@ -1,12 +1,12 @@
 #qrcode {
     display: flex;
-    position: fixed;
-    top: calc(80px + var(--spacing-15));
+    position: relative;
+    /* top: calc(80px + var(--spacing-15)); */
     left: 0;
     right: 0;
     width: 100%;
     /* max-width: 50% !important; */
-    height: calc(100% - 20px - 78px - 63px - var(--spacing-15));
+    height: calc(100% - 80px);
     padding: 20px;
     margin-left: auto !important;
     margin-right: auto !important;
@@ -15,7 +15,7 @@
     justify-content: center;
     border-radius: 20px !important;
     background: none;
-    overflow-y: scroll;
+    overflow-y: auto;
     transition: .3s;
 }
   

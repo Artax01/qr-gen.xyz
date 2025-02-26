@@ -122,9 +122,14 @@ body {
     user-select: none;
 }
   
-.global_header {
+#global_header {
     display: flex;
-    padding: var(--spacing-10);
+}
+
+#global_feed {
+    position: relative;
+    display: flex;
+    height: calc(100vh - 85px);
 }
 
 /* ################################################################## */
@@ -202,15 +207,14 @@ body {
       flex-direction: column;
     }
     
-    .global_header {
+    #global_header {
       position: relative;
       display: flex;
       padding: 0;
       flex-direction: column;
     }
 
-    .global_feed {
-        display: flex;
+    #global_feed {
         flex-direction: column;
         gap: var(--spacing-10);
     }

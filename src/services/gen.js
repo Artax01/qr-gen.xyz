@@ -1,4 +1,4 @@
-// Send request to api.qrserser.com
+// Send request to api.qrserver.com
 
 function genQR(container, data, size) {
   var text = String(data);
