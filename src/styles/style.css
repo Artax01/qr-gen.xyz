@@ -899,6 +899,7 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: .3s cubic-bezier(.79,.14,.15,.86);
+    z-index: 9999;
 }
 
 .optMenu.active {
