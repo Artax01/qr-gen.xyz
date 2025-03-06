@@ -12,7 +12,7 @@ css_files = styles/root.css \
 			$(feed_dir)/card.css \
 			$(feed_dir)/mainHeader.css \
 			$(feed_dir)/qrcode.css \
-			$(feed_dir)/sideBar.css \
+			$(feed_dir)/toolBar.css \
 			$(menu_dir)/optMenu.css \
 			$(menu_dir)/sideMenu.css
 

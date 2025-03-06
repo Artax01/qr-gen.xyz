@@ -21,6 +21,7 @@ html, body {
 body {
     background: var(--bg-1);
     max-height: 100vh;
+    overflow: hidden;
     -webkit-animation: fadein 2s;
     -moz-animation: fadein 2s;
     -ms-animation: fadein 2s;

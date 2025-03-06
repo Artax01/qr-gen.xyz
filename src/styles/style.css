@@ -21,6 +21,7 @@ html, body {
 body {
     background: var(--bg-1);
     max-height: 100vh;
+    overflow: hidden;
     -webkit-animation: fadein 2s;
     -moz-animation: fadein 2s;
     -ms-animation: fadein 2s;
@@ -820,8 +821,8 @@ body {
 @media only screen and (max-width: 800px) {  
     #qrcode {
         position: relative;
-        top: calc(150px + var(--spacing-15));;
-        height: calc(100% - 141px 10px);
+        /* top: calc(150px + var(--spacing-15)); */
+        /* height: calc(100% - 141px - 10px); */
         max-width: 100% !important;
         padding: 3px;
         box-shadow: none;
