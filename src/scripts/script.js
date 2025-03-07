@@ -8,7 +8,6 @@ const qrcode = document.getElementById('qrcode');
 const container = document.getElementById('card-container'); // card container inside qrcode block
 const card = document.getElementById('card');
 const layerBtnContainer = document.getElementById('layerBtnContainer');
-const optMenu = document.getElementById('optMenu');
 const optImage = document.getElementById('optImage');
 const optName = document.getElementById('optName');
 const optDate = document.getElementById('optDate');
@@ -179,6 +178,7 @@ class CardContainer {
   }
 
   setEventListener(element) {
+    var optMenu = document.getElementById('optMenu');
     var targetedCard = document.getElementById(String(`card${element.id}`));
 
     element.card.addEventListener('click', function() {
