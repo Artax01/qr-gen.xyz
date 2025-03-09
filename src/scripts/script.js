@@ -50,6 +50,15 @@ window.addEventListener('resize', () => {
     }
 });
 
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches }) => {
+  if (matches) {
+    document.querySelector(':root').classList.add('dark_theme');
+  }
+  else {
+    document.querySelector(':root').classList.remove('dark_theme');
+  }
+});
+
 const units = Object.freeze({0: "B", 3: "KB", 6: "MB", 9: "GB", 12: "TB"});
 const months = Object.freeze({1: "January", 2: "Febuary", 3: "March", 4: "April", 5: "Mai", 6: "June", 7: "July", 8: "August", 9: "September", 10: "October", 11: "November", 12: "December"});
 resetInput();

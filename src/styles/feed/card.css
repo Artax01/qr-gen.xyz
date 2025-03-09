@@ -3,7 +3,6 @@
     display: flex;
     width: 100%;
     max-width: 50% !important;
-    /* margin: var(--spacing-10); */
     margin-left: auto;
     margin-right: auto;
     gap: var(--spacing-10);
@@ -30,7 +29,7 @@
     border: 1px solid var(--border);
     border-radius: var(--spacing-15);
     gap: 20px;
-    background: var(--bg-2);
+    background: var(--light-dark);
     box-shadow: var(--light-soft-shadow);
     cursor: pointer;
     transform: scale(0);
@@ -62,6 +61,8 @@
   
 .infos p {
     background: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
   
 #name {

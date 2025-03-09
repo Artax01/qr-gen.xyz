@@ -33,12 +33,13 @@ body {
 /* ################################################################## */
 
 :root {
+    color-scheme: light;
     --font: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     --font-code: "Source Code Pro", sans-serif !important;
   
     --text-color: #000; /* main text color */
     --text-color-2: #F3F7FA;
-    --light-dark: rgba(0,0,0,0.1); /* light dark color */
+    --light-dark: rgba(0,0,0,0.03); /* light dark color */
   
     --bg-1: #F3F7FA; /* main background */
     --bg-2: #fff; /* second background */
@@ -75,18 +76,18 @@ body {
     --text-color: #F3F7FA; /* main text color */
     --text-color-2: #000;
     --light-dark: rgba(255,255,255,0.03); /* light dark color (invert) */
-  
+    
     --bg-1: #121212; /* main background */
     --bg-2: #201f1f; /* second background */
-    --bg-3: rgba(255,255,255,1); /* burger menu background */
+    --bg-3: #fff; /* burger menu background */
     --bg-4: #201f1f;
     --bg-blur: rgba(102, 98, 98, 0.3);
-  
+    
     --border: rgba(78, 78, 79, 0.4); /* dark border  */
     --border-2: #262629; /* darker border */
     --border-3: #252526; /* darker+ border */
     --burger-menu-line: #fff;
-  
+    
     --importBar-btn: none; /* invert color to see icon on buttons */
     --selection-color: hsla(340.2, 100%, 75.1%, 0.66);
     --selected-border-color:rgba(255,255,255,0.75);
@@ -227,6 +228,7 @@ body {
     right: 0;
     border-radius: 40px;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 5000;
     transition: .3s;
@@ -234,9 +236,9 @@ body {
   
 #burger-menu span {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 0.75rem;
+    position: relative;
+    top: 6%;
+    left: 0;
     width: 1rem;
     height: 0.125rem;
     background: var(--burger-menu-line);
@@ -303,6 +305,7 @@ body {
         border: none;
         box-shadow: none;
         border-radius: 0;
+        justify-content: center;
     }
 
     #burger-menu {
@@ -497,8 +500,9 @@ body {
     border-radius: var(--spacing-15);
     text-decoration: none;
     border: 1px solid var(--border-2);
-    background: var(--bg-2);
+    background: var(--light-dark);
     transition: .3s;
+    color: var(--text-color);
 }
   
 #messageInput:focus {
@@ -556,7 +560,6 @@ body {
         height: 100%;
         max-width: 100% !important;
         padding-left: 1rem;
-        background: var(--bg-2);
         font-size: .9em;
         border: none;
         border-radius: var(--spacing-10) 0 0 var(--spacing-10);
@@ -580,7 +583,6 @@ body {
     display: flex;
     width: 100%;
     max-width: 50% !important;
-    /* margin: var(--spacing-10); */
     margin-left: auto;
     margin-right: auto;
     gap: var(--spacing-10);
@@ -607,7 +609,7 @@ body {
     border: 1px solid var(--border);
     border-radius: var(--spacing-15);
     gap: 20px;
-    background: var(--bg-2);
+    background: var(--light-dark);
     box-shadow: var(--light-soft-shadow);
     cursor: pointer;
     transform: scale(0);
@@ -639,6 +641,8 @@ body {
   
 .infos p {
     background: transparent;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
   
 #name {
@@ -996,19 +1000,15 @@ body {
 }
 
 .optTextInfos {
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    overflow: hidden;
 }
   
 #optName, #optDate {
-    position: relative;
-    display: flex;
-    bottom: 0;
-    left: 0;
-    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
   
 #optName {

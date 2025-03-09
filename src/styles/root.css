@@ -33,12 +33,13 @@ body {
 /* ################################################################## */
 
 :root {
+    color-scheme: light;
     --font: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     --font-code: "Source Code Pro", sans-serif !important;
   
     --text-color: #000; /* main text color */
     --text-color-2: #F3F7FA;
-    --light-dark: rgba(0,0,0,0.1); /* light dark color */
+    --light-dark: rgba(0,0,0,0.03); /* light dark color */
   
     --bg-1: #F3F7FA; /* main background */
     --bg-2: #fff; /* second background */
@@ -75,18 +76,18 @@ body {
     --text-color: #F3F7FA; /* main text color */
     --text-color-2: #000;
     --light-dark: rgba(255,255,255,0.03); /* light dark color (invert) */
-  
+    
     --bg-1: #121212; /* main background */
     --bg-2: #201f1f; /* second background */
-    --bg-3: rgba(255,255,255,1); /* burger menu background */
+    --bg-3: #fff; /* burger menu background */
     --bg-4: #201f1f;
     --bg-blur: rgba(102, 98, 98, 0.3);
-  
+    
     --border: rgba(78, 78, 79, 0.4); /* dark border  */
     --border-2: #262629; /* darker border */
     --border-3: #252526; /* darker+ border */
     --burger-menu-line: #fff;
-  
+    
     --importBar-btn: none; /* invert color to see icon on buttons */
     --selection-color: hsla(340.2, 100%, 75.1%, 0.66);
     --selected-border-color:rgba(255,255,255,0.75);

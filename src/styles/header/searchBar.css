@@ -44,8 +44,9 @@
     border-radius: var(--spacing-15);
     text-decoration: none;
     border: 1px solid var(--border-2);
-    background: var(--bg-2);
+    background: var(--light-dark);
     transition: .3s;
+    color: var(--text-color);
 }
   
 #messageInput:focus {
@@ -103,7 +104,6 @@
         height: 100%;
         max-width: 100% !important;
         padding-left: 1rem;
-        background: var(--bg-2);
         font-size: .9em;
         border: none;
         border-radius: var(--spacing-10) 0 0 var(--spacing-10);

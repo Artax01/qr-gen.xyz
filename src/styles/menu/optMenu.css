@@ -106,19 +106,15 @@
 }
 
 .optTextInfos {
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    overflow: hidden;
 }
   
 #optName, #optDate {
-    position: relative;
-    display: flex;
-    bottom: 0;
-    left: 0;
-    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
   
 #optName {

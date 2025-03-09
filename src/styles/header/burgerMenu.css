@@ -5,6 +5,7 @@
     right: 0;
     border-radius: 40px;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 5000;
     transition: .3s;
@@ -12,9 +13,9 @@
   
 #burger-menu span {
     display: none;
-    position: absolute;
-    top: 50%;
-    left: 0.75rem;
+    position: relative;
+    top: 6%;
+    left: 0;
     width: 1rem;
     height: 0.125rem;
     background: var(--burger-menu-line);
@@ -81,6 +82,7 @@
         border: none;
         box-shadow: none;
         border-radius: 0;
+        justify-content: center;
     }
 
     #burger-menu {
