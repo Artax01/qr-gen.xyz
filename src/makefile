@@ -18,8 +18,8 @@ css_files = styles/root.css \
 
 $(output_file): $(css_files)
 	cat $(css_files) > $(output_file)
-	@echo "Fichiers css regroupés dans $(output_file)"
+	@echo "All css files combined in $(output_file)"
 
 clean:
 	rm -f $(output_file)
-	@echo "Fichier $(output_file) supprimé"
+	@echo "File $(output_file) deleted"

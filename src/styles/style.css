@@ -364,7 +364,18 @@ body {
 /* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
     .importBar {
-      display: flex;
+        display: flex;
+        /* width: 100%;
+        bottom: 0;
+        margin: 0;
+        border-radius: 12px 12px 0 0;
+        max-width: 100%;
+        gap: 0;
+        right: 0;
+        transform: scale(1);
+        padding: 1rem;
+        justify-content: space-around;
+        background: var(--bg-3); */
     }
 }
 
@@ -460,7 +471,6 @@ body {
     position: fixed;
     display: flex;
     bottom: var(--spacing-15);
-    /* bottom: -100px; */
     left: 0;
     right: 0;
     width: 100%;
@@ -796,11 +806,9 @@ body {
 #qrcode {
     display: flex;
     position: relative;
-    /* top: calc(80px + var(--spacing-15)); */
     left: 0;
     right: 0;
     width: 100%;
-    /* max-width: 50% !important; */
     height: calc(100% - 80px);
     padding: 20px;
     margin-left: auto !important;
@@ -827,8 +835,6 @@ body {
 @media only screen and (max-width: 800px) {  
     #qrcode {
         position: relative;
-        /* top: calc(150px + var(--spacing-15)); */
-        /* height: calc(100% - 141px - 10px); */
         max-width: 100% !important;
         padding: 3px;
         box-shadow: none;
