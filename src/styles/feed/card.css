@@ -120,7 +120,6 @@
     .card {
         width: 100%;
         padding: .5em .2em .5em 1em;
-        background: var(--bg-2);
         border: none;
         box-shadow: none;
         font-weight: bold;
