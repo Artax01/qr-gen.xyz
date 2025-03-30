@@ -1,2 +1,7 @@
 .git/
 dev/
+src/makefile
+
+src/styles/feed/
+src/styles/header/
+src/styles/menu/

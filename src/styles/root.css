@@ -7,7 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--text-color);
+    color: var(--text-black);
     font-family: var(--font);
     transition: background 0.3s ease-in-out;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -38,14 +38,17 @@ body {
     --font: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     --font-code: "Source Code Pro", sans-serif !important;
   
-    --text-color: #000; /* main text color */
-    --text-color-2: #F3F7FA;
+    --text-black: #000; /* main text color */
+    --text-white: #F3F7FA;
+    --text-white-final: #F3F7FA; /* constant bg-1 */
+
     --light-dark: rgba(0,0,0,0.03); /* light dark color */
   
-    --bg-1: #F3F7FA; /* main background */
-    --bg-2: #fff; /* second background */
-    --bg-3: #000; /* burger menu background */
-    --bg-4: #F3F7FA;
+    --bg-1: #F3F7FA;
+    --bg-2: #F3F7FA;
+    --bg-3: #000;
+    --bg-4: #201f1f;
+    --bg-5: #201f1f; /* constant bg-4 */
     --bg-blur: var(--light-dark);
   
     --spacing-7: 7px;
@@ -74,14 +77,15 @@ body {
 /* #dc314e */
 
 .dark_theme {
-    --text-color: #F3F7FA; /* main text color */
-    --text-color-2: #000;
+    --text-black: #F3F7FA; /* main text color */
+    --text-white: #000;
     --light-dark: rgba(255,255,255,0.03); /* light dark color (invert) */
     
-    --bg-1: #121212; /* main background */
-    --bg-2: #201f1f; /* second background */
-    --bg-3: #fff; /* burger menu background */
-    --bg-4: #201f1f;
+    --bg-1: #121212;
+    --bg-2: #201f1f;
+    --bg-3: #fff;
+    --bg-4: #F3F7FA;
+    --bg-5: #121212;
     --bg-blur: rgba(102, 98, 98, 0.3);
     
     --border: rgba(78, 78, 79, 0.4); /* dark border  */

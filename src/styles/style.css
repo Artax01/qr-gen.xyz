@@ -7,7 +7,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: var(--text-color);
+    color: var(--text-black);
     font-family: var(--font);
     transition: background 0.3s ease-in-out;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -38,14 +38,17 @@ body {
     --font: "Inter",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
     --font-code: "Source Code Pro", sans-serif !important;
   
-    --text-color: #000; /* main text color */
-    --text-color-2: #F3F7FA;
+    --text-black: #000; /* main text color */
+    --text-white: #F3F7FA;
+    --text-white-final: #F3F7FA; /* constant bg-1 */
+
     --light-dark: rgba(0,0,0,0.03); /* light dark color */
   
-    --bg-1: #F3F7FA; /* main background */
-    --bg-2: #fff; /* second background */
-    --bg-3: #000; /* burger menu background */
-    --bg-4: #F3F7FA;
+    --bg-1: #F3F7FA;
+    --bg-2: #F3F7FA;
+    --bg-3: #000;
+    --bg-4: #201f1f;
+    --bg-5: #201f1f; /* constant bg-4 */
     --bg-blur: var(--light-dark);
   
     --spacing-7: 7px;
@@ -74,14 +77,15 @@ body {
 /* #dc314e */
 
 .dark_theme {
-    --text-color: #F3F7FA; /* main text color */
-    --text-color-2: #000;
+    --text-black: #F3F7FA; /* main text color */
+    --text-white: #000;
     --light-dark: rgba(255,255,255,0.03); /* light dark color (invert) */
     
-    --bg-1: #121212; /* main background */
-    --bg-2: #201f1f; /* second background */
-    --bg-3: #fff; /* burger menu background */
-    --bg-4: #201f1f;
+    --bg-1: #121212;
+    --bg-2: #201f1f;
+    --bg-3: #fff;
+    --bg-4: #F3F7FA;
+    --bg-5: #121212;
     --bg-blur: rgba(102, 98, 98, 0.3);
     
     --border: rgba(78, 78, 79, 0.4); /* dark border  */
@@ -330,7 +334,7 @@ body {
 .importBar {
     display: none;
     position: fixed;
-    color: var(--text-color-2);
+    color: var(--text-white);
     bottom: var(--spacing-15);
     left: 0;
     right: 0;
@@ -514,7 +518,7 @@ body {
     border: 1px solid var(--border-2);
     background: var(--light-dark);
     transition: .3s;
-    color: var(--text-color);
+    color: var(--text-black);
 }
   
 #messageInput:focus {
@@ -691,12 +695,6 @@ body {
 }
 
 /* RESPONSIVE */
-
-@media only screen and (max-width: 1024px) {
-    .input-container {
-        background: var(--bg-2);
-    }
-}
 
 /* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
@@ -936,7 +934,7 @@ body {
     max-height: 100vh;
     width: 100%;
     max-width: 800px;
-    background: var(--bg-4);
+    background: var(--bg-2);
     border-radius: 12px 12px 0 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
     transform: translateY(100%);
@@ -968,7 +966,7 @@ body {
     display: block;
     height: 4px;
     width: 40px;
-    background: var(--text-color);
+    background: var(--text-black);
     border-radius: 50px;
 }
 
@@ -1040,7 +1038,7 @@ body {
     font-size: 1.05em;
     border-top: 1px solid var(--border-3);
     border-radius: 12px 12px 0 0;
-    background: var(--bg-4);
+    background: var(--bg-2);
 }
   
 #downloadBtn {
@@ -1109,8 +1107,8 @@ body {
     height: 100%;
     width: 0;
     background: var(--bg-blur);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
+    /* -webkit-backdrop-filter: blur(10px); */
     transform: translateX(100vw);
     z-index: 100;
     transition: .3s;
@@ -1125,15 +1123,15 @@ nav {
     position: fixed;
     display: flex;
     top: 0;
-    right: 0;
+    left: 0;
     max-width: 590px;
     width: 100%;
     height: 100dvh;
     flex-direction: column;
-    justify-content: center;
-    background: var(--bg-1);
+    /* justify-content: center; */
+    background: var(--bg-5);
     box-shadow: var(--dark-soft-shadow);
-    transform: translateX(150vw);
+    transform: translateX(-150vw);
     transition: .4s;
     transition-delay: .15s;
     z-index: 100;
@@ -1143,8 +1141,24 @@ nav.active {
     position: fixed;
     transform: translateX(0);
 }
+
+.nav_header {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 25%;
+    background-color: var(--bg-2);
+}
+
+.nav_header_title {
+    display: flex;
+    padding: 2rem;
+    color: #dc314e;
+    font-weight: bold;
+}
   
-nav a, nav p, nav center {
+nav a, nav p {
     background: none;
 }
   
@@ -1152,8 +1166,6 @@ nav a, nav p, nav center {
     display: flex;
     width: 100%;
     padding: 0 50px 0 100px;
-    margin-bottom: 1.25rem;
-    font-size: 2em;
     font-weight: bold;
     flex-direction: column;
     background: none;
@@ -1161,10 +1173,10 @@ nav a, nav p, nav center {
   
 .nav_info a {
     width: fit-content;
-    padding: var(--spacing-15) var(--spacing-15) var(--spacing-15) 0;
-    margin: 5px 5px 5px 0;
+    padding: var(--spacing-10) var(--spacing-15) var(--spacing-10) 0;
     text-decoration: none;
-    color: var(--text-color);
+    font-size: 1em;
+    color: var(--text-white-final);
     transition: .3s;
 }
   
@@ -1228,7 +1240,8 @@ nav a, nav p, nav center {
 
 @media only screen and (max-width: 1024px){
     nav {
-      max-width: 100%;
+      /* max-width: 100%; */
+      max-width: 82%;
     }
   
     nav.active {
@@ -1238,9 +1251,7 @@ nav a, nav p, nav center {
     }
   
     .nav_info {
-      padding-left: 50px;
-      font-size: 1.75em;
-      align-items: center;
+      padding: 2.5rem;
     }
 }
 
@@ -1259,9 +1270,9 @@ nav a, nav p, nav center {
 }
 
 @media only screen and (max-width: 500px) {
-    .nav_info {
+    /* .nav_info {
       text-align: center;
-    }
+    } */
   
     .nav_info a {
       width: 100%;
