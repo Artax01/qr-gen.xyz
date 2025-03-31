@@ -49,7 +49,7 @@ body {
     --bg-3: #000;
     --bg-4: #201f1f;
     --bg-5: #201f1f; /* constant bg-4 */
-    --bg-blur: var(--light-dark);
+    --bg-blur: rgba(0,0,0,0.25);
   
     --spacing-7: 7px;
     --spacing-10: 10px;
@@ -397,7 +397,6 @@ body {
     justify-content: space-between;
     background: var(--bg-1);
     border-bottom: 1px solid var(--light-dark);
-    /* box-shadow: 1em 0 1.5em var(--light-dark), -1em 0 1.5em var(--light-dark); */
     transition: .3s;
 }
   
@@ -1101,34 +1100,30 @@ body {
 }
 
 .blur {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
     width: 0;
     background: var(--bg-blur);
-    /* backdrop-filter: blur(10px); */
-    /* -webkit-backdrop-filter: blur(10px); */
-    transform: translateX(100vw);
     z-index: 100;
     transition: .3s;
 }
   
 .blur.active {
     width: 100%;
-    transform: translateX(0);
 }
   
 nav {
     position: fixed;
-    display: flex;
+    display: none;
     top: 0;
     left: 0;
     max-width: 590px;
     width: 100%;
     height: 100dvh;
     flex-direction: column;
-    /* justify-content: center; */
     background: var(--bg-5);
     box-shadow: var(--dark-soft-shadow);
     transform: translateX(-150vw);
@@ -1147,15 +1142,31 @@ nav.active {
     position: relative;
     width: 100%;
     height: 100%;
-    max-height: 25%;
+    padding: 1.5rem 1.25rem 0 1.25rem;
+    max-height: 22%;
     background-color: var(--bg-2);
+    flex-direction: column;
 }
 
 .nav_header_title {
     display: flex;
-    padding: 2rem;
+    width: 100%;
     color: #dc314e;
     font-weight: bold;
+    font-size: 1.15rem;
+}
+
+.nav_header_stats {
+    display: flex;
+    height: 100%;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.nav_header_stats svg {
+    position: relative;
+    height: 30px;
+    width: 30px;
 }
   
 nav a, nav p {
@@ -1165,13 +1176,30 @@ nav a, nav p {
 .nav_info {
     display: flex;
     width: 100%;
-    padding: 0 50px 0 100px;
+    padding: 1rem 1.25rem;
     font-weight: bold;
     flex-direction: column;
     background: none;
 }
+
+.nav_info_container {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.nav_info_container svg {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    filter: invert();
+}
+
+.nav_info_container.active svg {
+    filter: invert();
+}
   
-.nav_info a {
+.nav_info_container a {
     width: fit-content;
     padding: var(--spacing-10) var(--spacing-15) var(--spacing-10) 0;
     text-decoration: none;
@@ -1180,8 +1208,9 @@ nav a, nav p {
     transition: .3s;
 }
   
-.nav_info a:hover {
-    color: var(--selected-border-color);
+.nav_info_container:hover a {
+    color: var(--border-3);
+    cursor: pointer;
 }
 
 #creator {
@@ -1197,7 +1226,7 @@ nav a, nav p {
   
   
 .darkMode, #languageBtn {
-    position: absolute;
+    position: relative;
     top: 1.8rem;
     right: 5.5rem;
     height: 2.5rem;
@@ -1221,6 +1250,7 @@ nav a, nav p {
 }
   
 #languageBtn {
+    display: none;
     left: 2rem;
     text-align: center;
     font-size: 1.5em;
@@ -1231,16 +1261,8 @@ nav a, nav p {
 
 /* RESPONSIVE */
 
-
-@media only screen and (max-width: 1200px) {
-    .darkMode {
-      right: 6.5rem;
-    }
-}
-
 @media only screen and (max-width: 1024px){
     nav {
-      /* max-width: 100%; */
       max-width: 82%;
     }
   
@@ -1249,17 +1271,18 @@ nav a, nav p {
       width: 100%;
       border-right: none;
     }
-  
-    .nav_info {
-      padding: 2.5rem;
-    }
 }
 
 /* Design For Mobile Device From Here */
 @media only screen and (max-width: 800px) {
+    .blur, nav {
+        display: flex;
+    }
+
     .darkMode {
       top: 0.75rem;
-      right: 5.5rem;
+      right: 0;
+      margin-right: 2rem;
       background: none;
       filter: invert();
     }
@@ -1270,11 +1293,7 @@ nav a, nav p {
 }
 
 @media only screen and (max-width: 500px) {
-    /* .nav_info {
-      text-align: center;
-    } */
-  
-    .nav_info a {
+    .nav_info_container a {
       width: 100%;
     }
 }
@@ -1286,7 +1305,7 @@ nav a, nav p {
       align-items: center;
     }
   
-    .nav_info a {
+    .nav_info_container a {
       padding: var(--spacing-15) 0;
       margin: var(--spacing-10) 0;
       text-align: center;
