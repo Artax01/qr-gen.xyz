@@ -75,7 +75,7 @@ class Card {
 
     getCurrentDate() {
         const now = new Date();
-        return `${findMonth(now.getMonth() + 1)}/${now.getDate()}/${now.getFullYear()}`;
+        return `${String(now.getMonth() + 1).padStart(2, '0')}/${String(now.getDate()).padStart(2, '0')}/${now.getFullYear()}`;
     }
   
     getQR() {
@@ -86,8 +86,11 @@ class Card {
             return;
         }
 
-        new genQR(image, this.text, 128);
+        new genQR(imageContainer, this.text, 128);
         this.updateSize();
+
+        let i = document.getElementById('qrcode_counter');
+        i.innerText = parseInt(i.innerText) + 1;
     }
 
 
@@ -161,7 +164,7 @@ class CardContainer {
         const image = cardElement.querySelector('.img_container').innerHTML;
         optImage.innerHTML = image;
         optName.innerText = newCard.text;
-        optDate.innerText = `${newCard.time}, ${newCard.fullDate}`;
+        optDate.innerText = `${newCard.time}, ${newCard.date}`;
         optMenu.classList.toggle('active');
     });
 
@@ -238,7 +241,7 @@ function resetInput() {
   messageInput.value = "";
   hiddenFileInput.value = "";
   generateButton.style.display = "none";
-//   messageInput.style.borderRadius = `10px`;
+  messageInput.style.borderRadius = `10px`;
 }
 
 /**

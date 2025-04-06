@@ -39,7 +39,7 @@ let dragStop = () => {
 
     let menuHeight = parseInt(optContent.style.height);
 
-    menuHeight < 55 ? hideOptMenu() : menuHeight > 65 ? updateHeight(55) : updateHeight(55);
+    menuHeight < 55 ? hideOptMenu() : menuHeight > 65 ? updateHeight(60) : updateHeight(60);
 };
 
 

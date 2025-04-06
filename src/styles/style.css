@@ -451,7 +451,9 @@ body {
     ._container[class~=connexion] {
         display: none;
     }
-}#search {
+}
+
+#search {
     position: fixed;
     display: flex;
     bottom: var(--spacing-15);
@@ -570,7 +572,9 @@ body {
     #search .file-select-btn {
         display: none;
     }
-}#card-container {
+}
+
+#card-container {
     visibility: hidden;
     display: flex;
     width: 100%;
@@ -679,6 +683,7 @@ body {
         width: 100%;
         padding: .5em .2em .5em 1em;
         border-radius: 12px;
+        border: none;
         font-weight: bold;
         box-shadow: none;
     }
@@ -711,7 +716,9 @@ body {
     .optionsBtn {
         margin-left: var(--spacing-10);
     }
-}.main_header {
+}
+
+.main_header {
     display: flex;
     justify-content: center;
     transition: .3s;
@@ -758,7 +765,9 @@ body {
     .main_header {
         padding: var(--spacing-15);
     }
-}#qrcode {
+}
+
+#qrcode {
     display: flex;
     width: 100%;
     height: calc(100% - 80px);
@@ -796,6 +805,7 @@ body {
         top: auto;
     }
 }
+
 .optMenu {
     display: flex;
     position: fixed;
@@ -990,7 +1000,9 @@ body {
     .optImage {
         height: 150px;
     }
-}.blur {
+}
+
+.blur {
     display: none;
     position: absolute;
     top: 0;
