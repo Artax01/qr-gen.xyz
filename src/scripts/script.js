@@ -10,13 +10,12 @@ const optName = document.getElementById('optName');
 const optDate = document.getElementById('optDate');
 const downloadButton = document.getElementById('downloadBtn');
 
-// const layerBtnContainer = document.getElementById('layerBtnContainer');
-
 /**detect if the client is desktop or mobile to adapt the app
 the app is based on this limit (mobile <= 800px > desktop)*/
 let containerHeight = container.clientHeight; // height of the qrcode container
 let containerWidth = container.clientWidth; // width of the qrcode container
 let currentUserDevice = detectDevice(); // current user device (mobile or desktop)
+let activeCard = null; // current active card (the one that is clicked)
 
 function detectDevice() {
   return window.screen.width <= 800 ? 'mobile' : 'desktop';
@@ -28,13 +27,14 @@ function adjustUI() {
     qrcodeContainer.style.height = detectDevice() === 'mobile' ? `calc(100vh - ${navbarHeight}px - ${document.querySelector('#search').clientHeight}px)` : `calc(100vh - ${navbarHeight}px)`;
     currentUserDevice = detectDevice();
 }
-adjustUI();
 
 window.addEventListener('resize', () => {
     if (detectDevice() !== currentUserDevice) {
         adjustUI();
     }
 });
+
+adjustUI();
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', ({ matches }) => {
     document.documentElement.classList.toggle('dark_theme', matches);
@@ -89,7 +89,7 @@ class Card {
         new genQR(imageContainer, this.text, 128);
         this.updateSize();
 
-        let i = document.getElementById('qrcode_counter');
+        let i = document.getElementById('stats_counter');
         i.innerText = parseInt(i.innerText) + 1;
     }
 
@@ -99,7 +99,7 @@ class Card {
             const qrCodeImage = this.card.querySelector('.img_container img').src;
             fetch(qrCodeImage).then(response => response.blob()).then(blob => {
                 this.size = findUnit(blob.size);
-                this.card.querySelector('#size').innerText = findUnit(blob.size);
+                this.card.querySelector('#size').innerText = this.size;
             });
         },100);
     }
@@ -115,6 +115,9 @@ class Card {
                 URL.revokeObjectURL(link.href);
             });
         }, 100);
+
+        let i = document.getElementById('stats_download');
+        i.innerText = parseInt(i.innerText) + 1;
     }
 
     render() {
@@ -124,12 +127,17 @@ class Card {
         newCard.querySelector('#text').innerText = this.text;
         newCard.querySelector('#date_time').innerText = String(`${this.time}`);
         container.insertBefore(newCard, container.firstChild);
-        newCard.style.top = `${Math.random() * (containerHeight - 271)}px`;
-        newCard.style.left = `${Math.random() * (containerWidth - 359)}px`;
-        newCard.style.zIndex = `${this.id}`;
         newCard.classList.add('visible');
 
-        downloadButton.addEventListener('click', () => this.downloadQR());
+        newCard.addEventListener('click', () => {
+            activeCard = this;
+
+            const imageHTML = newCard.querySelector('.img_container').innerHTML;
+            optImage.innerHTML = imageHTML;
+            optName.innerText = this.text;
+            optDate.innerText = `${this.time}, ${this.date}`;
+            optMenu.classList.add('active');
+        });
 
         return newCard;
     }
@@ -157,28 +165,8 @@ class CardContainer {
 
     const newCard = new Card(this.cardList.length);
     this.cardList.push(newCard);
-    const optMenu = document.getElementById('optMenu');
-    const cardElement = newCard.card;
-
-    cardElement.addEventListener('click', () => {
-        const image = cardElement.querySelector('.img_container').innerHTML;
-        optImage.innerHTML = image;
-        optName.innerText = newCard.text;
-        optDate.innerText = `${newCard.time}, ${newCard.date}`;
-        optMenu.classList.toggle('active');
-    });
-
     resetInput();
     this.updateStatus();
-
-    // var layerBtn = document.createElement('button');
-    // layerBtn.classList.add('layerBtn');
-    // layerBtn.innerText = newCard.text;
-    // layerBtn.addEventListener('click', () => {
-    //     document.getElementById(String(`card${newCard.id}`)).classList.toggle('visible');
-    //     layerBtn.classList.toggle('active');
-    // });
-    // layerBtnContainer.appendChild(layerBtn);
   }
 
   updateStatus() {
@@ -231,6 +219,26 @@ generateButton.addEventListener('click', () => {
     cardContainer.addCard();
 });
 
+downloadButton.addEventListener('click', () => {
+    if (activeCard) {
+        activeCard.downloadQR();
+    } else {
+        alert('Please select a QRCode to download.');
+    }
+});
+
+// deleteButton.addEventListener('click', () => {
+//     if (activeCard) {
+//         activeCard.card.remove();
+//         cardContainer.cardList = cardContainer.cardList.filter(card => card !== activeCard);
+//         activeCard = null;
+//         resetInput();
+//         cardContainer.updateStatus();
+//     } else {
+//         alert('Please select a QRCode to delete.');
+//     }
+// });
+
 
 
 /**
@@ -250,7 +258,7 @@ function resetInput() {
  * @param size  the size in bits of the QRCode
  */
 function findUnit(size) {
-    const units = ["B", "KB", "MB", "GB", "TB"];
+    const units = Object.freeze(["B", "KB", "MB", "GB", "TB"]);
     let k = 0;
     while (size >= 1000) {
         size/=1000;
@@ -259,7 +267,7 @@ function findUnit(size) {
     return `${size.toFixed(2)} ${units[k]}`;
 }
 
-function findMonth(nb) {
-    const months = ["January", "Febuary", "March", "April", "Mai", "June", "July", "August", "September", "October", "November", "December"];
-    return String(months[nb]);
-}
+// function findMonth(nb) {
+//     const months = ["January", "Febuary", "March", "April", "Mai", "June", "July", "August", "September", "October", "November", "December"];
+//     return String(months[nb]);
+// }
