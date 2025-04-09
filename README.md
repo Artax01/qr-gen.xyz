@@ -2,7 +2,7 @@
 
 A website for generating qrcode.  
 
-> [!IMPORTANT]\ 
+> [!IMPORTANT]\
 > I'm currently building my own QRCode generation library but it's takes times.  
 
 ### How to you use it ?
