@@ -1,6 +1,9 @@
 # qr-gen.xyz
 
-A website for generating qrcode.
+A website for generating qrcode.  
+
+> [!IMPORTANT]\ 
+> I'm currently building my own QRCode generation library but it's takes times.  
 
 ### How to you use it ?
 
@@ -26,4 +29,4 @@ Same as for download.
 
 This website was developed by Artax01.
 
-> This website uses an API to generate QRCode : [goqr.me API](https://goqr.me/api/). QR Code is a registered trademark of DENSO WAVE INCORPORATED.
+> This website uses the ```qrcode.js``` library to generate QRCode. QR Code is a registered trademark of DENSO WAVE INCORPORATED.

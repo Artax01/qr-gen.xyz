@@ -43,6 +43,8 @@ body {
     --text-white-final: #F3F7FA; /* constant bg-1 */
 
     --light-dark: rgba(0,0,0,0.03); /* light dark color */
+    --soft-light: rgba(0,0,0,0.1); /* soft dark color */
+    --softer-light: rgba(0,0,0,0.25); 
   
     --bg-1: #F3F7FA;
     --bg-2: #F3F7FA;
@@ -64,7 +66,7 @@ body {
     --selected-border-color:rgba(0,0,0,0.25);
     --special-text: rgb(40, 200, 184); /* code text color */
     --special-text-hover: rgb(36, 175, 161); /* hover code text color */
-    --light-soft-shadow: rgba(255,255,255,0.1) 0px 5px 30px; /* light soft shadow */
+    --light-soft-shadow: var(--soft-light) 0px 5px 30px; /* light soft shadow */
     --dark-soft-shadow: var(--light-dark) 0px 5px 30px; /* dark soft shadow */
   
     /* ---------CONST---------- */
@@ -79,14 +81,17 @@ body {
 .dark_theme {
     --text-black: #F3F7FA; /* main text color */
     --text-white: #000;
-    --light-dark: rgba(255,255,255,0.03); /* light dark color (invert) */
+
+    --light-dark: rgba(255,255,255,0.03);
+    --soft-light: rgba(255,255,255,0.1); 
+    --softer-light: rgba(255,255,255,0.25); 
     
     --bg-1: #121212;
     --bg-2: #201f1f;
     --bg-3: #fff;
     --bg-4: #F3F7FA;
     --bg-5: #121212;
-    --bg-blur: rgba(102, 98, 98, 0.3);
+    --bg-blur: rgba(70, 63, 63, 0.3);
     
     --border: rgba(78, 78, 79, 0.4); /* dark border  */
     --border-2: #262629; /* darker border */
@@ -98,7 +103,7 @@ body {
     --selected-border-color:rgba(255,255,255,0.75);
     --special-text: turquoise; /* code text color */
     --special-text-hover: rgb(49, 145, 136); /* hover code text color */
-    --light-soft-shadow: rgba(255,255,255,0.06) 0px 5px 30px; /* dark soft shadow (invert) */
+    --light-soft-shadow: var(--soft-light) 0px 5px 30px; /* dark soft shadow (invert) */
     --dark-soft-shadow: rgba(92,83,86,0.1) 0px 8px 30px; /* light soft shadow (invert) */
 }
 
@@ -115,12 +120,46 @@ body {
     display: flex;
     left: 0;
     right: 0;
-    max-width: 95%;
+    max-width: 100%;
     padding: .5rem .75rem;
     align-items: center;
     border-radius: 20px;
     background: none;
     transition: .3s;
+}
+
+input {
+    padding: var(--spacing-10);
+    width: 100%;
+    border-radius: var(--spacing-15);
+    text-decoration: none;
+    border: 1px solid var(--border-2);
+    background: var(--light-dark);
+    transition: .3s;
+    color: var(--text-black);
+}
+
+input:focus {
+    border-color: var(--border-3);
+    outline: none;
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+}
+
+ol, pre {
+    overflow-x: auto;
+    background: var(--light-dark);
+    padding: 1em;
+    border-radius: 5px;
+}
+
+code {
+    font-family: monospace;
+    white-space: pre;
+    word-wrap: normal;
 }
 
 .unselectable {
@@ -213,6 +252,15 @@ body {
     body, html {
       display: flex;
       flex-direction: column;
+    }
+
+    input {
+        height: 100%;
+        max-width: 100% !important;
+        padding-left: 1rem;
+        font-size: .9em;
+        border: none;
+        border-radius: var(--spacing-10) 0 0 var(--spacing-10);
     }
     
     #global_header {
@@ -307,7 +355,7 @@ body {
 @media only screen and (max-width: 800px) {
     ._container[class~=burgerMenu] {
         max-width: 100%;
-        /* padding: .5rem 1rem; */
+        padding: .5rem .75rem;
         border: none;
         box-shadow: none;
         border-radius: 0;
@@ -491,22 +539,6 @@ body {
     transition: .2s;
 }
 
-#messageInput {
-    padding: var(--spacing-10);
-    width: 100%;
-    border-radius: var(--spacing-15);
-    text-decoration: none;
-    border: 1px solid var(--border-2);
-    background: var(--light-dark);
-    transition: .3s;
-    color: var(--text-black);
-}
-
-#messageInput:focus {
-    border-color: var(--border-3);
-    outline: none;
-}
-
 .send-btn {
     display: flex;
     align-items: center;
@@ -552,15 +584,6 @@ body {
         transition: .3s;
     }
 
-    #messageInput {
-        height: 100%;
-        max-width: 100% !important;
-        padding-left: 1rem;
-        font-size: .9em;
-        border: none;
-        border-radius: var(--spacing-10) 0 0 var(--spacing-10);
-    }
-
     .send-btn {
         border-radius: 0 var(--spacing-10) var(--spacing-10) 0;
     }
@@ -604,7 +627,6 @@ body {
     border-radius: var(--spacing-15);
     gap: 20px;
     background: var(--light-dark);
-    box-shadow: var(--light-soft-shadow);
     cursor: pointer;
     transform: scale(0);
     transition: .3s;
@@ -744,6 +766,10 @@ body {
     transition: .3s ease-in-out;
 }
 
+#qrcode.active .main_header {
+    display: none;
+}
+
 /* RESPONSIVE */
 
 @media only screen and (max-width: 800px) {
@@ -751,9 +777,9 @@ body {
         padding: var(--spacing-15) 20px;
     }
 
-    #qrcode.active .main_header {
+    /* #qrcode.active .main_header {
         display: none;
-    }
+    } */
 
     .status-msg {
         padding: 0;
@@ -800,13 +826,9 @@ body {
         border-radius: 0;
         overflow-x: hidden;
     }
-
-    #qrcode.active {
-        top: auto;
-    }
 }
 
-.optMenu {
+.bsMenu {
     display: flex;
     position: fixed;
     top: 0;
@@ -822,7 +844,7 @@ body {
     z-index: 9999;
 }
 
-.optMenu.active {
+.bsMenu.active {
     opacity: 1;
     pointer-events: auto;
 }
@@ -837,7 +859,7 @@ body {
     z-index: -1;
 }
 
-.optMenu .optContent {
+.bsMenu .bsContent {
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -848,28 +870,28 @@ body {
     transition: 0.3s ease;
 }
 
-.optMenu.active .optContent {
+.bsMenu.active .bsContent {
     transform: translateY(0%);
 }
 
-.optMenu.dragging .optContent {
+.bsMenu.dragging .bsContent {
     transition: none;
 }
 
-.optMenu .optContent .optHeader {
+.bsMenu .bsContent .bsHeader {
     display: flex;
     padding-top: 15px;
     justify-content: center;
     cursor: grab;
 }
 
-.optMenu .optContent .optHeader .drag-icon {
+.bsMenu .bsContent .bsHeader .drag-icon {
     padding: 15px;
     margin-top: -15px;
     cursor: grab;
 }
 
-.optMenu .optContent .optHeader .drag-icon span {
+.bsMenu .bsContent .bsHeader .drag-icon span {
     display: block;
     height: 4px;
     width: 40px;
@@ -877,27 +899,26 @@ body {
     border-radius: 50px;
 }
 
-.optMenu .optContent .optBody {
+.bsMenu .bsContent .bsBody {
     display: flex;
     flex-direction: column;
-    padding: var(--spacing-15) 0;
+    padding-bottom: var(--spacing-15);
     height: 100%;
     overflow-y: auto;
     justify-content: space-between;
 }
 
-.optMenu .optContent .optBody::-webkit-scrollbar {
+.bsMenu .bsContent .bsBody::-webkit-scrollbar {
     width: 0;
 }
 
-.optInfos {
+.bsInfos {
     display: flex;
     gap: calc(1.6 * var(--spacing-15));
-    padding: 0 1.5rem;
-    margin-bottom: 30px;
+    padding: var(--spacing-15) 1.5rem;
 }
 
-.optImage {
+.bsImage {
     display: flex;
     justify-content: center;
     height: 200px;
@@ -905,31 +926,31 @@ body {
     transition: .3s;
 }
 
-#optImage img {
+#bsImage img {
     border-radius: 13px;
     border: 8px solid #fff;
     box-shadow: var(--dark-soft-shadow);
 }
 
-.optTextInfos {
+.bsTextInfos {
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
 }
 
-#optName, #optDate {
+#bsName, #bsDate {
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-#optName {
+#bsName {
     font-weight: bold;
     font-size: 1.25em;
     margin-bottom: 5px;
 }
 
-.optButtons {
+.bsButtons {
     display: flex;
     flex-direction: column;
     padding: 15px 30px 30px 30px;
@@ -997,7 +1018,7 @@ body {
 /* RESPONSIVE */
 
 @media only screen and (max-width: 1024px) {
-    .optImage {
+    .bsImage {
         height: 150px;
     }
 }
@@ -1088,6 +1109,7 @@ nav.active {
     flex-direction: column;
     justify-content: center;
     gap: 0.25rem;
+    line-height: 1;
 }
 
 .stats_num {
@@ -1126,6 +1148,10 @@ nav a, nav p {
     filter: invert();
 }
 
+.dark_theme .nav_info_container svg {
+    filter: none;
+}
+
 .nav_info_container.active svg {
     filter: invert();
 }
@@ -1142,6 +1168,13 @@ nav a, nav p {
 .nav_info_container:hover a {
     color: var(--border-3);
     cursor: pointer;
+}
+
+.nav_info_container hr {
+    width: 90%;
+    margin: 1em 0;
+    opacity: 0.15;
+    border-radius: 5px;
 }
 
 #creator {

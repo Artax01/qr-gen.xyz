@@ -1,0 +1,109 @@
+html {
+    overflow: visible;
+}
+body {
+    margin: auto;
+    overflow: scroll;
+    line-height: 1.6;
+}
+.content {
+    display: flex;
+    max-width: 800px;
+    padding: 1em 2em 4em 2em;
+    margin: auto;
+    gap: 1em;
+    flex-direction: column;
+}
+#link {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background: var(--bg-1);
+    flex-direction: column;
+    z-index: 1;
+    transition: .3s;
+}
+#link a {
+    font-weight: bold;
+    padding: 1em 0;
+}
+#progressBar {
+    display: none;
+}
+#fullProgressBar, #progressOnBar {
+    background-color: var(--soft-light);
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+}
+#progressOnBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    max-width: 100%;
+    background-color: var(--softer-light);
+    transition: .2s;
+}
+._container {
+    padding: 0.5em 0;
+}
+.generateBtn {
+    display: flex;
+    flex-direction: column;
+}
+#generateBtn {
+    opacity: 0.4;
+}
+.generateBtn p {
+    width: 80%;
+    margin-top: 0.3em;
+    font-size: 0.8em;
+    opacity: 0.4;
+    text-align: center;
+}
+input, button {
+    border-radius: 5px !important;
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: var(--spacing-10);
+    gap: var(--spacing-15);
+    border-radius: 12px;
+    background: var(--accent-color);
+    border: var(--border) solid 1px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+.img_container {
+    display: flex;
+    height: fit-content;
+    max-width: 100%;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: .3s;          
+}
+.img_container img {
+    height: auto;
+    width: auto;
+}
+ol {
+    padding-left: 2em;
+    gap: 1em;
+}
+li {
+    font-family: monospace;
+    white-space: pre;
+    word-wrap: normal;
+}
+
+@media only screen and (max-width: 800px) {
+    .content {
+        margin: 0;
+    }
+}
