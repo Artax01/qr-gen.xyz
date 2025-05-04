@@ -48,7 +48,8 @@ class Root {
 
     static escapeHTML(str) {
         return str
-            .replace(/<script[\s\S]*?>[\s\S]*?<\/script\s*>/gi, '')
+            .replace(/<\s*script[\s\S]*?>[\s\S]*?<\/script\s*[^>]*>/gi, '')
+            .replace(/\bon\w+=(["'`])([^"'>]*)\1/gi, '')
             .replace(/\bon\w+="[^"]*"/gi, '')
             .replace(/\bon\w+='[^']*'/gi, '')
             .replace(/\bon\w+=\s*`[^`]*`/gi, '')
