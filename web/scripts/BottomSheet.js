@@ -105,20 +105,22 @@ class BottomSheetMenu {
         const elementsWithSrc = tempDiv.querySelectorAll('[src]');
         elementsWithSrc.forEach(element => {
             const src = element.getAttribute('src');
-    
             if (src && src.startsWith('data:') && !src.startsWith('data:image/')) {
                 element.setAttribute('src', '_NOT_VALID_URI_');
             }
         });
     
-        const filtered = tempDiv.innerHTML.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
-                                                .replace(/\bon\w+="[^"]*"/gi, '')
-                                                .replace(/\bon\w+='[^']*'/gi, '')
-                                                .replace(/\bon\w+=\s*`[^`]*`/gi, '')
-                                                .replace(/javascript:/gi, '')
-                                                .replace(/vbscript:/gi, '')
-                                                .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
-        this.infosContainer.innerHTML = filtered;
+        const filtered = tempDiv.innerHTML
+            .replace(/<script[\s\S]*?>[\s\S]*?<\/script\s*>/gi, '')
+            .replace(/\bon\w+="[^"]*"/gi, '')
+            .replace(/\bon\w+='[^']*'/gi, '')
+            .replace(/\bon\w+=\s*`[^`]*`/gi, '')
+            .replace(/javascript:/gi, '')
+            .replace(/vbscript:/gi, '')
+            .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
+    
+        const escapedContent = this.escapeHTML(filtered);
+        this.infosContainer.innerHTML = escapedContent;
     }
 
     addButton(label, callback, options={}) {
