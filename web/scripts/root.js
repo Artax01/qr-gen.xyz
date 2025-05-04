@@ -8,7 +8,8 @@ class Root {
     }
 
     static isHome() {
-        return (window.location.pathname.split("/").pop() === "index.html") ? true : false;
+        let path = window.location.pathname.split('/');
+        return (path.pop() === "index.html" || path.join('') === "qr-gen.xyz") ? true : false;
     }
 
     static isOnDesktop() {
