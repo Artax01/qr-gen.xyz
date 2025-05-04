@@ -101,24 +101,26 @@ class BottomSheetMenu {
     setInfos(htmlContent) {
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = htmlContent;
-    
+
         const elementsWithSrc = tempDiv.querySelectorAll('[src]');
         elementsWithSrc.forEach(element => {
             const src = element.getAttribute('src');
-    
+
             if (src && src.startsWith('data:')) {
                 if (!src.startsWith('data:image/')) {
                     element.setAttribute('src', '_NOT_VALID_URI_');
                 }
+            } else if (src && !src.startsWith('http') && !src.startsWith('data:')) {
+                element.setAttribute('src', '_NOT_VALID_URI_');
             }
         });
-    
+
         const filtered = tempDiv.innerHTML
+            .replace(/<\s*script/gi, '')
             .replace(/<\s*script[\s\S]*?>[\s\S]*?<\/script\s*[^>]*>/gi, '')
-            .replace(/\bon\w+=(["'`])([^"'>]*)\1/gi, '')
-            .replace(/\bon\w+="[^"]*"/gi, '')
-            .replace(/\bon\w+='[^']*'/gi, '')
-            .replace(/\bon\w+=\s*`[^`]*`/gi, '')
+            .replace(/\s*on\w+="[^"]*"/gi, '')
+            .replace(/\s*on\w+='[^']*'/gi, '')
+            .replace(/\s*on\w+=`[^`]*`/gi, '')
             .replace(/javascript:/gi, '')
             .replace(/vbscript:/gi, '')
             .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
