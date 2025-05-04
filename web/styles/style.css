@@ -1072,6 +1072,7 @@ code {
     box-shadow: blue 5px 0px 5px;
     cursor: pointer;
     margin-bottom: 1em;
+    color: var(--text-white-final);
 }
 
 .bsInfos #QRChoice {
