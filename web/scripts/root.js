@@ -1,17 +1,25 @@
-class AppTools {
+class Root {
     constructor() {}
     
     /**detect if the client is desktop or mobile to adapt the app
      * the app is based on this limit (mobile <= 800px > desktop)*/
-    detectDevice() {
+    static detectDevice() {
         return window.screen.width <= 800 ? 'mobile' : 'desktop';
     }
 
-    isHome() {
+    static isHome() {
         return (window.location.pathname.split("/").pop() === "index.html") ? true : false;
     }
 
-    resetInput(messageInput, hiddenFileInput, generateButton) {
+    static isOnDesktop() {
+        return Root.detectDevice() === 'desktop';
+    }
+
+    static isOnMobile() {
+        return Root.detectDevice() === 'mobile';
+    }
+
+    static resetInput(messageInput, hiddenFileInput, generateButton) {
         if (messageInput && messageInput !== null) {
             messageInput.value = "";
         }
@@ -27,7 +35,7 @@ class AppTools {
      * find the unit of the generated QRCode size
      * @param size  the size in bits of the QRCode
      */
-    findUnit(size) {
+    static findUnit(size) {
         const units = Object.freeze(["B", "KB", "MB", "GB", "TB"]);
         let k = 0;
         while (size >= 1000) {
@@ -39,13 +47,12 @@ class AppTools {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = new AppTools();
     const burger_menu = document.getElementById('burger-menu');
     const darkMode = document.getElementById('darkMode');
     const side_menu = document.getElementById('side_menu');
     const _blur = document.getElementById('blur');
     
-    let currentUserDevice = root.detectDevice(); // current user device (mobile or desktop)
+    let currentUserDevice = Root.detectDevice(); // current user device (mobile or desktop)
 
     document.documentElement.classList.toggle('dark_theme', window.matchMedia('(prefers-color-scheme: dark)').matches);
             
@@ -54,17 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function adjustUI() {
-        if (root.isHome()) {
+        if (Root.isHome()) {
             const qrcodeContainer = document.getElementById('qrcode');
-            const navbarHeight = document.querySelector('.navbar').clientHeight;
-            qrcodeContainer.style.height = root.detectDevice() === 'mobile' ? `calc(100vh - ${navbarHeight}px - ${document.querySelector('#search').clientHeight}px)` : `calc(100vh - ${navbarHeight}px)`;
+            qrcodeContainer.style.height = `calc(100vh - ${document.querySelector('.navbar').clientHeight}px - ${document.querySelector('#search').clientHeight}px)`;
         }
 
-        currentUserDevice = root.detectDevice();
+        currentUserDevice = Root.detectDevice();
     }
 
     window.addEventListener('resize', () => {
-        if (root.detectDevice() !== currentUserDevice) {
+        if (Root.detectDevice() !== currentUserDevice) {
             adjustUI();
         }
     });
@@ -90,5 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector(':root').classList.toggle('dark_theme');
             darkMode.classList.toggle('active');
         });
+    }
+
+    if (Root.isHome() && Root.isOnDesktop()) {
+        const search = document.getElementById('search');
+        search.innerHTML += `
+            <input type="text" id="messageInput" placeholder="Write here to generate..." autofocus autocapitalize="none" autocomplete="off" spellcheck="false" title="Write here to generate...">
+            <div class="send-btn" id="generateButton" title="Generate QRCode">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0l20 10L0 20V0zm0 8v4l10-2L0 8z"/></svg>
+            </div>
+        `;
     }
 });

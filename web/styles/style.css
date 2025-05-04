@@ -260,7 +260,7 @@ code {
         padding-left: 1rem;
         font-size: .9em;
         border: none;
-        border-radius: var(--spacing-10) 0 0 var(--spacing-10);
+        border-radius: 5px;
     }
     
     #global_header {
@@ -376,58 +376,6 @@ code {
 
     #burger-menu ul {
         display: none;
-    }
-}
-
-.importBar {
-    display: none;
-    position: fixed;
-    color: var(--text-white);
-    bottom: var(--spacing-15);
-    left: 0;
-    right: 0;
-    width: fit-content;
-    padding: var(--spacing-7) 14px;
-    margin-left: 5%;
-    margin-right: auto;
-    max-width: 90px;
-    align-items: center;
-    gap: 16px;
-    border-radius: 40px;
-    background:  #000;
-    box-shadow: var(--dark-soft-shadow);
-    transition: .3s;
-    transform: scale(1.15);
-}
-  
-.importBar svg {
-    filter: var(--importBar-btn);
-}
-  
-#imgSelectButton {
-    height: 24px;
-    transform: scale(1.20);
-}
-
-
-/* RESPONSIVE */
-
-
-/* Design For Mobile Device From Here */
-@media only screen and (max-width: 800px) {
-    .importBar {
-        display: flex;
-        /* width: 100%;
-        bottom: 0;
-        margin: 0;
-        border-radius: 12px 12px 0 0;
-        max-width: 100%;
-        gap: 0;
-        right: 0;
-        transform: scale(1);
-        padding: 1rem;
-        justify-content: space-around;
-        background: var(--bg-3); */
     }
 }
 
@@ -828,6 +776,56 @@ code {
     }
 }
 
+#sidebar {
+    position: relative;
+    display: flex;
+    left: 0;
+    width: 25vw;
+    min-width: 225px;
+    max-width: 250px;
+    padding: 1rem 1rem 1rem 1.5rem;
+    gap: 5px;
+    flex-direction: column;
+    border-right: 1px solid var(--light-dark);
+    background: var(--bg-1);
+    transition: .3s cubic-bezier(.18,.89,.32,1.28);
+}
+
+#sidebar ul {
+    display: flex;
+    padding: 1rem 0;
+    flex-direction: column;
+    list-style: none;
+}
+
+#sidebar ul h3 {
+    margin-bottom: 1rem;
+}
+
+#sidebar ul li {
+    padding: 0.35rem 0 0.35rem 1rem;
+    border-left: 1px solid var(--selected-border-color);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#sidebar ul li:hover {
+    background: var(--light-dark);
+}
+
+#sidebar ul li:active {
+    background: rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVE */
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {
+    #sidebar {
+        display: none;
+    }
+}
+
 .bsMenu {
     display: flex;
     position: fixed;
@@ -912,10 +910,28 @@ code {
     width: 0;
 }
 
+.bsLabel {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5em;
+    justify-content: left;
+}
+
+.bsLabel #bsTitle {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+.bsLabel #bsCaption {
+    opacity: 0.8;
+    font-size: 0.95em;
+}
+
 .bsInfos {
     display: flex;
     gap: calc(1.6 * var(--spacing-15));
     padding: var(--spacing-15) 1.5rem;
+    flex-direction: column;
 }
 
 .bsImage {
@@ -968,7 +984,7 @@ code {
     right: 0;
 }
 
-#downloadBtn {
+.bsButtons .primaryBtn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -983,35 +999,33 @@ code {
     transition: .3s;
 }
 
-#downloadBtn p {
+.primaryBtn p {
     color: #fff;
 }
 
-#downloadBtn:hover {
+.primaryBtn:hover {
     background: var(--accent-color-hover);
 }
 
-#deleteBtn {
+.bsButtons .secondaryBtn {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: var(--spacing-7);
     gap: var(--spacing-15);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
     font-weight: 500;
     border-radius: 12px;
     cursor: pointer;
     transition: .3s;
 }
 
-#deleteBtn p {
+.secondaryBtn p {
     color: var(--accent-color);
     margin: 0 2rem;
 }
 
-#deleteBtn p:hover {
+.secondaryBtn p:hover {
     color: var(--accent-color-hover);
 }
 
@@ -1023,6 +1037,62 @@ code {
     }
 }
 
+.colorPicker {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-15);
+    justify-content: center;
+}
+
+.colorPicker .colorPickerContainer {
+    display: flex;
+    gap: var(--spacing-15);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.colorPicker .colorPickerContainer .colorInput {
+    height: 2em;
+    border-radius: 9999px;
+    padding: 0px;
+    width: 2em;
+    box-shadow: rgba(0,0,0,0.07) 5px 5px 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}#createNewBtn {
+    margin: auto;
+    margin-bottom: auto;
+    width: 45%;
+    text-align: center;
+    background: blue;
+    padding: 0.5em 2em;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: blue 5px 0px 5px;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.bsInfos #QRChoice {
+    display: flex;
+    padding: var(--spacing-10);
+    border: 1px solid var(--softer-light);
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--spacing-10);
+    gap: 1em;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#QRChoice #QRCodePreview {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    background: linear-gradient(0.6turn, black, 65%, white);
+}
 .blur {
     display: none;
     position: absolute;

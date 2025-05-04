@@ -4,7 +4,7 @@
  * Easily create BottomSheetMenu
  */
 class BottomSheetMenu {
-    constructor(menuId) {
+    constructor(menuId, options = {}) {
         this.menu = document.createElement('div');
         this.menu.id = menuId;
         this.menu.className = 'bsMenu';
@@ -18,6 +18,10 @@ class BottomSheetMenu {
                     </div>
                 </div>
                 <div class="bsBody">
+                    <div class="bsLabel">
+                        <div class="bsTitle"></div>
+                        <div class="bsCaption"></div>
+                    </div>
                     <div class="bsInfos"></div>
                     <div class="bsButtons"></div>
                 </div>
@@ -30,12 +34,13 @@ class BottomSheetMenu {
         this.content = this.menu.querySelector('.bsContent');
         this.header = this.menu.querySelector('.bsHeader');
         this.body = this.menu.querySelector('.bsBody');
+        this.label = this.menu.querySelector('.bsLabel');
         this.infosContainer = this.menu.querySelector('.bsInfos');
         this.buttonsContainer = this.menu.querySelector('.bsButtons');
 
         this.isDragging = false;
         this.startY = 0;
-        this.startHeight = 55; // must change this in the future
+        this.startHeight = options.height || 55; // must change this in the future
 
         this.setHeight(0);
         this.bindEvents();
@@ -61,20 +66,28 @@ class BottomSheetMenu {
             this.isDragging = false;
             this.menu.classList.remove('dragging');
 
-            let menuHeight = parseInt(this.content.style.height) <55 ? this.hide() : this.setHeight(this.startHeight);
+            let menuHeight = parseInt(this.content.style.height) < 55 ? this.hide() : this.setHeight(this.startHeight);
         }
 
-        this.menu.addEventListener('mousedown', dragStart);
-        this.menu.addEventListener('mousemove', dragging);
-        this.menu.addEventListener('mouseup', dragStop);
-        this.menu.addEventListener('touchstart', dragStart);
-        this.menu.addEventListener('touchmove', dragging);
+        this.header.addEventListener('mousedown', dragStart);
+        this.header.addEventListener('mousemove', dragging);
+        this.header.addEventListener('mouseup', dragStop);
+        this.header.addEventListener('touchstart', dragStart);
+        this.header.addEventListener('touchmove', dragging);
         document.addEventListener('touchend', dragStop);
         this.overlay.addEventListener('click', () => this.hide());
     }
 
     setHeight(height) {
         this.content.style.height = `${height}vh`;
+    }
+
+    setTitle(title) {
+        this.label.innerHTML += `<div id="bsTitle" class="unselectable">${title}</div>`;
+    }
+
+    setCaption(caption) {
+        this.label.innerHTML += `<div id="bsCaption" class="unselectable">${caption}</div>`;
     }
 
     setInfos(htmlContent) {
@@ -85,10 +98,30 @@ class BottomSheetMenu {
         const button = document.createElement('div');
         button.id = options.id || '';
         button.className = options.className || '';
+        button.style = options.style || '';
+
+        if (options.disabled) {
+            button.style.pointerEvents = 'none';
+            button.style.opacity = '0.4';
+        }
 
         button.innerHTML = `<p>${label}</p>`;
         button.addEventListener('click', callback);
         this.buttonsContainer.appendChild(button);
+    }
+
+    addEventListener(id, event, callback) {
+        let iDs = id.split(' ');
+        let events = event.split(' ');
+
+        for (let i = 0; i < iDs.length; i++) {
+            const element = this.infosContainer.querySelector(`#${iDs[i]}`);
+            if (element) {
+                element.addEventListener(event, callback);
+            } else {
+                console.error(`Element with id ${iDs[i]} not found`);
+            }
+        }
     }
 
     clearInfos() {

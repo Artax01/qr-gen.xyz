@@ -1,8 +1,6 @@
 .git/
-dev/
+.dev/
 
 *.css
-**/makefile
 !**/style.css
-!**/styles/pages/
-
+!**/pages/*.css
