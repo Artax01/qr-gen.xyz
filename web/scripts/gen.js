@@ -66,8 +66,8 @@ class Card {
     constructor(id, options = {}) {
         this.id = id;
         this.text = messageInput.value.trim();
-        this.time = Root.escapeHTML(this.getCurrentTime());
-        this.date = Root.escapeHTML(this.getCurrentDate());
+        this.time = this.getCurrentTime();
+        this.date = this.getCurrentDate();
         this.card = this.render();
         this.menu = null;
         this.colorLight = options.colorLight || "#FFFFFF";
@@ -112,7 +112,7 @@ class Card {
             const qrCodeImage = this.card.querySelector('.img_container img').src;
             fetch(qrCodeImage).then(response => response.blob()).then(blob => {
                 this.size = Root.findUnit(blob.size);
-                this.card.querySelector('#size').innerText = Root.escapeHTML(this.size);
+                this.card.querySelector('#size').innerText = this.size;
             });
         },100);
     }

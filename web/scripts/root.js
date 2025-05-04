@@ -45,25 +45,6 @@ class Root {
         }
         return `${size.toFixed(2)} ${units[k]}`;
     }
-
-    static escapeHTML(str) {
-        return str
-            .replace(/<\s*script[\s\S]*?>[\s\S]*?<\/script\s*[^>]*>/gi, '')
-            .replace(/\bon\w+=(["'`])([^"'>]*)\1/gi, '')
-            .replace(/\bon\w+="[^"]*"/gi, '')
-            .replace(/\bon\w+='[^']*'/gi, '')
-            .replace(/\bon\w+=\s*`[^`]*`/gi, '')
-            .replace(/javascript:/gi, '')
-            .replace(/data:/gi, '')
-            .replace(/vbscript:/gi, '')
-            .replace(/\s(src|href)="javascript:[^"]*"/gi, '')
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/\"/g, '&quot;')
-            .replace(/\'/g, '&#39;')
-            .replace(/\//g, '&#x2F;');
-    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -121,7 +121,7 @@ class BottomSheetMenu {
             .replace(/\bon\w+=\s*`[^`]*`/gi, '')
             .replace(/javascript:/gi, '')
             .replace(/vbscript:/gi, '')
-            .replace(/\s(src|href)="javascript:[^"]*"/gi, '')
+            .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
         this.infosContainer.innerHTML = filtered;
     }
 
