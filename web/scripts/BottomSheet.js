@@ -83,15 +83,27 @@ class BottomSheetMenu {
     }
 
     setTitle(title) {
-        this.label.innerHTML += `<div id="bsTitle" class="unselectable">${title}</div>`;
+        const el = document.createElement('div');
+        el.id = 'bsTitle';
+        el.className = 'unselectable';
+        el.textContent = Root.escapeHTML(title);
+        this.label.appendChild(el);
     }
 
     setCaption(caption) {
-        this.label.innerHTML += `<div id="bsCaption" class="unselectable">${caption}</div>`;
+        const el = document.createElement('div');
+        el.id = 'bsCaption';
+        el.className = 'unselectable';
+        el.textContent = Root.escapeHTML(caption);
+        this.label.appendChild(el);
     }
 
     setInfos(htmlContent) {
-        this.infosContainer.innerHTML = htmlContent;
+        const verifiedContent = htmlContent.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+                                            .replace(/on\w+="[^"]*"/gi, '')
+                                            .replace(/javascript:/gi, '');
+        this.infosContainer.innerHTML = verifiedContent;
+        // this.infosContainer.innerHTML = Root.escapeHTML(htmlContent);
     }
 
     addButton(label, callback, options={}) {
@@ -105,14 +117,15 @@ class BottomSheetMenu {
             button.style.opacity = '0.4';
         }
 
-        button.innerHTML = `<p>${label}</p>`;
+        const el = document.createElement('p');
+        el.textContent = Root.escapeHTML(label);
+        button.appendChild(el);
         button.addEventListener('click', callback);
         this.buttonsContainer.appendChild(button);
     }
 
     addEventListener(id, event, callback) {
         let iDs = id.split(' ');
-        let events = event.split(' ');
 
         for (let i = 0; i < iDs.length; i++) {
             const element = this.infosContainer.querySelector(`#${iDs[i]}`);

@@ -968,20 +968,21 @@ code {
 
 .bsButtons {
     display: flex;
-    flex-direction: column;
-    padding: 15px 30px 30px 30px;
-    gap: var(--spacing-7);
+    position: relative;
     width: 100%;
     max-width: 100%;
+    padding: 15px 30px 30px 30px;
+    bottom: var(--spacing-7);
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    gap: var(--spacing-7);
     font-size: 1.05em;
     border-top: 1px solid var(--border-3);
     border-radius: 12px 12px 0 0;
     background: var(--bg-2);
-    margin-left: auto;
-    margin-right: auto;
-    bottom: var(--spacing-7);
-    left: 0;
-    right: 0;
+    flex-direction: column;
 }
 
 .bsButtons .primaryBtn {
@@ -1071,7 +1072,7 @@ code {
     font-weight: bold;
     box-shadow: blue 5px 0px 5px;
     cursor: pointer;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
     color: var(--text-white-final);
 }
 
@@ -1088,11 +1089,11 @@ code {
 }
 
 #QRChoice #QRCodePreview {
+    display: block;
     position: relative;
     height: 40px;
     width: 40px;
     min-width: 40px;
-    background: linear-gradient(0.6turn, black, 65%, white);
 }
 .blur {
     display: none;

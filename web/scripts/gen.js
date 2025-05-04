@@ -66,8 +66,8 @@ class Card {
     constructor(id, options = {}) {
         this.id = id;
         this.text = messageInput.value.trim();
-        this.time = this.getCurrentTime();
-        this.date = this.getCurrentDate();
+        this.time = Root.escapeHTML(this.getCurrentTime());
+        this.date = Root.escapeHTML(this.getCurrentDate());
         this.card = this.render();
         this.menu = null;
         this.colorLight = options.colorLight || "#FFFFFF";
@@ -112,7 +112,7 @@ class Card {
             const qrCodeImage = this.card.querySelector('.img_container img').src;
             fetch(qrCodeImage).then(response => response.blob()).then(blob => {
                 this.size = Root.findUnit(blob.size);
-                this.card.querySelector('#size').innerText = this.size;
+                this.card.querySelector('#size').innerText = Root.escapeHTML(this.size);
             });
         },100);
     }
@@ -244,7 +244,7 @@ function selectionMenu () {
     selectionMenu.setCaption('Choose what you want to generate.');
     selectionMenu.setInfos(`
         <div id="QRChoice">
-            <div id="QRCodePreview"></div>
+            <img id="QRCodePreview" src="./assets/template_qrcode.jpg" alt=""></img>
             <div>Generate a new personalized QRCode -></div>
         </div>
     `);
@@ -289,12 +289,12 @@ function createQRMenu() {
     createQRMenu.addButton('Generate', () => { generateQRCode({ colorLight: colorLight.value, colorDark: colorDark.value }); createQRMenu.hide(); document.getElementById('selectionMenu').remove(); }, { id: "generateButton", className: "primaryBtn",  disabled: true });
     createQRMenu.addButton('Back', () => { createQRMenu.hide(); }, { className: 'secondaryBtn'});
 
-    let timeout;
     function generate() {
         container.innerHTML = "";
         if (messageInput.value.trim().length === 0) new QRCode(container, { text: " ", width: 128, height: 128, colorDark: colorDark.value, colorLight: colorLight.value });
         else new QRCode(container, { text: messageInput.value.trim(), width: 128, height: 128, colorDark: colorDark.value, colorLight: colorLight.value });
     }
+    let timeout;
     createQRMenu.addEventListener('messageInput', 'input', () => {
         let generateButton = createQRMenu.menu.querySelector('#generateButton');
             if (messageInput.value.trim().length === 0) {
@@ -308,7 +308,10 @@ function createQRMenu() {
             }
     });
 
-    createQRMenu.addEventListener('colorLight colorDark', 'change', () => { generate(); });
+    createQRMenu.addEventListener('colorLight colorDark', 'change', () => { 
+        clearTimeout(timeout);
+        timeout = setTimeout(() => { generate(); }, 400);
+    });
     generate();
     createQRMenu.show();
 }
