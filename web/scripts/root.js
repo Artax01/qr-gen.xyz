@@ -48,15 +48,20 @@ class Root {
 
     static escapeHTML(str) {
         return str
+            .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+            .replace(/\bon\w+="[^"]*"/gi, '')
+            .replace(/\bon\w+='[^']*'/gi, '')
+            .replace(/\bon\w+=\s*`[^`]*`/gi, '')
+            .replace(/javascript:/gi, '')
+            .replace(/data:/gi, '')
+            .replace(/vbscript:/gi, '')
+            .replace(/\s(src|href)="javascript:[^"]*"/gi, '')
             .replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
             .replace(/\"/g, '&quot;')
             .replace(/\'/g, '&#39;')
-            .replace(/\//g, '&#x2F;')
-            .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
-            .replace(/on\w+="[^"]*"/gi, '')
-            .replace(/javascript:/gi, '');
+            .replace(/\//g, '&#x2F;');
     }
 }
 

@@ -153,10 +153,11 @@ class Card {
             this.menu.setInfos(`
                 <div id="bsImage" class="bsImage unselectable">${image}</div>
                 <div class="bsTextInfos">
-                    <div id="bsName">${this.text}</div>
+                    <div id="bsName"></div>
                     <div id="bsDate">${this.time}, ${this.date}</div>
                 </div>
             `);
+            this.menu.menu.querySelector('#bsName').innerText = this.text;
             this.menu.addButton('Download', () => { this.downloadQR(); }, { className: 'primaryBtn' });
             this.menu.addButton('Delete', () => { cardContainer.removeCard(this.id); }, { className: 'secondaryBtn' });
             this.menu.show();

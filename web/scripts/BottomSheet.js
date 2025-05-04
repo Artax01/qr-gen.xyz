@@ -86,7 +86,7 @@ class BottomSheetMenu {
         const el = document.createElement('div');
         el.id = 'bsTitle';
         el.className = 'unselectable';
-        el.textContent = Root.escapeHTML(title);
+        el.textContent = title;
         this.label.appendChild(el);
     }
 
@@ -94,16 +94,31 @@ class BottomSheetMenu {
         const el = document.createElement('div');
         el.id = 'bsCaption';
         el.className = 'unselectable';
-        el.textContent = Root.escapeHTML(caption);
+        el.textContent = caption;
         this.label.appendChild(el);
     }
 
     setInfos(htmlContent) {
-        const verifiedContent = htmlContent.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
-                                            .replace(/on\w+="[^"]*"/gi, '')
-                                            .replace(/javascript:/gi, '');
-        this.infosContainer.innerHTML = verifiedContent;
-        // this.infosContainer.innerHTML = Root.escapeHTML(htmlContent);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = htmlContent;
+    
+        const elementsWithSrc = tempDiv.querySelectorAll('[src]');
+        elementsWithSrc.forEach(element => {
+            const src = element.getAttribute('src');
+    
+            if (src && src.startsWith('data:') && !src.startsWith('data:image/')) {
+                element.setAttribute('src', '_NOT_VALID_URI_');
+            }
+        });
+    
+        const filtered = tempDiv.innerHTML.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+                                                .replace(/\bon\w+="[^"]*"/gi, '')
+                                                .replace(/\bon\w+='[^']*'/gi, '')
+                                                .replace(/\bon\w+=\s*`[^`]*`/gi, '')
+                                                .replace(/javascript:/gi, '')
+                                                .replace(/vbscript:/gi, '')
+                                                .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
+        this.infosContainer.innerHTML = filtered;
     }
 
     addButton(label, callback, options={}) {
@@ -118,7 +133,7 @@ class BottomSheetMenu {
         }
 
         const el = document.createElement('p');
-        el.textContent = Root.escapeHTML(label);
+        el.textContent = label;
         button.appendChild(el);
         button.addEventListener('click', callback);
         this.buttonsContainer.appendChild(button);
