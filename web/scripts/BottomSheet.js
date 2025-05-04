@@ -119,8 +119,8 @@ class BottomSheetMenu {
             .replace(/vbscript:/gi, '')
             .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
     
-        const escapedContent = this.escapeHTML(filtered);
-        this.infosContainer.innerHTML = escapedContent;
+        const escaped = Root.escapeHTML(filtered);
+        this.infosContainer.innerHTML = escaped;
     }
 
     addButton(label, callback, options={}) {
