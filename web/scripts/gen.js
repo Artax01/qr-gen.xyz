@@ -6,47 +6,6 @@ const generateButton = document.getElementById('generateButton');
 Root.resetInput(messageInput, null, generateButton);
 
 
-// messageInput.addEventListener("input", () => {
-//     if (messageInput.value.trim().length === 0) {
-//         generateButton.style.opacity = 0.4;
-//     } else {
-//         generateButton.style.opacity = 1;
-//     }
-// });
-
-// messageInput.addEventListener("keypress", (event) => {
-//     if (event.key === "Enter") {
-//         if (messageInput.value.trim().length > 0) {
-//             generateQRCode();
-//         }
-//     }
-// });
-
-// generateButton.addEventListener("click", () => {
-//     if (messageInput.value.trim().length > 0) {
-//         generateQRCode();
-//     }
-// });
-
-if (Root.isHome()) {
-    const fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
-    const hiddenFileInput = document.getElementById('hiddenFileInput');
-
-    hiddenFileInput.addEventListener('change', (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            Root.resetInput(messageInput, hiddenFileInput, null);
-            messageInput.value = file.name;
-            cardContainer.addCard();
-        }
-    });
-    
-    fileSelectButton.addEventListener('click', (event) => {
-      event.preventDefault();
-      hiddenFileInput.click();
-    });
-}
-
 function generateQRCode(options = {}) {
     const container = Root.isHome() ? cardContainer.addCard(options) : document.querySelector("#image");
     if (container && !Root.isHome()) new Card().getQR(container);
@@ -55,12 +14,12 @@ function generateQRCode(options = {}) {
 /**
  * @name Card
  * @description Create card that contain generated qrcode
- * @function getCurrentTime
- * @function getCurrentDate
- * @function getQR
- * @function updateSize
- * @function downloadQR
- * @function render render the generated QRCode
+ * @method getCurrentTime
+ * @method getCurrentDate
+ * @method getQR
+ * @method updateSize
+ * @method downloadQR
+ * @method render render the generated QRCode
 */
 class Card {
     constructor(id, options = {}) {
@@ -170,8 +129,8 @@ class Card {
 /**
  * @name CardContainer
  * @description Container for generated qrcode classes instance
- * @function addCard
- * @function updateStatus
+ * @method addCard
+ * @method updateStatus
  */
 class CardContainer {
     constructor() {
@@ -224,12 +183,77 @@ class CardContainer {
     }
 }
 
+
+
+
+
+
+
+
+
+
 const cardContainer = new CardContainer();
-if (Root.isHome() && Root.isOnMobile()) { 
-    document.getElementById('global_feed').innerHTML += `<div id="createNewBtn">Create New</div>`;
-    document.getElementById('createNewBtn').addEventListener('click', selectionMenu);
-    selectionMenu(); 
+
+const updateOnResize = () => {
+    if (Root.isOnDesktop() && Root.isHome()) {
+        messageInput.addEventListener("click", selectionMenu);
+
+        const fileSelectButton  = document.getElementById('fileSelectButton'); // file import button
+        const hiddenFileInput = document.getElementById('hiddenFileInput');
+
+        hiddenFileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                Root.resetInput(messageInput, hiddenFileInput, null);
+                messageInput.value = file.name;
+                cardContainer.addCard();
+            }
+        });
+        
+        fileSelectButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            hiddenFileInput.click();
+        });
+    }
+    else if (Root.isHome() && Root.isOnMobile()) {
+        document.getElementById('createNewBtn').addEventListener('click', selectionMenu);
+        selectionMenu();
+    }
+    
+    if (!Root.isHome() || (Root.isOnDesktop() && Root.isHome())) {
+        messageInput.addEventListener("input", () => {
+            if (messageInput.value.trim().length === 0) {
+                generateButton.style.opacity = 0.4;
+            } else {
+                generateButton.style.opacity = 1;
+            }
+        });
+
+        messageInput.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") {
+                if (messageInput.value.trim().length > 0) {
+                    generateQRCode();
+                }
+            }
+        });
+
+        generateButton.addEventListener("click", () => {
+            if (messageInput.value.trim().length > 0) {
+                generateQRCode();
+            }
+        });
+    }
 }
+
+updateOnResize();
+
+
+
+
+
+
+
+
 
 
 
@@ -263,7 +287,7 @@ function createQRMenu() {
         <p class="unselectable" style="opacity: 0.4; font-size: 0.8em; font-style: italic; text-align:center;">
             Please consider that when you change QRCode color, the QRCode can become unreadable ! 
             Especially when you change more than one color ! 
-            (The constract much be high).
+            (The constract must be high).
         </p>
         <div id="bsTextInfos">
             <div id="colorPicker" class="colorPicker">

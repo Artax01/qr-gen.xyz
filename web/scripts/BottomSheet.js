@@ -1,9 +1,9 @@
-// optMenu is open when clicked on a card
-// the eventListener is in script.js file in Card class in render method
 /**
- * Easily create BottomSheetMenu
+ * Easily create BottomSheet menu with this class
  */
 class BottomSheetMenu {
+    // static instances = [];
+
     constructor(menuId, options = {}) {
         this.menu = document.createElement('div');
         this.menu.id = menuId;
@@ -69,6 +69,13 @@ class BottomSheetMenu {
             let menuHeight = parseInt(this.content.style.height) < 55 ? this.hide() : this.setHeight(this.startHeight);
         }
 
+        // const closeOnEscape = (event) => {
+        //     if (event.key === 'Escape') {
+        //         this.hide();
+        //         document.removeEventListener('keydown', closeOnEscape);
+        //     }
+        // }
+
         this.header.addEventListener('mousedown', dragStart);
         this.header.addEventListener('mousemove', dragging);
         this.header.addEventListener('mouseup', dragStop);
@@ -76,6 +83,7 @@ class BottomSheetMenu {
         this.header.addEventListener('touchmove', dragging);
         document.addEventListener('touchend', dragStop);
         this.overlay.addEventListener('click', () => this.hide());
+        // document.addEventListener('keydown', closeOnEscape);
     }
 
     setHeight(height) {
@@ -99,32 +107,10 @@ class BottomSheetMenu {
     }
 
     setInfos(htmlContent) {
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = htmlContent;
-
-        const elementsWithSrc = tempDiv.querySelectorAll('[src]');
-        elementsWithSrc.forEach(element => {
-            const src = element.getAttribute('src');
-
-            if (src && src.startsWith('data:')) {
-                if (!src.startsWith('data:image/')) {
-                    element.setAttribute('src', '_NOT_VALID_URI_');
-                }
-            } else if (src && !src.startsWith('http') && !src.startsWith('data:')) {
-                element.setAttribute('src', '_NOT_VALID_URI_');
-            }
-        });
-
-        const filtered = tempDiv.innerHTML
-            .replace(/<\s*script/gi, '')
-            .replace(/<\s*script[\s\S]*?>[\s\S]*?<\/script\s*[^>]*>/gi, '')
-            .replace(/\s*on\w+="[^"]*"/gi, '')
-            .replace(/\s*on\w+='[^']*'/gi, '')
-            .replace(/\s*on\w+=`[^`]*`/gi, '')
-            .replace(/javascript:/gi, '')
-            .replace(/vbscript:/gi, '')
-            .replace(/\s(src|href)="javascript:[^"]*"/gi, '');
-        this.infosContainer.innerHTML = filtered;
+        if (htmlContent && htmlContent.trim() !== '' && htmlContent instanceof String) {
+            this.infosContainer.innerHTML = '';
+            this.infosContainer.innerHTML = htmlContent;
+        }
     }
 
     addButton(label, callback, options={}) {
@@ -180,4 +166,5 @@ class BottomSheetMenu {
             cardMenu.remove();
         }, 500);
     }
+    
 }

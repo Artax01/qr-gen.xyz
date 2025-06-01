@@ -32,10 +32,6 @@ class Root {
         }
     }
 
-    /**
-     * find the unit of the generated QRCode size
-     * @param size  the size in bits of the QRCode
-     */
     static findUnit(size) {
         const units = Object.freeze(["B", "KB", "MB", "GB", "TB"]);
         let k = 0;
@@ -64,8 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function adjustUI() {
         if (Root.isHome()) {
             const qrcodeContainer = document.getElementById('qrcode');
-            qrcodeContainer.style.height = `calc(100vh - ${document.querySelector('.navbar').clientHeight}px - ${document.querySelector('#search').clientHeight}px)`;
+            const search = document.getElementById('search');
+            qrcodeContainer.style.height = `calc(100vh - ${document.querySelector('.navbar').clientHeight}px - ${search.clientHeight}px)`;
+            if (Root.isOnMobile()) {
+                search.style.display = 'none';
+            } else {
+                search.style.display = 'flex';
+            }
         }
+        // updateOnResize;
 
         currentUserDevice = Root.detectDevice();
     }
@@ -97,15 +100,5 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelector(':root').classList.toggle('dark_theme');
             darkMode.classList.toggle('active');
         });
-    }
-
-    if (Root.isHome() && Root.isOnDesktop()) {
-        const search = document.getElementById('search');
-        search.innerHTML += `
-            <input type="text" id="messageInput" placeholder="Write here to generate..." autofocus autocapitalize="none" autocomplete="off" spellcheck="false" title="Write here to generate...">
-            <div class="send-btn" id="generateButton" title="Generate QRCode">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0l20 10L0 20V0zm0 8v4l10-2L0 8z"/></svg>
-            </div>
-        `;
     }
 });

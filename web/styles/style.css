@@ -260,7 +260,7 @@ code {
         padding-left: 1rem;
         font-size: .9em;
         border: none;
-        border-radius: 5px;
+        border-radius: 5px !important;
     }
     
     #global_header {
@@ -667,7 +667,6 @@ code {
     }
 
     .img_container {
-        display: none;
         margin: 3px var(--spacing-10) 3px 3px;
         padding: 2px;
     }
@@ -1062,6 +1061,7 @@ code {
     border: none;
     cursor: pointer;
 }#createNewBtn {
+    display: none;
     margin: auto;
     margin-bottom: auto;
     width: 45%;
@@ -1074,6 +1074,7 @@ code {
     cursor: pointer;
     margin-bottom: 1.5em;
     color: var(--text-white-final);
+    transition: .3s;
 }
 
 .bsInfos #QRChoice {
@@ -1094,6 +1095,15 @@ code {
     height: 40px;
     width: 40px;
     min-width: 40px;
+}
+
+/* RESPONSIVE */
+
+/* Design For Mobile Device From Here */
+@media only screen and (max-width: 800px) {
+    #createNewBtn {
+        display: block;
+    }
 }
 .blur {
     display: none;
