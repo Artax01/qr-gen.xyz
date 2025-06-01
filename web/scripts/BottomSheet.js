@@ -107,7 +107,7 @@ class BottomSheetMenu {
     }
 
     setInfos(htmlContent) {
-        if (htmlContent && htmlContent.trim() !== '') {
+        if (htmlContent) {
             this.infosContainer.innerHTML = '';
             this.infosContainer.innerHTML = htmlContent;
         }
